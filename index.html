@@ -426,43 +426,43 @@
     .lookbook-title { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
     .lookbook-sub { font-size: 0.85rem; color: rgba(250, 250, 248, 0.7); }
 
-    /* --- SECTION: APP STORE BADGE --- */
-    .badge-section {
-        background-color: var(--bg-color);
-        padding: 180px 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-top: var(--border-subtle);
-    }
+    /* --- SECTION: APP STORE BADGE PROVISIONS --- */
+        .badge-section {
+            background-color: var(--bg-color);
+            padding: 180px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: var(--border-subtle);
+        }
 
-    .app-store-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
+        .app-store-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
 
-    .app-store-placeholder {
-        width: 180px;
-        height: 54px;
-        background: #000000;
-        color: #FFFFFF;
-        border: 1px solid rgba(255,255,255,0.15);
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 16px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        cursor: pointer;
-        user-select: none;
-        transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-    .app-store-placeholder:hover { transform: scale(1.02); }
-    .app-store-placeholder .badge-top { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500; line-height: 1; margin-bottom: 2px; opacity: 0.8; }
-    .app-store-placeholder .badge-main { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.2px; line-height: 1; }
+        .app-store-link {
+            display: inline-block;
+            text-decoration: none;
+            line-height: 0; /* Prevents text alignment metrics from fracturing SVG boundaries */
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
 
+        .app-store-link:hover {
+            transform: scale(1.04);
+        }
+
+        .app-store-link picture img {
+            width: 180px; /* Exact scale geometry mirroring your original layout */
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .badge-section { padding: 120px 24px; }
+        }
     /* --- STEALTH FOOTER --- */
     .stealth-footer {
         padding: 40px 32px;
@@ -658,15 +658,20 @@
         </div>
     </section>
 
-    <section class="badge-section">
-        <div class="app-store-wrapper">
-            <div class="app-store-placeholder">
-                <span class="badge-top">Download on the</span>
-                <span class="badge-main">App Store</span>
+    <!-- SECTION 4: HIGH-FIDELITY APP STORE AUTOMATION -->
+        <section class="badge-section">
+            <div class="app-store-wrapper">
+                <a href="#" class="app-store-link" target="_blank" rel="noopener noreferrer">
+                    <picture>
+                        <!-- System reads this line first: changes canvas asset if dark mode is active -->
+                        <source srcset="photos/app_store_dark.svg" media="(prefers-color-scheme: dark)">
+                        <!-- Default fallback: serves light canvas asset layout under normal parameters -->
+                        <img src="photos/app_store_light.svg" alt="Download on the App Store">
+                    </picture>
+                </a>
             </div>
-        </div>
-    </section>
-
+        </section>
+        
     <footer class="stealth-footer">
         <div class="copyright">cercle © 2026</div>
         <div class="footer-links">
