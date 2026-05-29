@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Standard Favicon -->
 <link rel="icon" type="image/png" href="photos/favicon.png">
+<!-- Fallback for older browsers -->
 <link rel="shortcut icon" type="image/x-icon" href="photos/favicon.ico">
+<!-- iOS Home Screen / Safari Premium Icon -->
 <link rel="apple-touch-icon" href="photos/apple-touch-icon.png">
+<!-- Primary Meta Tags -->
 <meta name="title" content="cercle">
 <meta name="description" content="Curate something wonderful today.">
+<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cercle.to/">
 <meta property="og:title" content="cercle">
 <meta property="og:description" content="Curate something wonderful today.">
 <meta property="og:image" content="photos/og_share.jpg">
 
+<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://cercle.to/">
 <meta property="twitter:title" content="cercle">
@@ -74,7 +80,7 @@
         flex-direction: column;
         position: relative;
         padding-bottom: 120px;
-        overflow: hidden; /* Fully locks mobile 3D layout bounds from stretching out horizontally */
+        overflow: hidden;
     }
 
     .editorial-padding {
@@ -483,31 +489,31 @@
         .editorial-padding { padding: 90px 24px; }
         .grid-header { margin-bottom: 36px; }
         .manifesto-section { min-height: 85vh; }
-        .billboard-statement { font-size: 4.6rem !important; line-height: 1.05; letter-spacing: -0.06em; }
         .stealth-footer { flex-direction: column; gap: 16px; text-align: center; }
 
-        /* Shrunk Hero Cards profile down by ~13% on mobile as explicitly specified */
+        /* Compressed padding and typography limits to save vertical screen space on mobile */
+        .header { padding: 20px 24px 0px 24px; }
+        .hero-headline { margin-bottom: 24px; }
+
+        /* Direct micro-spacing reduction between collection picker and interactive card deck */
+        .stack-container { margin-top: -24px; }
+
+        /* Shrunk Hero Cards profile down by ~13% on mobile */
         .card {
             width: min(65vw, 31vh) !important;
             height: calc(min(65vw, 31vh) * 1.5) !important;
             border-radius: 14px;
         }
 
-        /* Scaled down grid content padding and typography parameters to prevent image canvas blackout */
-        .lookbook-overlay {
-            padding: 14px !important;
-        }
+        /* Scaled down lookbook content metrics to prevent content blanking */
+        .lookbook-overlay { padding: 14px !important; }
         .lookbook-meta {
             padding: 4px 8px !important;
             font-size: 0.5rem !important;
             margin-bottom: 4px !important;
         }
-        .lookbook-title {
-            font-size: 0.95rem !important;
-        }
-        .lookbook-sub {
-            font-size: 0.75rem !important;
-        }
+        .lookbook-title { font-size: 0.95rem !important; }
+        .lookbook-sub { font-size: 0.75rem !important; }
         .lookbook-item .note {
             font-size: 0.72rem !important;
             margin-top: 4px !important;
@@ -557,7 +563,9 @@
 
             <div class="lookbook-split-container">
 
+                <!-- LEFT TRACK COLUMN -->
                 <div class="lookbook-column">
+                    <!-- 1. Music (Square) -->
                     <div class="lookbook-item ratio-square">
                         <img class="lookbook-img" src="photos/romance.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -568,16 +576,18 @@
                         </div>
                     </div>
 
+                    <!-- 3. Photo (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/disposable_14.png" alt="">
                         <div class="lookbook-overlay">
                             <div class="lookbook-meta">PHOTO</div>
                             <div class="lookbook-title">Disposable #10</div>
                             <div class="lookbook-sub">Eastern Europe</div>
-                            <div class="note">"This blurry shot outside is going straight onto the fridge."</div>
+                            <div class="note">"This blurry shot is going straight onto the fridge."</div>
                         </div>
                     </div>
 
+                    <!-- 5. Music (Square) -->
                     <div class="lookbook-item ratio-square">
                         <img class="lookbook-img" src="photos/impala.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -588,6 +598,7 @@
                         </div>
                     </div>
 
+                    <!-- 7. Books (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/rams.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -598,6 +609,7 @@
                         </div>
                     </div>
 
+                    <!-- 9. Podcast (Square) -->
                     <div class="lookbook-item ratio-square">
                         <img class="lookbook-img" src="photos/mfdoom.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -609,7 +621,9 @@
                     </div>
                 </div>
 
+                <!-- RIGHT TRACK COLUMN -->
                 <div class="lookbook-column">
+                    <!-- 2. Spot (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/neals.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -620,6 +634,7 @@
                         </div>
                     </div>
 
+                    <!-- 4. Spot (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/simmons.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -630,6 +645,7 @@
                         </div>
                     </div>
 
+                    <!-- 6. Photo (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/silver.png" alt="">
                         <div class="lookbook-overlay">
@@ -640,6 +656,7 @@
                         </div>
                     </div>
 
+                    <!-- 8. Spot (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/hackney.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -650,6 +667,7 @@
                         </div>
                     </div>
 
+                    <!-- 10. Link (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/loewe.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -665,6 +683,7 @@
         </div>
     </section>
 
+    <!-- SECTION 4: HIGH-FIDELITY APP STORE SVG IMPLEMENTATION -->
     <section class="badge-section">
         <div class="app-store-wrapper">
             <a href="#" class="app-store-link" target="_blank" rel="noopener noreferrer">
@@ -813,27 +832,23 @@
         }, 8000);
     }
 
+    function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+        stack.classList.remove('dragging');
+        if (Math.abs(currentDrag) > 40) {
+            topCardIndex = currentDrag < 0 ? (topCardIndex + 1) % currentItems.length : (topCardIndex - 1 + currentItems.length) % currentItems.length;
+        }
+        currentDrag = 0;
+        renderStack(0);
+        resetAutoScroll();
+    }
+
     picker.addEventListener('change', (e) => { stopAutoScroll(); loadCollection(e.target.value); });
     stack.addEventListener('pointerdown', (e) => { isDragging = true; startX = e.clientX; stack.classList.add('dragging'); stopAutoScroll(); });
     window.addEventListener('pointermove', (e) => { if (!isDragging) return; currentDrag = e.clientX - startX; requestAnimationFrame(() => renderStack(currentDrag)); });
-    // Create a unified reset function to clear the drag state safely
-        function endDrag() {
-            if (!isDragging) return;
-            isDragging = false;
-            stack.classList.remove('dragging');
-            if (Math.abs(currentDrag) > 40) {
-                topCardIndex = currentDrag < 0 ? (topCardIndex + 1) % currentItems.length : (topCardIndex - 1 + currentItems.length) % currentItems.length;
-            }
-            currentDrag = 0;
-            renderStack(0);
-            resetAutoScroll();
-        }
-
-        // Listen for standard release
-        window.addEventListener('pointerup', endDrag);
-
-        // Listen for browser touch hijacking (like scrolling up/down right over the stack)
-        window.addEventListener('pointercancel', endDrag);
+    window.addEventListener('pointerup', endDrag);
+    window.addEventListener('pointercancel', endDrag);
 
     loadCollection(currentCollectionKey);
 
@@ -857,31 +872,26 @@
     setInterval(animateDynamicWord, 2000);
 
     // ==========================================
-        // STRICT VIEWPORT ZOOM DISABLEMENT ENGINE
-        // ==========================================
-
-        // 1. Neutralizes multi-finger touch configurations (Pinch-to-Zoom)
-        document.addEventListener('touchstart', function (event) {
-            if (event.touches.length > 1) {
-                event.preventDefault();
-            }
-        }, { passive: false });
-
-        // 2. Explicitly overrides and kills native iOS Safari scale gestures
-        document.addEventListener('gesturestart', function (event) {
+    // STRICT VIEWPORT ZOOM DISABLEMENT ENGINE
+    // ==========================================
+    document.addEventListener('touchstart', function (event) {
+        if (event.touches.length > 1) {
             event.preventDefault();
-        });
+        }
+    }, { passive: false });
 
-        // 3. Blocks rapid consecutive tap tracking (Double-Tap to Zoom)
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function (event) {
-            const now = (new Date()).getTime();
-            if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
-    
+    document.addEventListener('gesturestart', function (event) {
+        event.preventDefault();
+    });
+
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function (event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
 </script>
 </body>
 </html>
