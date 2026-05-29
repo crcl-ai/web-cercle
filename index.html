@@ -855,6 +855,33 @@
     }
 
     setInterval(animateDynamicWord, 2000);
+
+    // ==========================================
+        // STRICT VIEWPORT ZOOM DISABLEMENT ENGINE
+        // ==========================================
+
+        // 1. Neutralizes multi-finger touch configurations (Pinch-to-Zoom)
+        document.addEventListener('touchstart', function (event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+
+        // 2. Explicitly overrides and kills native iOS Safari scale gestures
+        document.addEventListener('gesturestart', function (event) {
+            event.preventDefault();
+        });
+
+        // 3. Blocks rapid consecutive tap tracking (Double-Tap to Zoom)
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    
 </script>
 </body>
 </html>
