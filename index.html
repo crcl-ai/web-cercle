@@ -183,7 +183,7 @@
         justify-content: center;
         align-items: center;
         perspective: 1200px;
-        touch-action: none;
+        touch-action: pan-y;
         transition: opacity 0.4s ease;
         min-height: 480px;
     }
@@ -816,11 +816,24 @@
     picker.addEventListener('change', (e) => { stopAutoScroll(); loadCollection(e.target.value); });
     stack.addEventListener('pointerdown', (e) => { isDragging = true; startX = e.clientX; stack.classList.add('dragging'); stopAutoScroll(); });
     window.addEventListener('pointermove', (e) => { if (!isDragging) return; currentDrag = e.clientX - startX; requestAnimationFrame(() => renderStack(currentDrag)); });
-    window.addEventListener('pointerup', () => {
-        if (!isDragging) return; isDragging = false; stack.classList.remove('dragging');
-        if (Math.abs(currentDrag) > 40) { topCardIndex = currentDrag < 0 ? (topCardIndex + 1) % currentItems.length : (topCardIndex - 1 + currentItems.length) % currentItems.length; }
-        currentDrag = 0; renderStack(0); resetAutoScroll();
-    });
+    // Create a unified reset function to clear the drag state safely
+        function endDrag() {
+            if (!isDragging) return;
+            isDragging = false;
+            stack.classList.remove('dragging');
+            if (Math.abs(currentDrag) > 40) {
+                topCardIndex = currentDrag < 0 ? (topCardIndex + 1) % currentItems.length : (topCardIndex - 1 + currentItems.length) % currentItems.length;
+            }
+            currentDrag = 0;
+            renderStack(0);
+            resetAutoScroll();
+        }
+
+        // Listen for standard release
+        window.addEventListener('pointerup', endDrag);
+
+        // Listen for browser touch hijacking (like scrolling up/down right over the stack)
+        window.addEventListener('pointercancel', endDrag);
 
     loadCollection(currentCollectionKey);
 
