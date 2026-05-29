@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Standard Favicon -->
 <link rel="icon" type="image/png" href="photos/favicon.png">
-<!-- Fallback for older browsers -->
 <link rel="shortcut icon" type="image/x-icon" href="photos/favicon.ico">
-<!-- iOS Home Screen / Safari Premium Icon -->
 <link rel="apple-touch-icon" href="photos/apple-touch-icon.png">
-<!-- Primary Meta Tags -->
 <meta name="title" content="cercle">
 <meta name="description" content="Curate something wonderful today.">
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cercle.to/">
 <meta property="og:title" content="cercle">
 <meta property="og:description" content="Curate something wonderful today.">
 <meta property="og:image" content="photos/og_share.jpg">
 
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://cercle.to/">
 <meta property="twitter:title" content="cercle">
@@ -80,6 +74,7 @@
         flex-direction: column;
         position: relative;
         padding-bottom: 120px;
+        overflow: hidden; /* Fully locks mobile 3D layout bounds from stretching out horizontally */
     }
 
     .editorial-padding {
@@ -139,6 +134,7 @@
         max-width: 850px;
         margin-bottom: 44px;
         color: var(--text-main);
+        overflow-wrap: break-word;
     }
 
     .picker-container {
@@ -304,17 +300,13 @@
         letter-spacing: -0.05em;
         line-height: 1.15;
         color: var(--text-faint);
+        overflow-wrap: break-word;
     }
 
     .billboard-statement em {
         font-style: normal;
         color: var(--text-main);
         position: relative;
-    }
-
-    @media (max-width: 640px) {
-        .manifesto-section { min-height: 85vh; }
-        .billboard-statement { font-size: 4.6rem !important; line-height: 1.05; letter-spacing: -0.06em; }
     }
 
     /* --- SECTION: TWO-COLUMN LOCAL TRACK GRID --- */
@@ -423,46 +415,43 @@
         margin-bottom: 6px;
     }
 
-    .lookbook-title { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
-    .lookbook-sub { font-size: 0.85rem; color: rgba(250, 250, 248, 0.7); }
+    .lookbook-title { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; overflow-wrap: break-word; }
+    .lookbook-sub { font-size: 0.85rem; color: rgba(250, 250, 248, 0.7); overflow-wrap: break-word; }
 
-    /* --- SECTION: APP STORE BADGE PROVISIONS --- */
-        .badge-section {
-            background-color: var(--bg-color);
-            padding: 180px 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-top: var(--border-subtle);
-        }
+    /* --- SECTION: APP STORE BADGE --- */
+    .badge-section {
+        background-color: var(--bg-color);
+        padding: 180px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: var(--border-subtle);
+    }
 
-        .app-store-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
+    .app-store-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 
-        .app-store-link {
-            display: inline-block;
-            text-decoration: none;
-            line-height: 0; /* Prevents text alignment metrics from fracturing SVG boundaries */
-            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
-        }
+    .app-store-link {
+        display: inline-block;
+        text-decoration: none;
+        line-height: 0;
+        transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
 
-        .app-store-link:hover {
-            transform: scale(1.04);
-        }
+    .app-store-link:hover {
+        transform: scale(1.04);
+    }
 
-        .app-store-link picture img {
-            width: 180px; /* Exact scale geometry mirroring your original layout */
-            height: auto;
-            display: block;
-        }
+    .app-store-link picture img {
+        width: 180px;
+        height: auto;
+        display: block;
+    }
 
-        @media (max-width: 768px) {
-            .badge-section { padding: 120px 24px; }
-        }
     /* --- STEALTH FOOTER --- */
     .stealth-footer {
         padding: 40px 32px;
@@ -482,11 +471,10 @@
     .footer-links a, .copyright { color: var(--text-faint); text-decoration: none; transition: color 0.3s ease; }
     .footer-links a:hover { color: var(--text-main); }
 
+    /* --- RESPONSIVE MEDIA TUNING REGISTER --- */
     @media (max-width: 768px) {
         .lookbook-split-container { gap: 16px; }
         .lookbook-column { gap: 16px; }
-        .lookbook-overlay { padding: 16px; }
-        .lookbook-title { font-size: 1.1rem; }
         .badge-section { padding: 120px 24px; }
     }
 
@@ -494,7 +482,38 @@
         .global-nav { padding: 16px 24px; }
         .editorial-padding { padding: 90px 24px; }
         .grid-header { margin-bottom: 36px; }
+        .manifesto-section { min-height: 85vh; }
+        .billboard-statement { font-size: 4.6rem !important; line-height: 1.05; letter-spacing: -0.06em; }
         .stealth-footer { flex-direction: column; gap: 16px; text-align: center; }
+
+        /* Shrunk Hero Cards profile down by ~13% on mobile as explicitly specified */
+        .card {
+            width: min(65vw, 31vh) !important;
+            height: calc(min(65vw, 31vh) * 1.5) !important;
+            border-radius: 14px;
+        }
+
+        /* Scaled down grid content padding and typography parameters to prevent image canvas blackout */
+        .lookbook-overlay {
+            padding: 14px !important;
+        }
+        .lookbook-meta {
+            padding: 4px 8px !important;
+            font-size: 0.5rem !important;
+            margin-bottom: 4px !important;
+        }
+        .lookbook-title {
+            font-size: 0.95rem !important;
+        }
+        .lookbook-sub {
+            font-size: 0.75rem !important;
+        }
+        .lookbook-item .note {
+            font-size: 0.72rem !important;
+            margin-top: 4px !important;
+            line-height: 1.3 !important;
+            padding-left: 6px !important;
+        }
     }
 </style>
 </head>
@@ -538,9 +557,7 @@
 
             <div class="lookbook-split-container">
 
-                <!-- LEFT TRACK COLUMN -->
                 <div class="lookbook-column">
-                    <!-- 1. Music (Square) -->
                     <div class="lookbook-item ratio-square">
                         <img class="lookbook-img" src="photos/romance.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -551,18 +568,16 @@
                         </div>
                     </div>
 
-                    <!-- 3. Photo (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/disposable_14.png" alt="">
                         <div class="lookbook-overlay">
                             <div class="lookbook-meta">PHOTO</div>
                             <div class="lookbook-title">Disposable #10</div>
                             <div class="lookbook-sub">Eastern Europe</div>
-                            <div class="note">"This blurry shot is going straight onto the fridge."</div>
+                            <div class="note">"This blurry shot outside is going straight onto the fridge."</div>
                         </div>
                     </div>
 
-                    <!-- 5. Music (Square) -->
                     <div class="lookbook-item ratio-square">
                         <img class="lookbook-img" src="photos/impala.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -573,7 +588,6 @@
                         </div>
                     </div>
 
-                    <!-- 7. Books (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/rams.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -584,7 +598,6 @@
                         </div>
                     </div>
 
-                    <!-- 9. Podcast (Square) -->
                     <div class="lookbook-item ratio-square">
                         <img class="lookbook-img" src="photos/mfdoom.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -596,9 +609,7 @@
                     </div>
                 </div>
 
-                <!-- RIGHT TRACK COLUMN -->
                 <div class="lookbook-column">
-                    <!-- 2. Spot (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/neals.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -609,7 +620,6 @@
                         </div>
                     </div>
 
-                    <!-- 4. Spot (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/simmons.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -620,7 +630,6 @@
                         </div>
                     </div>
 
-                    <!-- 6. Photo (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/silver.png" alt="">
                         <div class="lookbook-overlay">
@@ -631,7 +640,6 @@
                         </div>
                     </div>
 
-                    <!-- 8. Spot (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/hackney.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -642,7 +650,6 @@
                         </div>
                     </div>
 
-                    <!-- 10. Link (3:4 Portrait) -->
                     <div class="lookbook-item ratio-portrait">
                         <img class="lookbook-img" src="photos/loewe.jpg" alt="">
                         <div class="lookbook-overlay">
@@ -658,20 +665,17 @@
         </div>
     </section>
 
-    <!-- SECTION 4: HIGH-FIDELITY APP STORE AUTOMATION -->
-        <section class="badge-section">
-            <div class="app-store-wrapper">
-                <a href="#" class="app-store-link" target="_blank" rel="noopener noreferrer">
-                    <picture>
-                        <!-- System reads this line first: changes canvas asset if dark mode is active -->
-                        <source srcset="photos/app_store_dark.svg" media="(prefers-color-scheme: dark)">
-                        <!-- Default fallback: serves light canvas asset layout under normal parameters -->
-                        <img src="photos/app_store_light.svg" alt="Download on the App Store">
-                    </picture>
-                </a>
-            </div>
-        </section>
-        
+    <section class="badge-section">
+        <div class="app-store-wrapper">
+            <a href="#" class="app-store-link" target="_blank" rel="noopener noreferrer">
+                <picture>
+                    <source srcset="photos/app_store_dark.svg" media="(prefers-color-scheme: dark)">
+                    <img src="photos/app_store_light.svg" alt="Download on the App Store">
+                </picture>
+            </a>
+        </div>
+    </section>
+
     <footer class="stealth-footer">
         <div class="copyright">cercle © 2026</div>
         <div class="footer-links">
