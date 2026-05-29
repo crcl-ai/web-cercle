@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Standard Favicon -->
+<link rel="icon" type="image/png" href="photos/favicon.png">
+<!-- Fallback for older browsers -->
+<link rel="shortcut icon" type="image/x-icon" href="photos/favicon.ico">
+<!-- iOS Home Screen / Safari Premium Icon -->
+<link rel="apple-touch-icon" href="photos/apple-touch-icon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+<title>cercle — Terms of Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    /* --- SYSTEM-ADAPTIVE COLOR SPECIFICATION --- */
+    :root {
+        --bg-color: #FAFAF8; 
+        --text-main: #000000; 
+        --text-muted: rgba(0, 0, 0, 0.65);
+        --text-faint: rgba(0, 0, 0, 0.35);
+        --app-blue: #0A84FF;
+        --border-subtle: 1px solid rgba(0, 0, 0, 0.06);
+        --card-bg: #FFFFFF;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bg-color: #000000; 
+            --text-main: #FAFAF8; 
+            --text-muted: rgba(250, 250, 248, 0.65);
+            --text-faint: rgba(250, 250, 248, 0.35);
+            --border-subtle: 1px solid rgba(250, 250, 248, 0.06);
+            --card-bg: #111111;
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        font-family: 'Inter', -apple-system, sans-serif;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-height: 100vh;
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    /* --- LAYOUT UTILITIES --- */
+    .legal-padding {
+        padding: 80px 48px 140px 48px;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* --- NAVIGATION (BLUE GET BUTTON LOCKED) --- */
+    .global-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 32px;
+        z-index: 100;
+        flex-shrink: 0; 
+        border-bottom: var(--border-subtle);
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.05em; 
+        color: var(--text-main);
+        text-decoration: none;
+    }
+
+    .get-btn {
+        background-color: var(--app-blue);
+        color: #FFFFFF;
+        border: none;
+        border-radius: 16px;
+        padding: 6px 18px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .get-btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+    /* --- EDITORIAL HEADER --- */
+    .legal-header {
+        margin-bottom: 80px;
+        border-bottom: var(--border-subtle);
+        padding-bottom: 40px;
+    }
+
+    .legal-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--app-blue);
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    .legal-title {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+        color: var(--text-main);
+        margin-bottom: 16px;
+    }
+
+    .legal-meta {
+        font-size: 0.85rem;
+        color: var(--text-faint);
+    }
+
+    /* --- ASYMMETRIC LEGAL TWO-COLUMN GRID --- */
+    .legal-split {
+        display: grid;
+        grid-template-columns: 0.5fr 1.5fr;
+        gap: 64px;
+        align-items: start;
+        margin-bottom: 64px;
+    }
+
+    .section-label {
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-main);
+        position: sticky;
+        top: 40px;
+    }
+
+    .section-content {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    .section-content p {
+        margin-bottom: 24px;
+    }
+
+    /* --- HIGHLIGHTED ARTIFACT CLAUSE BLOCK --- */
+    .critical-clause-box {
+        background-color: var(--card-bg);
+        border: 1px solid var(--text-main);
+        padding: 32px;
+        margin: 32px 0;
+        border-radius: 4px;
+    }
+
+    .critical-clause-box h4 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-main);
+        margin-bottom: 16px;
+    }
+
+    .critical-clause-box p {
+        font-size: 1rem;
+        color: var(--text-main);
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+
+    /* --- STEALTH FOOTER --- */
+    .stealth-footer {
+        padding: 40px 32px; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+        font-size: 0.75rem; 
+        font-weight: 500; 
+        letter-spacing: 0.05em;
+        text-transform: lowercase;
+        border-top: var(--border-subtle);
+        background-color: var(--bg-color);
+    }
+
+    .footer-links { display: flex; gap: 32px; }
+    .footer-links a, .copyright { color: var(--text-faint); text-decoration: none; transition: color 0.3s ease; }
+    .footer-links a:hover { color: var(--text-main); }
+
+    @media (max-width: 768px) {
+        .legal-split { grid-template-columns: 1fr; gap: 16px; }
+        .section-label { position: static; border-bottom: 1px dashed var(--text-faint); padding-bottom: 8px; }
+        .legal-padding { padding: 60px 24px; }
+        .stealth-footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+</style>
+</head>
+<body>
+
+    <nav class="global-nav">
+        <a href="/" class="logo">cercle</a>
+        <button class="get-btn">Get</button>
+    </nav>
+
+    <main class="legal-padding">
+        <header class="legal-header">
+            <span class="legal-label">Platform Protocol</span>
+            <h1 class="legal-title">Terms of Service</h1>
+            <p class="legal-meta">Effective Execution: May 2026 &bull; Worldwide Jurisdiction</p>
+        </header>
+
+        <!-- SECTION 1 -->
+        <div class="legal-split">
+            <div class="section-label">01 / Agreement</div>
+            <div class="section-content">
+                <p>Welcome to cercle. By accessing or downloading our platform, you explicitly enter a binding legal covenant governed by these Terms of Service. If you do not accept these provisions entirely, your right to interface with our digital systems is immediately rescinded.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: SPECIFIC OWNERSHIP DISCLOSURE -->
+        <div class="legal-split">
+            <div class="section-label">02 / Curation Rights</div>
+            <div class="section-content">
+                <p>Cercle operates as a shared, interconnected multi-dimensional lookbook designed around user curation. While you retain native copyrights to raw assets you upload individually, the structural integration of public sharing shifts ownership dynamics to preserve the platform’s ecosystem continuity.</p>
+                
+                <div class="critical-clause-box">
+                    <h4>Public Artifact Ownership Architecture</h4>
+                    <p>When you intentionally save, log, or commit an item as a public artifact on cercle, you permanently relinquish sole ownership and control over that data instance. Consequently, if another platform member saves or incorporates your public artifact into their individual digital capsules or circles, the platform is not legally required, obligated, or bound to delete or scrub that asset instance from the network—even upon account termination, data erasure requests, or original profile deletion.</p>
+                </div>
+
+                <p>This structural arrangement ensures that shared environments, curated maps, and interconnected design matrices remain complete for the user base that received or built upon them.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="legal-split">
+            <div class="section-label">03 / Global Compliance</div>
+            <div class="section-content">
+                <p><strong>United States (US):</strong> These terms incorporate compliance parameters governed by the Digital Millennium Copyright Act (DMCA) and state-specific fair practices code. Liability limitations apply to the maximum extent permitted by local statutory law.</p>
+                <p><strong>United Kingdom & European Union (UK/EU):</strong> Provisions are designed to conform directly with consumer contract regulations. The joint retention of shared items serves our legitimate operational interest to maintain infrastructure durability under standard transactional law frameworks.</p>
+                <p><strong>India:</strong> This platform is deployed in full compliance with the Information Technology Act, 2000, and related intermediate liability metrics. Our curation structure satisfies safe harbor definitions through absolute user-driven input mechanisms.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="legal-split">
+            <div class="section-label">04 / Liability Core</div>
+            <div class="section-content">
+                <p>Cercle provides its software infrastructure on an "as-is" and "as-available" blueprint. Under no legal circumstances shall the platform, its founders, or corporate extensions be held liable for indirect, incidental, or consequential damages resulting from asset curation, network access failures, or data exposure globally.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="stealth-footer">
+        <div class="copyright">cercle © 2026</div>
+        <div class="footer-links">
+            <a href="terms.html">terms</a>
+            <a href="privacy.html">privacy</a>
+            <a href="#">contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>

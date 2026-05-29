@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Standard Favicon -->
+<link rel="icon" type="image/png" href="photos/favicon.png">
+<!-- Fallback for older browsers -->
+<link rel="shortcut icon" type="image/x-icon" href="photos/favicon.ico">
+<!-- iOS Home Screen / Safari Premium Icon -->
+<link rel="apple-touch-icon" href="photos/apple-touch-icon.png">
+<!-- Primary Meta Tags -->
+<meta name="title" content="cercle">
+<meta name="description" content="Curate something wonderful today.">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cercle.to/">
+<meta property="og:title" content="cercle">
+<meta property="og:description" content="Curate something wonderful today.">
+<meta property="og:image" content="photos/og_share.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://cercle.to/">
+<meta property="twitter:title" content="cercle">
+<meta property="twitter:description" content="Curate something wonderful today.">
+<meta property="twitter:image" content="photos/og_share.jpg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+<title>cercle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+<style>
+    /* --- SYSTEM-ADAPTIVE COLOR SPECIFICATION --- */
+    :root {
+        --bg-color: #FAFAF8;
+        --text-main: #000000;
+        --text-muted: rgba(0, 0, 0, 0.65);
+        --text-faint: rgba(0, 0, 0, 0.35);
+        --app-blue: #0A84FF;
+        --border-subtle: 1px solid rgba(0, 0, 0, 0.06);
+        --card-bg: #FFFFFF;
+        --scrim-color: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.9) 100%);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bg-color: #000000;
+            --text-main: #FAFAF8;
+            --text-muted: rgba(250, 250, 248, 0.65);
+            --text-faint: rgba(250, 250, 248, 0.35);
+            --border-subtle: 1px solid rgba(250, 250, 248, 0.06);
+            --card-bg: #111111;
+            --scrim-color: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.95) 100%);
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        font-family: 'Inter', -apple-system, sans-serif;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-height: 100vh;
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    /* --- LAYOUT STRUCTURES --- */
+    .hero-section {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 120px;
+    }
+
+    .editorial-padding {
+        padding: 140px 48px;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* --- NAVIGATION --- */
+    .global-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 32px;
+        z-index: 100;
+        flex-shrink: 0;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        color: var(--text-main);
+    }
+
+    .get-btn {
+        background-color: var(--app-blue);
+        color: #FFFFFF;
+        border: none;
+        border-radius: 16px;
+        padding: 6px 18px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .get-btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+    /* --- HERO SYSTEM --- */
+    .header {
+        padding: 20px 24px 10px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        z-index: 100;
+        flex-shrink: 0;
+    }
+
+    .hero-headline {
+        font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+        max-width: 850px;
+        margin-bottom: 44px;
+        color: var(--text-main);
+    }
+
+    .picker-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-bottom: 8px;
+    }
+
+    .collection-picker {
+        background: transparent;
+        color: var(--text-main);
+        border: none;
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        outline: none;
+        cursor: pointer;
+        appearance: none;
+        text-align: center;
+        text-align-last: center;
+    }
+
+    .picker-container::after {
+        content: "▼";
+        font-size: 0.55rem;
+        color: var(--text-muted);
+        pointer-events: none;
+        margin-top: 2px;
+    }
+
+    .header p {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: var(--text-faint);
+        text-transform: uppercase;
+    }
+
+    /* --- INTERACTIVE 3D STACK --- */
+    .stack-container {
+        position: relative;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1200px;
+        touch-action: none;
+        transition: opacity 0.4s ease;
+        min-height: 480px;
+    }
+
+    .card {
+        position: absolute;
+        width: min(75vw, 36vh);
+        height: calc(min(75vw, 36vh) * 1.5);
+        border-radius: 18px;
+        background-color: var(--card-bg);
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+        overflow: hidden;
+        cursor: grab;
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        will-change: transform;
+        transform-origin: bottom center;
+        border: var(--border-subtle);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .card { box-shadow: 0 25px 50px rgba(0,0,0,0.7); }
+    }
+
+    .card:active { cursor: grabbing; }
+    .stack-container.dragging .card { transition: none; }
+
+    .scrim {
+        position: absolute;
+        inset: 0;
+        background: var(--scrim-color);
+        pointer-events: none;
+    }
+
+    .card-content {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        gap: 6px;
+        pointer-events: none;
+        color: #FAFAF8;
+    }
+
+    .type-badge {
+        align-self: flex-start;
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        padding: 6px 12px;
+        background: rgba(250, 250, 248, 0.15);
+        border: 1px solid rgba(250, 250, 248, 0.2);
+        border-radius: 999px;
+        color: rgba(250, 250, 248, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        margin-bottom: 4px;
+    }
+
+    .title { font-size: 1.3rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+    .subtitle { font-size: 0.9rem; color: rgba(250,250,248,0.7); }
+
+    .note {
+        font-size: 0.82rem;
+        font-family: Georgia, serif;
+        font-style: italic;
+        color: rgba(250, 250, 248, 0.88);
+        margin-top: 8px;
+        line-height: 1.45;
+        border-left: 1px solid rgba(250, 250, 248, 0.25);
+        padding-left: 10px;
+    }
+
+    .card.is-note {
+        background-color: var(--text-main);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+        text-align: center;
+    }
+    .card.is-note .scrim { display: none; }
+    .card.is-note .card-content { position: relative; padding: 0; color: var(--bg-color); }
+    .card.is-note .type-badge { color: var(--text-muted); background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); align-self: center; }
+    .card.is-note .subtitle { color: var(--text-faint); }
+    .card.is-note .hero-quote {
+        font-weight: 600; font-size: 1.35rem; color: var(--bg-color);
+        margin-bottom: 24px; line-height: 1.4; letter-spacing: -0.02em;
+    }
+
+    /* --- SECTION: MANIFESTO BILLBOARD --- */
+    .manifesto-section {
+        border-top: var(--border-subtle);
+        background-color: var(--bg-color);
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .billboard-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .billboard-statement {
+        font-size: 3.6rem;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        line-height: 1.15;
+        color: var(--text-faint);
+    }
+
+    .billboard-statement em {
+        font-style: normal;
+        color: var(--text-main);
+        position: relative;
+    }
+
+    @media (max-width: 640px) {
+        .manifesto-section { min-height: 85vh; }
+        .billboard-statement { font-size: 4.6rem !important; line-height: 1.05; letter-spacing: -0.06em; }
+    }
+
+    /* --- SECTION: TWO-COLUMN LOCAL TRACK GRID --- */
+    .lookbook-section {
+        background-color: var(--bg-color);
+        border-top: var(--border-subtle);
+    }
+
+    .grid-header {
+        text-align: left;
+        margin-bottom: 56px;
+        width: 100%;
+    }
+
+    .grid-header h3 {
+        font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: var(--text-main);
+        line-height: 1.25;
+    }
+
+    .dynamic-word {
+        font-family: Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+        display: inline-block;
+        color: var(--text-main);
+        vertical-align: baseline;
+        transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        will-change: opacity, filter;
+        opacity: 1;
+        filter: blur(0px);
+    }
+
+    .dynamic-word.blur-out {
+        opacity: 0;
+        filter: blur(16px);
+    }
+
+    .lookbook-split-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .lookbook-column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .lookbook-item {
+        position: relative;
+        background: var(--card-bg);
+        border: var(--border-subtle);
+        border-radius: 14px;
+        overflow: hidden;
+        width: 100%;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.01);
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        isolation: isolate;
+    }
+
+    .ratio-square { aspect-ratio: 1 / 1 !important; }
+    .ratio-portrait { aspect-ratio: 3 / 4 !important; }
+
+    .lookbook-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translateZ(0);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lookbook-item:hover .lookbook-img { transform: scale(1.02) translateZ(0); }
+
+    .lookbook-overlay {
+        position: absolute;
+        inset: 0;
+        background: var(--scrim-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 24px;
+        color: #FAFAF8;
+    }
+
+    .lookbook-meta {
+        align-self: flex-start;
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        padding: 6px 12px;
+        background: rgba(250, 250, 248, 0.15);
+        border: 1px solid rgba(250, 250, 248, 0.2);
+        border-radius: 999px;
+        color: rgba(250, 250, 248, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        margin-bottom: 6px;
+    }
+
+    .lookbook-title { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+    .lookbook-sub { font-size: 0.85rem; color: rgba(250, 250, 248, 0.7); }
+
+    /* --- SECTION: APP STORE BADGE --- */
+    .badge-section {
+        background-color: var(--bg-color);
+        padding: 180px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: var(--border-subtle);
+    }
+
+    .app-store-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .app-store-placeholder {
+        width: 180px;
+        height: 54px;
+        background: #000000;
+        color: #FFFFFF;
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 16px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        cursor: pointer;
+        user-select: none;
+        transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .app-store-placeholder:hover { transform: scale(1.02); }
+    .app-store-placeholder .badge-top { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500; line-height: 1; margin-bottom: 2px; opacity: 0.8; }
+    .app-store-placeholder .badge-main { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.2px; line-height: 1; }
+
+    /* --- STEALTH FOOTER --- */
+    .stealth-footer {
+        padding: 40px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: lowercase;
+        flex-shrink: 0;
+        border-top: var(--border-subtle);
+        background-color: var(--bg-color);
+    }
+
+    .footer-links { display: flex; gap: 32px; }
+    .footer-links a, .copyright { color: var(--text-faint); text-decoration: none; transition: color 0.3s ease; }
+    .footer-links a:hover { color: var(--text-main); }
+
+    @media (max-width: 768px) {
+        .lookbook-split-container { gap: 16px; }
+        .lookbook-column { gap: 16px; }
+        .lookbook-overlay { padding: 16px; }
+        .lookbook-title { font-size: 1.1rem; }
+        .badge-section { padding: 120px 24px; }
+    }
+
+    @media (max-width: 640px) {
+        .global-nav { padding: 16px 24px; }
+        .editorial-padding { padding: 90px 24px; }
+        .grid-header { margin-bottom: 36px; }
+        .stealth-footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+</style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="global-nav">
+            <div class="logo">cercle</div>
+            <button class="get-btn">Get</button>
+        </div>
+
+        <div class="header">
+            <h1 class="hero-headline">Curate something wonderful today.</h1>
+            <div class="picker-container">
+                <select class="collection-picker" id="collection-picker">
+                    <option value="london">London's quiet corners</option>
+                    <option value="currently">Currently Into</option>
+                    <option value="ambient">Ambient Wednesday</option>
+                </select>
+            </div>
+            <p id="counter">1 / 5</p>
+        </div>
+
+        <div class="stack-container" id="stack" style="opacity: 0;"></div>
+    </section>
+
+    <section class="manifesto-section">
+        <div class="editorial-padding billboard-container">
+            <h2 class="billboard-statement">
+                Human principle isn’t built to consume. We exist <em>to give</em>—to curate whole experiences for someone else.
+            </h2>
+        </div>
+    </section>
+
+    <section class="lookbook-section">
+        <div class="editorial-padding">
+
+            <div class="grid-header">
+                <h3>Come find your new favourite <span id="dynamic-word" class="dynamic-word">song</span></h3>
+            </div>
+
+            <div class="lookbook-split-container">
+
+                <!-- LEFT TRACK COLUMN -->
+                <div class="lookbook-column">
+                    <!-- 1. Music (Square) -->
+                    <div class="lookbook-item ratio-square">
+                        <img class="lookbook-img" src="photos/romance.jpg" alt="">
+                        <div class="lookbook-overlay">
+                            <div class="lookbook-meta">MUSIC</div>
+                            <div class="lookbook-title">Romance</div>
+                            <div class="lookbook-sub">Fontaines D.C.</div>
+                            <div class="note">"Total anti-hero energy. pre-game playlist."</div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Photo (3:4 Portrait) -->
+                    <div class="lookbook-item ratio-portrait">
+                        <img class="lookbook-img" src="photos/disposable_14.png" alt="">
+                        <div class="lookbook-overlay">
+                            <div class="lookbook-meta">PHOTO</div>
+                            <div class="lookbook-title">Disposable #10</div>
+                            <div class="lookbook-sub">Eastern Europe</div>
+                            <div class="note">"This blurry shot is going straight onto the fridge."</div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Music (Square) -->
+                    <div class="lookbook-item ratio-square">
+                        <img class="lookbook-img" src="photos/impala.jpg" alt="">
+                        <div class="lookbook-overlay">
+                            <div class="lookbook-meta">MUSIC</div>
+                            <div class="lookbook-title">Oblivion</div>
+                            <div class="lookbook-sub">Tame Impala</div>
+                            <div class="note">"I know everyone is Team Dracula but I think this is better. fight me."</div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Books (3:4 Portrait) -->
+                    <div class="lookbook-item ratio-portrait">
+                        <img class="lookbook-img" src="photos/rams.jpg" alt="">
+                        <div class="lookbook-overlay">
+                            <div class="lookbook-meta">BOOK</div>
+                            <div class="lookbook-title">Dieter Rams: The Complete Works</div>
+                            <div class="lookbook-sub">Klaus Klemp</div>
+                            <div class="note">"A compilation of work by the first and final product designer."</div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Podcast (Square) -->
+                    <div class="lookbook-item ratio-square">
+                        <img class="lookbook-img" src="photos/mfdoom.jpg" alt="">
+                        <div class="lookbook-overlay">
+                            <div class="lookbook-meta">MUSIC</div>
+                            <div class="lookbook-title">Rapp Snitch Knishes</div>
+                            <div class="lookbook-sub">MF DOOM</div>
+                            <div class="note">"Learning the guitar just to be able to play this melody."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT TRACK COLUMN -->
+                <div class="lookbook-column">
+                    <!-- 2. Spot (3:4 Portrait) -->
+                    <div class="lookbook-item ratio-portrait">
+                        <img class="lookbook-img" src="photos/neals.jpg" alt="">
+                        <div class="lookbook-overlay">
+                            <div class="lookbook-meta">SPOT</div>
+                            <div class="lookbook-title">Neal's Yard</div>
+                            <div class="lookbook-sub">Covent Garden</div>
+                            <div class="note">"My new favourite Sunday spot."</div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Spot (3:4 Portrait) -->
+                    <div class="lookbook-item ratio-portrait">
+                        <img class="lookbook-img" src="photos/simmons.jpg" alt="">
+                        <div class="lookbook-overlay">
+                            <div class="lookbook-meta">SPOT</div>
+                            <div class="lookbook-title">Simmons</div>
+                            <div class="lookbook-sub">Liverpool Street</div>
+                            <div class="note">"Tiny, loud and perfect for Saturdays. Gummy bear in a teapot is a must-try."</div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Photo (3:4 Portrait) -->
+                    <div class="lookbook-item ratio-portrait">
+                        <img class="lookbook-img" src="photos/silver.png" alt="">
+                        <div class="lookbook-overlay">
+                            <div class="lookbook-meta">PHOTO</div>
+                            <div class="lookbook-title">Silver Baby</div>
+                            <div class="lookbook-sub">Hackney Wick</div>
+                            <div class="note">"💋💕"</div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Spot (3:4 Portrait) -->
+                    <div class="lookbook-item ratio-portrait">
+                        <img class="lookbook-img" src="photos/hackney.jpg" alt="">
+                        <div class="lookbook-overlay">
+                            <div class="lookbook-meta">SPOT</div>
+                            <div class="lookbook-title">CRATE Bar</div>
+                            <div class="lookbook-sub">Hackney Wick</div>
+                            <div class="note">"Sharing my favourite bar with you lot, don't ruin it for me."</div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Link (3:4 Portrait) -->
+                    <div class="lookbook-item ratio-portrait">
+                        <img class="lookbook-img" src="photos/loewe.jpg" alt="">
+                        <div class="lookbook-overlay">
+                            <div class="lookbook-meta">LINK</div>
+                            <div class="lookbook-title">Draped Jacket</div>
+                            <div class="lookbook-sub">loewe.com</div>
+                            <div class="note">"Am I the only one obsessed with the drape?"</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="badge-section">
+        <div class="app-store-wrapper">
+            <div class="app-store-placeholder">
+                <span class="badge-top">Download on the</span>
+                <span class="badge-main">App Store</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="stealth-footer">
+        <div class="copyright">cercle © 2026</div>
+        <div class="footer-links">
+            <a href="terms.html">terms</a>
+            <a href="privacy.html">privacy</a>
+            <a href="contact.html">contact</a>
+        </div>
+    </footer>
+
+<script>
+    // ==========================================
+    // REFACTORED 3D STACK LOCAL DIRECTORY ENGINE
+    // ==========================================
+    const rawItems = [
+        { id: 1, typeLabel: "SPOT", title: "LN-CC", subtitle: "Dalston", note: "They just pulled in some incredible artisanal boots and vintage Issey Miyake silhouettes. We need to go this weekend.", img: "photos/ln_cc.jpg" },
+        { id: 2, typeLabel: "PHOTO", title: "Soundcheck", subtitle: "Camden Town", note: "Found this shot from the gig last night", img: "photos/soundcheck.jpg" },
+        { id: 3, typeLabel: "MUSIC", title: "Mandinga", subtitle: "Anitta", note: "Mystical and Intense", img: "photos/mandinga.jpg" },
+        { id: 4, typeLabel: "SPOT", title: "Ridley Road Market Bar", subtitle: "Dalston", note: "Perfect for photos before dinner.", img: "photos/ridley_road.jpg" },
+        { id: 5, typeLabel: "SPOT", title: "Bloom Perfumery", subtitle: "Covent Garden", note: "Discovered the most intense, complex new scent here today. Heavy woods, very Orto Parisi. It’s completely unapologetic.", img: "photos/bloom_perfumery.jpg" },
+        { id: 6, typeLabel: "SPOT", title: "Jolene", subtitle: "Newington Green", note: "Best sourdough in the city.", img: "photos/jolene.jpg" },
+        { id: 7, typeLabel: "SPOT", title: "The Little Orange Door", subtitle: "Clapham Common", note: "I love hanging out in the blue room here.", img: "photos/orange_door.jpg" },
+        { id: 8, typeLabel: "SPOT", title: "Coq d'Argent", subtitle: "Bank", note: "Best rooftop near the office", img: "photos/coq_d_argent.jpg" },
+        { id: 9, typeLabel: "SPOT", title: "The George Tavern", subtitle: "Stepney Green", note: "Sticky floors, cheap pints, and the absolute best underground alt-rock sets in East London. Pure chaotic good for this Friday.", img: "photos/george_tavern.jpg" },
+        { id: 10, typeLabel: "LINK", title: "Abomination Jacket", subtitle: "garuda-ss.com", note: "Accidentally leaving this here so someone takes the hint.", img: "photos/abomination_jacket.png" },
+        { id: 11, typeLabel: "VIDEO", title: "Introduction to James Turrell", subtitle: "Guggenheim Museum", note: "Still chasing the absolute high of seeing this in person again", img: "photos/james_turrell.jpg" },
+        { id: 12, typeLabel: "MUSIC", title: "Romance", subtitle: "Fontaines D.C.", note: "Total anti-hero energy. pre-game playlist.", img: "photos/romance.jpg" },
+        { id: 13, typeLabel: "BOOK", title: "Meet Me in the Bathroom", subtitle: "Lizzy Goodman", note: "An oral history of the early 2000s rock scene. Reading this on the tube and getting entirely too nostalgic for an era I barely lived through.", img: "photos/bathroom.jpg" },
+        { id: 14, typeLabel: "MOVIES & TV", title: "Bandidos", subtitle: "Netflix", note: "Random watch ended up as one of my favourite shows", img: "photos/bandidos.jpg" },
+        { id: 15, typeLabel: "PHOTO", title: "Disposable #14", subtitle: "Soho", note: "This blurry shot outside the pub at 2 AM is going straight onto the fridge.", img: "photos/disposable_14.png" },
+        { id: 16, typeLabel: "NOTE", title: "Note to Self", subtitle: "Sunday Morning", note: "There is nothing better than walking through Columbia Road Flower Market with an iced matcha and absolutely nowhere to be.", img: "" },
+        { id: 17, typeLabel: "PHOTO", title: "Concrete Summer", subtitle: "Peckham", note: "Golden hour at Frank's.", img: "photos/concrete_summer.png" },
+        { id: 18, typeLabel: "PHOTO", title: "Chiltern Mornings", subtitle: "Marylebone", note: "Biking to work on Chiltern Street at 7 AM.", img: "photos/chiltern.png" }
+    ];
+
+    const collectionData = {
+        london: rawItems.filter(item => item.typeLabel === "SPOT"),
+        currently: rawItems.filter(item => ["LINK", "VIDEO", "BOOK", "MOVIES & TV", "NOTE"].includes(item.typeLabel)),
+        ambient: rawItems.filter(item => ["MUSIC", "PHOTO"].includes(item.typeLabel))
+    };
+
+    let currentCollectionKey = 'london';
+    let currentItems = collectionData[currentCollectionKey];
+    let topCardIndex = 0;
+    let cardElements = [];
+
+    const stack = document.getElementById('stack');
+    const counter = document.getElementById('counter');
+    const picker = document.getElementById('collection-picker');
+
+    function loadCollection(collectionKey) {
+        stack.style.opacity = '0';
+        counter.style.opacity = '0';
+
+        setTimeout(() => {
+            currentCollectionKey = collectionKey;
+            currentItems = collectionData[collectionKey];
+            topCardIndex = 0;
+            stack.innerHTML = '';
+
+            currentItems.forEach(item => {
+                const el = document.createElement('div');
+                el.className = 'card';
+
+                if (item.typeLabel === "NOTE") {
+                    el.classList.add('is-note');
+                    el.innerHTML = `
+                        <div class="hero-quote">"${item.note}"</div>
+                        <div class="card-content">
+                            <div class="type-badge">${item.typeLabel}</div>
+                            <div class="subtitle">${item.subtitle}</div>
+                        </div>
+                    `;
+                } else {
+                    el.style.backgroundImage = `url('${item.img}')`;
+                    el.innerHTML = `
+                        <div class="scrim"></div>
+                        <div class="card-content">
+                            <div class="type-badge">${item.typeLabel}</div>
+                            <div class="title">${item.title}</div>
+                            <div class="subtitle">${item.subtitle}</div>
+                            ${item.note ? `<div class="note">"${item.note}"</div>` : ''}
+                        </div>
+                    `;
+                }
+                stack.appendChild(el);
+            });
+
+            cardElements = Array.from(stack.querySelectorAll('.card'));
+            renderStack(0);
+
+            setTimeout(() => {
+                stack.style.opacity = '1';
+                counter.style.opacity = '1';
+            }, 50);
+
+            resetAutoScroll();
+        }, 300);
+    }
+
+    function renderStack(dragOffset = 0) {
+        if(!currentItems.length) return;
+        counter.innerText = `${topCardIndex + 1} / ${currentItems.length}`;
+
+        cardElements.forEach((card, index) => {
+            let distance = (index - topCardIndex + currentItems.length) % currentItems.length;
+            let offsetIndex = distance > Math.floor(currentItems.length / 2) ? distance - currentItems.length : distance;
+            let absOffset = Math.abs(offsetIndex);
+
+            let progress = Math.min(Math.abs(dragOffset) / 150, 1);
+            let signedProgress = (dragOffset >= 0 ? 1 : -1) * progress;
+            let isMovingUp = (offsetIndex === 1 && dragOffset < 0) || (offsetIndex === -1 && dragOffset > 0);
+
+            let xOffset = offsetIndex === 0 ? dragOffset : (offsetIndex * 35) - (isMovingUp ? (offsetIndex * 35 * progress) : 0);
+            let yOffset = offsetIndex === 0 ? 0 : (absOffset * 8) - (isMovingUp ? (absOffset * 8 * progress) : 0);
+            let rotateZ = offsetIndex === 0 ? (dragOffset / 15) : (offsetIndex * 6) - (isMovingUp ? (offsetIndex * 6 * progress) : 0);
+            let scale = offsetIndex === 0 ? 1.0 : 1.0 - (absOffset * 0.08) + (isMovingUp ? progress * 0.08 : 0);
+            let rotateY = (offsetIndex === 0 || isMovingUp) ? (10 * signedProgress) : 0;
+
+            let zIndex = currentItems.length - absOffset + (isMovingUp ? progress : 0);
+
+            card.style.zIndex = Math.round(zIndex * 100);
+            card.style.transform = `translateX(${xOffset}px) translateY(${yOffset}px) scale(${scale}) rotateZ(${rotateZ}deg) rotateY(${rotateY}deg)`;
+        });
+    }
+
+    let isDragging = false, startX = 0, currentDrag = 0, idleTimeout, scrollInterval;
+    function stopAutoScroll() { clearTimeout(idleTimeout); clearInterval(scrollInterval); }
+    function resetAutoScroll() {
+        stopAutoScroll();
+        idleTimeout = setTimeout(() => {
+            topCardIndex = (topCardIndex + 1) % currentItems.length; renderStack();
+            scrollInterval = setInterval(() => {
+                topCardIndex = (topCardIndex + 1) % currentItems.length; renderStack();
+            }, 3500);
+        }, 8000);
+    }
+
+    picker.addEventListener('change', (e) => { stopAutoScroll(); loadCollection(e.target.value); });
+    stack.addEventListener('pointerdown', (e) => { isDragging = true; startX = e.clientX; stack.classList.add('dragging'); stopAutoScroll(); });
+    window.addEventListener('pointermove', (e) => { if (!isDragging) return; currentDrag = e.clientX - startX; requestAnimationFrame(() => renderStack(currentDrag)); });
+    window.addEventListener('pointerup', () => {
+        if (!isDragging) return; isDragging = false; stack.classList.remove('dragging');
+        if (Math.abs(currentDrag) > 40) { topCardIndex = currentDrag < 0 ? (topCardIndex + 1) % currentItems.length : (topCardIndex - 1 + currentItems.length) % currentItems.length; }
+        currentDrag = 0; renderStack(0); resetAutoScroll();
+    });
+
+    loadCollection(currentCollectionKey);
+
+    // ==========================================
+    // AMBIENT 2000MS CYCLICAL BLUR PARAMETER LOOP
+    // ==========================================
+    const dynamicWords = ["song", "spot", "ritual", "moment", "experience", "feeling", "escape", "obsession"];
+    let wordIndex = 0;
+    const dynamicWordElement = document.getElementById('dynamic-word');
+
+    function animateDynamicWord() {
+        dynamicWordElement.classList.add('blur-out');
+
+        setTimeout(() => {
+            wordIndex = (wordIndex + 1) % dynamicWords.length;
+            dynamicWordElement.innerText = dynamicWords[wordIndex];
+            dynamicWordElement.classList.remove('blur-out');
+        }, 500);
+    }
+
+    setInterval(animateDynamicWord, 2000);
+</script>
+</body>
+</html>

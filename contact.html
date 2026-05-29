@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Standard Favicon -->
+<link rel="icon" type="image/png" href="photos/favicon.png">
+<!-- Fallback for older browsers -->
+<link rel="shortcut icon" type="image/x-icon" href="photos/favicon.ico">
+<!-- iOS Home Screen / Safari Premium Icon -->
+<link rel="apple-touch-icon" href="photos/apple-touch-icon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+<title>cercle — Contact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    /* --- SYSTEM-ADAPTIVE COLOR SPECIFICATION --- */
+    :root {
+        --bg-color: #FAFAF8; 
+        --text-main: #000000; 
+        --text-muted: rgba(0, 0, 0, 0.65);
+        --text-faint: rgba(0, 0, 0, 0.35);
+        --app-blue: #0A84FF;
+        --border-subtle: 1px solid rgba(0, 0, 0, 0.06);
+        --input-bg: #FFFFFF;
+        --border-input: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bg-color: #000000; 
+            --text-main: #FAFAF8; 
+            --text-muted: rgba(250, 250, 248, 0.65);
+            --text-faint: rgba(250, 250, 248, 0.35);
+            --border-subtle: 1px solid rgba(250, 250, 248, 0.06);
+            --input-bg: #111111;
+            --border-input: 1px solid rgba(250, 250, 248, 0.2);
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        font-family: 'Inter', -apple-system, sans-serif;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-height: 100vh;
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    /* --- LAYOUT UTILITIES --- */
+    .legal-padding {
+        padding: 80px 48px 140px 48px;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* --- NAVIGATION --- */
+    .global-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 32px;
+        z-index: 100;
+        flex-shrink: 0; 
+        border-bottom: var(--border-subtle);
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.05em; 
+        color: var(--text-main);
+        text-decoration: none;
+    }
+
+    .get-btn {
+        background-color: var(--app-blue);
+        color: #FFFFFF;
+        border: none;
+        border-radius: 16px;
+        padding: 6px 18px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .get-btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+    /* --- EDITORIAL HEADER --- */
+    .legal-header {
+        margin-bottom: 64px;
+        border-bottom: var(--border-subtle);
+        padding-bottom: 40px;
+    }
+
+    .legal-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--app-blue);
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    .legal-title {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+        color: var(--text-main);
+        margin-bottom: 16px;
+    }
+
+    /* --- ASYMMETRIC TWO-COLUMN LAYOUT FORM --- */
+    .legal-split {
+        display: grid;
+        grid-template-columns: 0.5fr 1.5fr;
+        gap: 64px;
+        align-items: start;
+    }
+
+    .section-label {
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-main);
+        position: sticky;
+        top: 40px;
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 650px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 28px;
+    }
+
+    .form-group label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-muted);
+    }
+
+    .form-input {
+        background-color: var(--input-bg);
+        color: var(--text-main);
+        border: var(--border-input);
+        border-radius: 8px;
+        padding: 14px 16px;
+        font-family: inherit;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s ease;
+    }
+
+    .form-input:focus {
+        border-color: var(--text-main);
+    }
+
+    textarea.form-input {
+        resize: none;
+        min-height: 160px;
+    }
+
+    .submit-btn {
+        background-color: var(--text-main);
+        color: var(--bg-color);
+        border: none;
+        border-radius: 8px;
+        padding: 16px 32px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .submit-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+    }
+
+    /* --- STEALTH FOOTER --- */
+    .stealth-footer {
+        padding: 40px 32px; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+        font-size: 0.75rem; 
+        font-weight: 500; 
+        letter-spacing: 0.05em;
+        text-transform: lowercase;
+        border-top: var(--border-subtle);
+        background-color: var(--bg-color);
+    }
+
+    .footer-links { display: flex; gap: 32px; }
+    .footer-links a, .copyright { color: var(--text-faint); text-decoration: none; transition: color 0.3s ease; }
+    .footer-links a:hover { color: var(--text-main); }
+
+    @media (max-width: 768px) {
+        .legal-split { grid-template-columns: 1fr; gap: 24px; }
+        .section-label { position: static; border-bottom: 1px dashed var(--text-faint); padding-bottom: 8px; }
+        .legal-padding { padding: 60px 24px; }
+        .stealth-footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+</style>
+</head>
+<body>
+
+    <nav class="global-nav">
+        <a href="cercle_index.html" class="logo">cercle</a>
+        <button class="get-btn">Get</button>
+    </nav>
+
+    <main class="legal-padding">
+        <header class="legal-header">
+            <span class="legal-label">Inquiries</span>
+            <h1 class="legal-title">Reach Out</h1>
+        </header>
+
+        <div class="legal-split">
+            <div class="section-label">Direct Line</div>
+            <div class="form-container">
+                <form action="mailto:team@cercle.to" method="POST" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Identity / Name</label>
+                        <input class="form-input" type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Return Channel / Email</label>
+                        <input class="form-input" type="email" id="email" name="email" required placeholder="name@domain.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-input" id="message" name="message" required placeholder="Share your atmosphere..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="stealth-footer">
+        <div class="copyright">cercle © 2026</div>
+        <div class="footer-links">
+            <a href="terms.html">terms</a>
+            <a href="privacy.html">privacy</a>
+            <a href="contact.html">contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>
