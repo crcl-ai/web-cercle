@@ -3,19 +3,25 @@
 <head>
 <!-- Standard Favicon -->
 <link rel="icon" type="image/png" href="photos/favicon.png">
-<!-- Fallback for older browsers -->
 <link rel="shortcut icon" type="image/x-icon" href="photos/favicon.ico">
-<!-- iOS Home Screen / Safari Premium Icon -->
 <link rel="apple-touch-icon" href="photos/apple-touch-icon.png">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
-<title>cercle — Privacy Policy</title>
+<title>Capsule — Privacy Policy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+    /* --- APPLE GARAMOND TYPOGRAPHY --- */
+    @font-face {
+        font-family: 'AppleGaramond';
+        src: url('apple_garamond/AppleGaramond-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
+
     /* --- SYSTEM-ADAPTIVE COLOR SPECIFICATION --- */
     :root {
         --bg-color: #FAFAF8; 
@@ -53,6 +59,8 @@
         overflow-y: auto;
         overflow-x: hidden;
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
         transition: background-color 0.4s ease, color 0.4s ease;
     }
 
@@ -62,6 +70,7 @@
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
+        flex: 1;
     }
 
     /* --- NAVIGATION --- */
@@ -76,11 +85,13 @@
     }
     
     .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        letter-spacing: -0.05em; 
+        font-family: 'AppleGaramond', Georgia, serif;
+        font-size: 2.2rem;
+        font-weight: 300;
+        letter-spacing: -0.02em; 
         color: var(--text-main);
         text-decoration: none;
+        text-transform: capitalize;
     }
 
     .get-btn {
@@ -91,6 +102,7 @@
         padding: 6px 18px;
         font-size: 0.95rem;
         font-weight: 700;
+        text-decoration: none;
         cursor: pointer;
         transition: transform 0.2s ease, opacity 0.2s ease;
     }
@@ -123,55 +135,64 @@
     }
 
     .legal-meta {
-        font-size: 0.85rem;
-        color: var(--text-faint);
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        font-weight: 400;
     }
 
-    /* --- LEGAL ASYMMETRIC GRID --- */
+    /* --- CONTENT SECTIONS --- */
     .legal-split {
         display: grid;
-        grid-template-columns: 0.5fr 1.5fr;
-        gap: 64px;
-        align-items: start;
-        margin-bottom: 64px;
+        grid-template-columns: 240px 1fr;
+        gap: 48px;
+        margin-bottom: 72px;
     }
 
     .section-label {
         font-size: 0.85rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: var(--text-main);
+        font-weight: 600;
+        color: var(--text-faint);
         position: sticky;
         top: 40px;
-    }
-
-    .section-content {
-        font-size: 1.05rem;
-        line-height: 1.6;
-        color: var(--text-muted);
+        align-self: start;
     }
 
     .section-content p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-muted);
         margin-bottom: 24px;
+        font-weight: 400;
     }
 
-    /* --- STYLED INLINE HIGHLIGHT ALERT --- */
+    .section-content strong {
+        color: var(--text-main);
+        font-weight: 600;
+    }
+
     .erasure-exception-box {
         background-color: var(--card-bg);
-        border-left: 3px solid var(--app-blue);
-        padding: 24px;
-        margin: 24px 0;
+        border: var(--border-subtle);
+        border-radius: 20px;
+        padding: 32px;
+        margin: 32px 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    }
+
+    .erasure-exception-box h4 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 12px;
     }
 
     .erasure-exception-box p {
         font-size: 0.95rem;
-        color: var(--text-main);
-        font-weight: 600;
+        color: var(--text-muted);
         margin-bottom: 0;
     }
 
-    /* --- STEALTH FOOTER --- */
+    /* --- FOOTER --- */
     .stealth-footer {
         padding: 40px 32px; 
         display: flex; 
@@ -183,6 +204,7 @@
         text-transform: lowercase;
         border-top: var(--border-subtle);
         background-color: var(--bg-color);
+        margin-top: auto;
     }
 
     .footer-links { display: flex; gap: 32px; }
@@ -200,64 +222,72 @@
 <body>
 
     <nav class="global-nav">
-        <a href="/" class="logo">cercle</a>
-        <button class="get-btn">Get</button>
+        <a href="index.html" class="logo">Capsule</a>
+        <a href="https://apps.apple.com" target="_blank" class="get-btn">Get</a>
     </nav>
 
     <main class="legal-padding">
         <header class="legal-header">
             <span class="legal-label">Data Architecture</span>
             <h1 class="legal-title">Privacy Policy</h1>
-            <p class="legal-meta">Effective Execution: May 2026 &bull; Worldwide Jurisdiction</p>
+            <p class="legal-meta">Controller: Sruper Inc. (Delaware, USA) &bull; London, UK</p>
         </header>
 
         <!-- SECTION 1 -->
         <div class="legal-split">
-            <div class="section-label">01 / Collection</div>
+            <div class="section-label">01 / Information We Collect</div>
             <div class="section-content">
-                <p>Cercle limits the ingestion of personal credentials to protect member privacy. We process parameters explicitly needed to construct your visual maps: basic profile sign-in details, device hardware data, and structural media items committed through user interaction (Music loops, Spots, Photos, Links, and Books).</p>
+                <p><strong>Capsule</strong> is designed as an offline-first, trust-first personal lookbook. We collect only the data explicitly required to synchronize your personal library and discovery maps across your devices.</p>
+                <p>This includes account identifiers (such as your authenticated user ID and chosen username), device hardware tokens for offline sync, and the structured media items you create (spots, notes, photos, links, music tags, and books).</p>
+                <p><strong>Age Requirement:</strong> Capsule is strictly built for individuals aged <strong>16 and older</strong>. We do not knowingly collect or solicit personal data from minors under 16.</p>
             </div>
         </div>
 
-        <!-- SECTION 2: RETENTION & THE EXCLUSION PRINCIPLE -->
+        <!-- SECTION 2: PROCESSORS & LOCATION DATA -->
         <div class="legal-split">
-            <div class="section-label">02 / Erasure & Joint Rights</div>
+            <div class="section-label">02 / Processors & Location</div>
             <div class="section-content">
-                <p>We respect international privacy framework mandates regarding the right to erasure and personal account removal. However, the unique architectural design of our sharing model limits your right to erasure on assets distributed into public network nodes.</p>
+                <p>To deliver secure synchronization and enriched metadata, Capsule partners with industry-standard cloud infrastructure and external API providers. Your data is processed via:</p>
+                <p>&bull; <strong>Cloud Database & Sync Providers:</strong> For secure data hosting, authentication session storage, and real-time offline data replication across your devices.<br>
+                &bull; <strong>Secure Identity Providers:</strong> For passwordless identity verification and sign-in.<br>
+                &bull; <strong>Mapping & Geocoding Services:</strong> To power place search, geographic tagging, and spatial coordinates.<br>
+                &bull; <strong>Media Catalog Services:</strong> To retrieve public track artwork, music metadata, book covers, and stock imagery.</p>
+                <p><strong>Sensitive Location Data:</strong> When you save a spot or pin a spatial anchor, we store precise geographic coordinates (latitude and longitude). This location data is processed strictly to render your personal maps and spatial constellations. We do not track background GPS movement or monetize your location history.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 3: ERASURE & FORK DELETION -->
+        <div class="legal-split">
+            <div class="section-label">03 / Erasure & Retention</div>
+            <div class="section-content">
+                <p>We retain your profile and item data for as long as your account remains active. You hold the absolute right to access, export, correct, or permanently delete your account at any time directly through the in-app account deletion setting.</p>
                 
                 <div class="erasure-exception-box">
-                    <p>Erasure Exception Rule: Once a personal asset is shared as a public artifact and duplicated or cataloged by other circle members, it morphs into a joint element of the network. If your account is dissolved, your profile identifying strings are fully wiped out; however, the shared public instances of that artifact remain preserved on the platform as long as third-party collections actively maintain dependencies on them.</p>
+                    <h4>GDPR Erasure & Re-Shared Fork Logic</h4>
+                    <p>When you delete your account or request data erasure under UK GDPR, EU GDPR, or applicable US privacy statutes, your personal identifying records (email, username, private capsules) are instantly and permanently purged.</p>
+                    <p style="margin-top: 12px;">For public items that peer users explicitly **forked** or saved into their independent libraries before your deletion: Capsule purges your author identity and personal notes, leaving only an anonymized, de-identified record of the item metadata (e.g., place coordinates or media catalog ID) so independent users do not suffer data corruption in their personal libraries.</p>
                 </div>
-
-                <p>This baseline retention strategy is legally justified under standard multi-jurisdictional rules as a legitimate commercial interest to maintain structural database integrity for our network members.</p>
             </div>
         </div>
 
-        <!-- SECTION 3 -->
+        <!-- SECTION 4: INTERNATIONAL TRANSFERS & CONTACT -->
         <div class="legal-split">
-            <div class="section-label">03 / Regional Mandates</div>
+            <div class="section-label">04 / Transfers & Contact</div>
             <div class="section-content">
-                <p><strong>European Union & United Kingdom (GDPR / UK GDPR):</strong> Cercle processes account metrics strictly via legal consent and operational necessity. Users hold native rights to review, correct, or extract personal parameters by contacting our data protection portal, subject to the shared curation limitations defined above.</p>
-                <p><strong>United States (CCPA / CPRA):</strong> We do not sell or monetize personal data parameters to data brokers or advertising exchanges under any operating protocol. Your data footprints serve your exclusive timeline curation.</p>
-                <p><strong>India (DPDP Act, 2023):</strong> Data collection follows the explicit protocols mandated for data fiduciaries. Consent remains digital, granular, and revocable. Profile logs are processed with strict infrastructure shielding inside automated secure clusters.</p>
-            </div>
-        </div>
-
-        <!-- SECTION 4 -->
-        <div class="legal-split">
-            <div class="section-label">04 / Security Core</div>
-            <div class="section-content">
-                <p>Our database utilizes complete transit cryptographic layers to protect active metadata nodes from external exposure. Security sweeps execute continuously to make sure structural components remain fully shielded worldwide.</p>
+                <p>Capsule operates from our headquarters in London, United Kingdom, with parent entity Sruper Inc. registered in Delaware, USA. By using our services, you consent to the secure transfer and processing of your data across global cloud regions (such as standard EU/US data centers) in compliance with international data protection standards.</p>
+                <p><strong>Changes to Policy:</strong> We will notify you of any material changes to this policy via in-app notifications prior to enforcement.</p>
+                <p>If you wish to exercise your data rights or contact our designated Data Protection Officer, email us at <a href="mailto:info@sruper.com" style="color: var(--app-blue); text-decoration: none;">info@sruper.com</a>.</p>
             </div>
         </div>
     </main>
 
     <footer class="stealth-footer">
-        <div class="copyright">cercle © 2026</div>
+        <div class="copyright">sruper © 2026</div>
         <div class="footer-links">
+            <a href="invest.html">invest</a>
             <a href="terms.html">terms</a>
-            <a href="privacy.html">privacy</a>
-            <a href="#">contact</a>
+            <a href="privacy.html">policy</a>
+            <a href="contact.html">contact</a>
         </div>
     </footer>
 

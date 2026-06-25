@@ -1,897 +1,853 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Standard Favicon -->
-<link rel="icon" type="image/png" href="photos/favicon.png">
-<!-- Fallback for older browsers -->
-<link rel="shortcut icon" type="image/x-icon" href="photos/favicon.ico">
-<!-- iOS Home Screen / Safari Premium Icon -->
-<link rel="apple-touch-icon" href="photos/apple-touch-icon.png">
-<!-- Primary Meta Tags -->
-<meta name="title" content="cercle">
-<meta name="description" content="Curate something wonderful today.">
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://cercle.to/">
-<meta property="og:title" content="cercle">
-<meta property="og:description" content="Curate something wonderful today.">
-<meta property="og:image" content="photos/og_share.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Capsule • Make something Wonderful</title>
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" href="photos/favicon.png">
+    <link rel="apple-touch-icon" href="photos/apple-touch-icon.png">
+    
+    <!-- Google Fonts for UI metadata -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- GSAP Animation Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://cercle.to/">
-<meta property="twitter:title" content="cercle">
-<meta property="twitter:description" content="Curate something wonderful today.">
-<meta property="twitter:image" content="photos/og_share.jpg">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
-<title>cercle</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* --- BRAND FONTS: APPLE GARAMOND LIGHT & LIGHT ITALIC --- */
+        @font-face {
+            font-family: 'Apple Garamond Light';
+            src: url('apple_garamond/AppleGaramond-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Apple Garamond Light';
+            src: url('apple_garamond/AppleGaramond-LightItalic.ttf') format('truetype');
+            font-weight: 300;
+            font-style: italic;
+        }
 
-<style>
-    /* --- SYSTEM-ADAPTIVE COLOR SPECIFICATION --- */
-    :root {
-        --bg-color: #FAFAF8;
-        --text-main: #000000;
-        --text-muted: rgba(0, 0, 0, 0.65);
-        --text-faint: rgba(0, 0, 0, 0.35);
-        --app-blue: #0A84FF;
-        --border-subtle: 1px solid rgba(0, 0, 0, 0.06);
-        --card-bg: #FFFFFF;
-        --scrim-color: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.9) 100%);
-    }
-
-    @media (prefers-color-scheme: dark) {
+        /* --- SYSTEM DESIGN TOKENS (#FAFAF8 LIGHT MODE) --- */
         :root {
-            --bg-color: #000000;
-            --text-main: #FAFAF8;
-            --text-muted: rgba(250, 250, 248, 0.65);
-            --text-faint: rgba(250, 250, 248, 0.35);
-            --border-subtle: 1px solid rgba(250, 250, 248, 0.06);
-            --card-bg: #111111;
-            --scrim-color: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.95) 100%);
-        }
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-        background-color: var(--bg-color);
-        color: var(--text-main);
-        font-family: 'Inter', -apple-system, sans-serif;
-        overflow-y: auto;
-        overflow-x: hidden;
-        min-height: 100vh;
-        transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
-    /* --- LAYOUT STRUCTURES --- */
-    .hero-section {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        padding-bottom: 120px;
-        overflow: hidden;
-    }
-
-    .editorial-padding {
-        padding: 140px 48px;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    /* --- NAVIGATION --- */
-    .global-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 24px 32px;
-        z-index: 100;
-        flex-shrink: 0;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        letter-spacing: -0.05em;
-        color: var(--text-main);
-    }
-
-    .get-btn {
-        background-color: var(--app-blue);
-        color: #FFFFFF;
-        border: none;
-        border-radius: 16px;
-        padding: 6px 18px;
-        font-size: 0.95rem;
-        font-weight: 700;
-        cursor: pointer;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-    .get-btn:hover { transform: scale(1.05); opacity: 0.9; }
-
-    /* --- HERO SYSTEM --- */
-    .header {
-        padding: 20px 24px 10px 24px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        z-index: 100;
-        flex-shrink: 0;
-    }
-
-    .hero-headline {
-        font-size: clamp(2.2rem, 5.5vw, 3.8rem);
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        line-height: 1.1;
-        max-width: 850px;
-        margin-bottom: 44px;
-        color: var(--text-main);
-        overflow-wrap: break-word;
-    }
-
-    .picker-container {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        margin-bottom: 8px;
-    }
-
-    .collection-picker {
-        background: transparent;
-        color: var(--text-main);
-        border: none;
-        font-size: 1.25rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        outline: none;
-        cursor: pointer;
-        appearance: none;
-        text-align: center;
-        text-align-last: center;
-    }
-
-    .picker-container::after {
-        content: "▼";
-        font-size: 0.55rem;
-        color: var(--text-muted);
-        pointer-events: none;
-        margin-top: 2px;
-    }
-
-    .header p {
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        color: var(--text-faint);
-        text-transform: uppercase;
-    }
-
-    /* --- INTERACTIVE 3D STACK --- */
-    .stack-container {
-        position: relative;
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        perspective: 1200px;
-        touch-action: pan-y;
-        transition: opacity 0.4s ease;
-        min-height: 480px;
-    }
-
-    .card {
-        position: absolute;
-        width: min(75vw, 36vh);
-        height: calc(min(75vw, 36vh) * 1.5);
-        border-radius: 18px;
-        background-color: var(--card-bg);
-        background-size: cover;
-        background-position: center;
-        box-shadow: 0 25px 50px rgba(0,0,0,0.12);
-        overflow: hidden;
-        cursor: grab;
-        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        will-change: transform;
-        transform-origin: bottom center;
-        border: var(--border-subtle);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        .card { box-shadow: 0 25px 50px rgba(0,0,0,0.7); }
-    }
-
-    .card:active { cursor: grabbing; }
-    .stack-container.dragging .card { transition: none; }
-
-    .scrim {
-        position: absolute;
-        inset: 0;
-        background: var(--scrim-color);
-        pointer-events: none;
-    }
-
-    .card-content {
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        align-self: flex-start;
-        gap: 6px;
-        pointer-events: none;
-        color: #FAFAF8;
-    }
-
-    .type-badge {
-        align-self: flex-start;
-        font-size: 0.6rem;
-        font-weight: 700;
-        letter-spacing: 1.2px;
-        text-transform: uppercase;
-        padding: 6px 12px;
-        background: rgba(250, 250, 248, 0.15);
-        border: 1px solid rgba(250, 250, 248, 0.2);
-        border-radius: 999px;
-        color: rgba(250, 250, 248, 0.95);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        margin-bottom: 4px;
-    }
-
-    .title { font-size: 1.3rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
-    .subtitle { font-size: 0.9rem; color: rgba(250,250,248,0.7); }
-
-    .note {
-        font-size: 0.82rem;
-        font-family: Georgia, serif;
-        font-style: italic;
-        color: rgba(250, 250, 248, 0.88);
-        margin-top: 8px;
-        line-height: 1.45;
-        border-left: 1px solid rgba(250, 250, 248, 0.25);
-        padding-left: 10px;
-    }
-
-    .card.is-note {
-        background-color: var(--text-main);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 32px;
-        text-align: center;
-    }
-    .card.is-note .scrim { display: none; }
-    .card.is-note .card-content { position: relative; padding: 0; color: var(--bg-color); }
-    .card.is-note .type-badge { color: var(--text-muted); background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); align-self: center; }
-    .card.is-note .subtitle { color: var(--text-faint); }
-    .card.is-note .hero-quote {
-        font-weight: 600; font-size: 1.35rem; color: var(--bg-color);
-        margin-bottom: 24px; line-height: 1.4; letter-spacing: -0.02em;
-    }
-
-    /* --- SECTION: MANIFESTO BILLBOARD --- */
-    .manifesto-section {
-        border-top: var(--border-subtle);
-        background-color: var(--bg-color);
-        min-height: 50vh;
-        display: flex;
-        align-items: center;
-    }
-
-    .billboard-container {
-        max-width: 1100px;
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .billboard-statement {
-        font-size: 3.6rem;
-        font-weight: 800;
-        letter-spacing: -0.05em;
-        line-height: 1.15;
-        color: var(--text-faint);
-        overflow-wrap: break-word;
-    }
-
-    .billboard-statement em {
-        font-style: normal;
-        color: var(--text-main);
-        position: relative;
-    }
-
-    /* --- SECTION: TWO-COLUMN LOCAL TRACK GRID --- */
-    .lookbook-section {
-        background-color: var(--bg-color);
-        border-top: var(--border-subtle);
-    }
-
-    .grid-header {
-        text-align: left;
-        margin-bottom: 56px;
-        width: 100%;
-    }
-
-    .grid-header h3 {
-        font-size: clamp(1.6rem, 4.5vw, 2.6rem);
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        color: var(--text-main);
-        line-height: 1.25;
-    }
-
-    .dynamic-word {
-        font-family: Georgia, serif;
-        font-style: italic;
-        font-weight: 400;
-        display: inline-block;
-        color: var(--text-main);
-        vertical-align: baseline;
-        transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        will-change: opacity, filter;
-        opacity: 1;
-        filter: blur(0px);
-    }
-
-    .dynamic-word.blur-out {
-        opacity: 0;
-        filter: blur(16px);
-    }
-
-    .lookbook-split-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .lookbook-column {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .lookbook-item {
-        position: relative;
-        background: var(--card-bg);
-        border: var(--border-subtle);
-        border-radius: 14px;
-        overflow: hidden;
-        width: 100%;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.01);
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        isolation: isolate;
-    }
-
-    .ratio-square { aspect-ratio: 1 / 1 !important; }
-    .ratio-portrait { aspect-ratio: 3 / 4 !important; }
-
-    .lookbook-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform: translateZ(0);
-        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .lookbook-item:hover .lookbook-img { transform: scale(1.02) translateZ(0); }
-
-    .lookbook-overlay {
-        position: absolute;
-        inset: 0;
-        background: var(--scrim-color);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 24px;
-        color: #FAFAF8;
-    }
-
-    .lookbook-meta {
-        align-self: flex-start;
-        font-size: 0.6rem;
-        font-weight: 700;
-        letter-spacing: 1.2px;
-        text-transform: uppercase;
-        padding: 6px 12px;
-        background: rgba(250, 250, 248, 0.15);
-        border: 1px solid rgba(250, 250, 248, 0.2);
-        border-radius: 999px;
-        color: rgba(250, 250, 248, 0.95);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        margin-bottom: 6px;
-    }
-
-    .lookbook-title { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; overflow-wrap: break-word; }
-    .lookbook-sub { font-size: 0.85rem; color: rgba(250, 250, 248, 0.7); overflow-wrap: break-word; }
-
-    /* --- SECTION: APP STORE BADGE --- */
-    .badge-section {
-        background-color: var(--bg-color);
-        padding: 180px 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-top: var(--border-subtle);
-    }
-
-    .app-store-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    .app-store-link {
-        display: inline-block;
-        text-decoration: none;
-        line-height: 0;
-        transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    .app-store-link:hover {
-        transform: scale(1.04);
-    }
-
-    .app-store-link picture img {
-        width: 180px;
-        height: auto;
-        display: block;
-    }
-
-    /* --- STEALTH FOOTER --- */
-    .stealth-footer {
-        padding: 40px 32px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 0.05em;
-        text-transform: lowercase;
-        flex-shrink: 0;
-        border-top: var(--border-subtle);
-        background-color: var(--bg-color);
-    }
-
-    .footer-links { display: flex; gap: 32px; }
-    .footer-links a, .copyright { color: var(--text-faint); text-decoration: none; transition: color 0.3s ease; }
-    .footer-links a:hover { color: var(--text-main); }
-
-    /* --- RESPONSIVE MEDIA TUNING REGISTER --- */
-    @media (max-width: 768px) {
-        .lookbook-split-container { gap: 16px; }
-        .lookbook-column { gap: 16px; }
-        .badge-section { padding: 120px 24px; }
-    }
-
-    @media (max-width: 640px) {
-        .global-nav { padding: 16px 24px; }
-        .editorial-padding { padding: 90px 24px; }
-        .grid-header { margin-bottom: 36px; }
-        .manifesto-section { min-height: 85vh; }
-        .stealth-footer { flex-direction: column; gap: 16px; text-align: center; }
-
-        /* Compressed padding and typography limits to save vertical screen space on mobile */
-        .header { padding: 20px 24px 0px 24px; }
-        .hero-headline { margin-bottom: 24px; }
-
-        /* Direct micro-spacing reduction between collection picker and interactive card deck */
-        .stack-container { margin-top: -24px; }
-
-        /* Shrunk Hero Cards profile down by ~13% on mobile */
-        .card {
-            width: min(65vw, 31vh) !important;
-            height: calc(min(65vw, 31vh) * 1.5) !important;
-            border-radius: 14px;
+            --bg-cream: #FAFAF8;
+            --text-primary: #000000;
+            --text-secondary: rgba(0, 0, 0, 0.65);
+            --text-tertiary: rgba(0, 0, 0, 0.4);
+            --accent-blue: #0A84FF;
+            --card-border: rgba(0, 0, 0, 0.12);
         }
 
-        /* Scaled down lookbook content metrics to prevent content blanking */
-        .lookbook-overlay { padding: 14px !important; }
-        .lookbook-meta {
-            padding: 4px 8px !important;
-            font-size: 0.5rem !important;
-            margin-bottom: 4px !important;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
         }
-        .lookbook-title { font-size: 0.95rem !important; }
-        .lookbook-sub { font-size: 0.75rem !important; }
-        .lookbook-item .note {
-            font-size: 0.72rem !important;
-            margin-top: 4px !important;
-            line-height: 1.3 !important;
-            padding-left: 6px !important;
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
         }
-    }
-</style>
+
+        /* --- TOP HEADER --- */
+        .app-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            padding: 32px 48px;
+            display: flex;
+            justify-content: flex-end; /* Top trailing edge only */
+            align-items: center;
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        .get-btn {
+            pointer-events: auto;
+            background: var(--accent-blue);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 9999px;
+            padding: 8px 26px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            box-shadow: 0 4px 20px rgba(10, 132, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .get-btn:hover {
+            transform: scale(1.06) translateY(-1px);
+            background: #1D8FFF;
+            box-shadow: 0 8px 28px rgba(10, 132, 255, 0.5);
+        }
+
+        .get-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* --- MASTER LAYOUT SHELL --- */
+        .viewport-shell {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- HERO TEXT SECTION --- */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        .title-capsule {
+            font-family: 'Apple Garamond Light', Georgia, serif;
+            font-weight: 300;
+            color: var(--text-primary);
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+        }
+
+        .title-wonderful {
+            font-family: 'Apple Garamond Light', Georgia, serif;
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.1;
+        }
+
+        .title-wonderful em {
+            font-family: 'Apple Garamond Light', Georgia, serif;
+            font-style: italic;
+            font-weight: 300;
+            color: var(--text-primary);
+        }
+
+        /* --- RIGHT / TRAILING INTERACTIVE STAGE --- */
+        .interactive-stage {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1200px;
+            z-index: 15;
+        }
+
+        /* Fixed Hitbox Wrapper matching Card Occupancy Space */
+        .card-hitbox {
+            width: 340px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- FLOATING UNIVERSE MASTER CONTAINER (Spans Full 100vw x 100vh) --- */
+        #universe-stage {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 30;
+        }
+
+        /* --- EXACT MIRROR IMAGE COLLECTION COVER CARD (Pure CSS) --- */
+        .collection-cover-card {
+            width: 330px;
+            height: 440px; /* Exact 3:4 aspect ratio */
+            background: #FFFFFF;
+            border-radius: 20px; /* ~16.18 continuous */
+            border: 1.5px solid var(--card-border);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform, opacity;
+        }
+
+        .collection-cover-card:hover {
+            box-shadow: 0 32px 80px rgba(10, 132, 255, 0.16), 0 8px 24px rgba(0, 0, 0, 0.06);
+            border-color: rgba(10, 132, 255, 0.4);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .eyebrow {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.45);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        /* Center 3 Fanned Polaroids */
+        .polaroid-stack {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .cover-polaroid {
+            position: absolute;
+            width: 142px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            will-change: transform;
+        }
+
+        .cover-polaroid .p-thumb {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #F0F0EE;
+        }
+
+        .cover-polaroid .p-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cover-polaroid .p-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #000000;
+            margin-top: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .cover-polaroid .p-sub {
+            font-size: 9.5px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.46);
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .cover-polaroid.p2 { transform: rotate(-8deg) translate(-26px, 14px); z-index: 1; }
+        .cover-polaroid.p1 { transform: rotate(6deg) translate(26px, -4px); z-index: 2; }
+        .cover-polaroid.p0 { transform: rotate(-2deg) translate(0px, 2px); z-index: 3; }
+
+        /* Bottom Bar */
+        .card-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .collection-title {
+            font-family: 'Apple Garamond Light', Georgia, serif;
+            font-size: 38px;
+            font-weight: 300;
+            color: #000000;
+            line-height: 1.0;
+        }
+
+        .collection-attr {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.38);
+            letter-spacing: 0.1em;
+        }
+
+        /* --- FLOATING UNIVERSE ITEMS (Exact FloatingItemBubble Styling) --- */
+        .universe-item {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transform: translate3d(-9999px, -9999px, 0) scale(0.01);
+            z-index: 5;
+            will-change: transform, opacity;
+        }
+
+        /* Artwork Box */
+        .universe-thumb {
+            position: relative;
+            overflow: hidden;
+            background: #F0F0EE;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14), 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .universe-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Labels Centered Below Bubble */
+        .universe-labels {
+            margin-top: 8px;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .u-title {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #000000;
+            line-height: 1.25;
+            max-width: 140px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .u-sub {
+            font-size: 10.5px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.55);
+            margin-top: 2px;
+            max-width: 140px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* --- THING TYPE GEOMETRY SPECIFICATIONS (FloatingItemBubble lines 164-194) --- */
+        .universe-thumb.type-music { width: 134px; height: 134px; border-radius: 8px; }
+        .universe-thumb.type-link, .universe-thumb.type-video { width: 196px; height: 112px; border-radius: 12px; }
+        .universe-thumb.type-book { width: 112px; height: 168px; border-radius: 4px; }
+        .universe-thumb.type-photo { width: 126px; height: 168px; border-radius: 12px; }
+        .universe-thumb.type-spot { width: 98px; height: 98px; border-radius: 50%; }
+
+        .universe-thumb.type-note {
+            width: 140px;
+            height: 140px;
+            background: #FFFFFF;
+            border-radius: 16.18px;
+            padding: 14px;
+            display: flex;
+            align-items: flex-start;
+            border: 1.5px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .note-content {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #000000;
+            letter-spacing: -0.02em;
+            line-height: 1.35;
+            text-align: left;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+        }
+
+        /* --- SIMPLE TEXT FOOTER (WEB DESKTOP ONLY) --- */
+        .web-footer {
+            position: absolute;
+            bottom: 32px;
+            left: 8vw;
+            display: flex;
+            gap: 28px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            font-size: 13.5px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: lowercase;
+            pointer-events: auto;
+            z-index: 50;
+        }
+        .web-footer a {
+            color: rgba(0, 0, 0, 0.55);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .web-footer a:hover {
+            color: #000000;
+        }
+
+        /* --- DESKTOP SPECIFIC RULES (WEB > 1100px and Landscape) --- */
+        @media (min-width: 1101px) and (orientation: landscape) {
+            .hero-section { width: 48vw; padding-left: 8vw; }
+            .title-capsule { font-size: clamp(4.8rem, 8vw, 9.5rem); }
+            .title-wonderful { font-size: clamp(2.8rem, 4.4vw, 5.8rem); margin-top: 8px; }
+        }
+
+        /* --- MOBILE & TABLET PORTRAIT RULES (<= 1100px or Portrait) --- */
+        @media (max-width: 1100px), (orientation: portrait) {
+            .web-footer { display: none !important; }
+            body { display: flex; flex-direction: column; }
+            .app-header {
+                position: relative;
+                top: auto;
+                left: auto;
+                width: 100%;
+                padding: 20px 24px 16px; /* Added generous bottom padding */
+                flex-shrink: 0;
+            }
+            .viewport-shell {
+                flex: 1;
+                height: auto;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: clamp(16px, 3.5vh, 26px);
+                padding: clamp(8px, 2vh, 24px) 20px clamp(16px, 3.5vh, 32px);
+            }
+            .hero-section { display: contents; }
+            .title-capsule { order: 1; text-align: center; width: 100%; font-size: clamp(2.8rem, 8.5vh, 5.2rem); }
+            .interactive-stage {
+                order: 2;
+                position: relative;
+                width: 100%;
+                height: clamp(300px, 48vh, 450px);
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .title-wonderful { order: 3; text-align: center; width: 100%; font-size: clamp(1.7rem, 5.2vh, 3.4rem); }
+            .mob-br { display: inline; }
+            
+            .card-hitbox { width: 290px; height: 385px; }
+            .collection-cover-card { width: 280px; height: 373.33px; padding: 22px; }
+            .polaroid-stack { height: 180px; }
+            .cover-polaroid { width: 120px; }
+            .collection-title { font-size: 32px; }
+        }
+
+        /* --- COMPACT MOBILE HEIGHTS (iPhone SE 1st/2nd/3rd Gen) --- */
+        @media (max-height: 700px) and ((max-width: 1100px) or (orientation: portrait)) {
+            .interactive-stage { transform: scale(0.82); }
+        }
+        @media (max-height: 600px) and ((max-width: 1100px) or (orientation: portrait)) {
+            .interactive-stage { transform: scale(0.68); }
+            .app-header { padding: 14px 18px 10px; }
+            .viewport-shell { padding: 4px 18px 12px; }
+        }
+    </style>
 </head>
 <body>
 
-    <section class="hero-section">
-        <div class="global-nav">
-            <div class="logo">cercle</div>
-            <button class="get-btn">Get</button>
-        </div>
+    <!-- Top Header -->
+    <header class="app-header">
+        <a href="https://apps.apple.com" target="_blank" class="get-btn">GET</a>
+    </header>
 
-        <div class="header">
-            <h1 class="hero-headline">Curate something wonderful today.</h1>
-            <div class="picker-container">
-                <select class="collection-picker" id="collection-picker">
-                    <option value="london">London's quiet corners</option>
-                    <option value="currently">Currently Into</option>
-                    <option value="ambient">Ambient Wednesday</option>
-                </select>
-            </div>
-            <p id="counter">1 / 5</p>
-        </div>
-
-        <div class="stack-container" id="stack" style="opacity: 0;"></div>
-    </section>
-
-    <section class="manifesto-section">
-        <div class="editorial-padding billboard-container">
-            <h2 class="billboard-statement">
-                Human principle isn’t built to consume. We exist <em>to give</em>—to curate whole experiences for someone else.
-            </h2>
-        </div>
-    </section>
-
-    <section class="lookbook-section">
-        <div class="editorial-padding">
-
-            <div class="grid-header">
-                <h3>Come find your new favourite <span id="dynamic-word" class="dynamic-word">song</span></h3>
-            </div>
-
-            <div class="lookbook-split-container">
-
-                <!-- LEFT TRACK COLUMN -->
-                <div class="lookbook-column">
-                    <!-- 1. Music (Square) -->
-                    <div class="lookbook-item ratio-square">
-                        <img class="lookbook-img" src="photos/romance.jpg" alt="">
-                        <div class="lookbook-overlay">
-                            <div class="lookbook-meta">MUSIC</div>
-                            <div class="lookbook-title">Romance</div>
-                            <div class="lookbook-sub">Fontaines D.C.</div>
-                            <div class="note">"Total anti-hero energy. pre-game playlist."</div>
-                        </div>
-                    </div>
-
-                    <!-- 3. Photo (3:4 Portrait) -->
-                    <div class="lookbook-item ratio-portrait">
-                        <img class="lookbook-img" src="photos/disposable_14.png" alt="">
-                        <div class="lookbook-overlay">
-                            <div class="lookbook-meta">PHOTO</div>
-                            <div class="lookbook-title">Disposable #10</div>
-                            <div class="lookbook-sub">Eastern Europe</div>
-                            <div class="note">"This blurry shot is going straight onto the fridge."</div>
-                        </div>
-                    </div>
-
-                    <!-- 5. Music (Square) -->
-                    <div class="lookbook-item ratio-square">
-                        <img class="lookbook-img" src="photos/impala.jpg" alt="">
-                        <div class="lookbook-overlay">
-                            <div class="lookbook-meta">MUSIC</div>
-                            <div class="lookbook-title">Oblivion</div>
-                            <div class="lookbook-sub">Tame Impala</div>
-                            <div class="note">"I know everyone is Team Dracula but I think this is better. fight me."</div>
-                        </div>
-                    </div>
-
-                    <!-- 7. Books (3:4 Portrait) -->
-                    <div class="lookbook-item ratio-portrait">
-                        <img class="lookbook-img" src="photos/rams.jpg" alt="">
-                        <div class="lookbook-overlay">
-                            <div class="lookbook-meta">BOOK</div>
-                            <div class="lookbook-title">Dieter Rams: The Complete Works</div>
-                            <div class="lookbook-sub">Klaus Klemp</div>
-                            <div class="note">"A compilation of work by the first and final product designer."</div>
-                        </div>
-                    </div>
-
-                    <!-- 9. Podcast (Square) -->
-                    <div class="lookbook-item ratio-square">
-                        <img class="lookbook-img" src="photos/mfdoom.jpg" alt="">
-                        <div class="lookbook-overlay">
-                            <div class="lookbook-meta">MUSIC</div>
-                            <div class="lookbook-title">Rapp Snitch Knishes</div>
-                            <div class="lookbook-sub">MF DOOM</div>
-                            <div class="note">"Learning the guitar just to be able to play this melody."</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RIGHT TRACK COLUMN -->
-                <div class="lookbook-column">
-                    <!-- 2. Spot (3:4 Portrait) -->
-                    <div class="lookbook-item ratio-portrait">
-                        <img class="lookbook-img" src="photos/neals.jpg" alt="">
-                        <div class="lookbook-overlay">
-                            <div class="lookbook-meta">SPOT</div>
-                            <div class="lookbook-title">Neal's Yard</div>
-                            <div class="lookbook-sub">Covent Garden</div>
-                            <div class="note">"My new favourite Sunday spot."</div>
-                        </div>
-                    </div>
-
-                    <!-- 4. Spot (3:4 Portrait) -->
-                    <div class="lookbook-item ratio-portrait">
-                        <img class="lookbook-img" src="photos/simmons.jpg" alt="">
-                        <div class="lookbook-overlay">
-                            <div class="lookbook-meta">SPOT</div>
-                            <div class="lookbook-title">Simmons</div>
-                            <div class="lookbook-sub">Liverpool Street</div>
-                            <div class="note">"Tiny, loud and perfect for Saturdays. Gummy bear in a teapot is a must-try."</div>
-                        </div>
-                    </div>
-
-                    <!-- 6. Photo (3:4 Portrait) -->
-                    <div class="lookbook-item ratio-portrait">
-                        <img class="lookbook-img" src="photos/silver.png" alt="">
-                        <div class="lookbook-overlay">
-                            <div class="lookbook-meta">PHOTO</div>
-                            <div class="lookbook-title">Silver Baby</div>
-                            <div class="lookbook-sub">Hackney Wick</div>
-                            <div class="note">"💋💕"</div>
-                        </div>
-                    </div>
-
-                    <!-- 8. Spot (3:4 Portrait) -->
-                    <div class="lookbook-item ratio-portrait">
-                        <img class="lookbook-img" src="photos/hackney.jpg" alt="">
-                        <div class="lookbook-overlay">
-                            <div class="lookbook-meta">SPOT</div>
-                            <div class="lookbook-title">CRATE Bar</div>
-                            <div class="lookbook-sub">Hackney Wick</div>
-                            <div class="note">"Sharing my favourite bar with you lot, don't ruin it for me."</div>
-                        </div>
-                    </div>
-
-                    <!-- 10. Link (3:4 Portrait) -->
-                    <div class="lookbook-item ratio-portrait">
-                        <img class="lookbook-img" src="photos/loewe.jpg" alt="">
-                        <div class="lookbook-overlay">
-                            <div class="lookbook-meta">LINK</div>
-                            <div class="lookbook-title">Draped Jacket</div>
-                            <div class="lookbook-sub">loewe.com</div>
-                            <div class="note">"Am I the only one obsessed with the drape?"</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4: HIGH-FIDELITY APP STORE SVG IMPLEMENTATION -->
-    <section class="badge-section">
-        <div class="app-store-wrapper">
-            <a href="#" class="app-store-link" target="_blank" rel="noopener noreferrer">
-                <picture>
-                    <source srcset="photos/app_store_dark.svg" media="(prefers-color-scheme: dark)">
-                    <img src="photos/app_store_light.svg" alt="Download on the App Store">
-                </picture>
-            </a>
-        </div>
-    </section>
-
-    <footer class="stealth-footer">
-        <div class="copyright">cercle © 2026</div>
-        <div class="footer-links">
+    <div class="viewport-shell">
+        <!-- Web Desktop Footer -->
+        <footer class="web-footer">
+            <a href="invest.html">invest</a>
             <a href="terms.html">terms</a>
-            <a href="privacy.html">privacy</a>
+            <a href="privacy.html">policy</a>
             <a href="contact.html">contact</a>
-        </div>
-    </footer>
+        </footer>
 
-<script>
-    // ==========================================
-    // REFACTORED 3D STACK LOCAL DIRECTORY ENGINE
-    // ==========================================
-    const rawItems = [
-        { id: 1, typeLabel: "SPOT", title: "LN-CC", subtitle: "Dalston", note: "They just pulled in some incredible artisanal boots and vintage Issey Miyake silhouettes. We need to go this weekend.", img: "photos/ln_cc.jpg" },
-        { id: 2, typeLabel: "PHOTO", title: "Soundcheck", subtitle: "Camden Town", note: "Found this shot from the gig last night", img: "photos/soundcheck.jpg" },
-        { id: 3, typeLabel: "MUSIC", title: "Mandinga", subtitle: "Anitta", note: "Mystical and Intense", img: "photos/mandinga.jpg" },
-        { id: 4, typeLabel: "SPOT", title: "Ridley Road Market Bar", subtitle: "Dalston", note: "Perfect for photos before dinner.", img: "photos/ridley_road.jpg" },
-        { id: 5, typeLabel: "SPOT", title: "Bloom Perfumery", subtitle: "Covent Garden", note: "Discovered the most intense, complex new scent here today. Heavy woods, very Orto Parisi. It’s completely unapologetic.", img: "photos/bloom_perfumery.jpg" },
-        { id: 6, typeLabel: "SPOT", title: "Jolene", subtitle: "Newington Green", note: "Best sourdough in the city.", img: "photos/jolene.jpg" },
-        { id: 7, typeLabel: "SPOT", title: "The Little Orange Door", subtitle: "Clapham Common", note: "I love hanging out in the blue room here.", img: "photos/orange_door.jpg" },
-        { id: 8, typeLabel: "SPOT", title: "Coq d'Argent", subtitle: "Bank", note: "Best rooftop near the office", img: "photos/coq_d_argent.jpg" },
-        { id: 9, typeLabel: "SPOT", title: "The George Tavern", subtitle: "Stepney Green", note: "Sticky floors, cheap pints, and the absolute best underground alt-rock sets in East London. Pure chaotic good for this Friday.", img: "photos/george_tavern.jpg" },
-        { id: 10, typeLabel: "LINK", title: "Abomination Jacket", subtitle: "garuda-ss.com", note: "Accidentally leaving this here so someone takes the hint.", img: "photos/abomination_jacket.png" },
-        { id: 11, typeLabel: "VIDEO", title: "Introduction to James Turrell", subtitle: "Guggenheim Museum", note: "Still chasing the absolute high of seeing this in person again", img: "photos/james_turrell.jpg" },
-        { id: 12, typeLabel: "MUSIC", title: "Romance", subtitle: "Fontaines D.C.", note: "Total anti-hero energy. pre-game playlist.", img: "photos/romance.jpg" },
-        { id: 13, typeLabel: "BOOK", title: "Meet Me in the Bathroom", subtitle: "Lizzy Goodman", note: "An oral history of the early 2000s rock scene. Reading this on the tube and getting entirely too nostalgic for an era I barely lived through.", img: "photos/bathroom.jpg" },
-        { id: 14, typeLabel: "MOVIES & TV", title: "Bandidos", subtitle: "Netflix", note: "Random watch ended up as one of my favourite shows", img: "photos/bandidos.jpg" },
-        { id: 15, typeLabel: "PHOTO", title: "Disposable #14", subtitle: "Soho", note: "This blurry shot outside the pub at 2 AM is going straight onto the fridge.", img: "photos/disposable_14.png" },
-        { id: 16, typeLabel: "NOTE", title: "Note to Self", subtitle: "Sunday Morning", note: "There is nothing better than walking through Columbia Road Flower Market with an iced matcha and absolutely nowhere to be.", img: "" },
-        { id: 17, typeLabel: "PHOTO", title: "Concrete Summer", subtitle: "Peckham", note: "Golden hour at Frank's.", img: "photos/concrete_summer.png" },
-        { id: 18, typeLabel: "PHOTO", title: "Chiltern Mornings", subtitle: "Marylebone", note: "Biking to work on Chiltern Street at 7 AM.", img: "photos/chiltern.png" }
-    ];
+        <!-- Hero Titles (Stacked via display:contents on Mobile) -->
+        <section class="hero-section">
+            <div class="title-capsule">Capsule</div>
+            <div class="title-wonderful">Make something <br class="mob-br"><em>Wonderful</em></div>
+        </section>
 
-    const collectionData = {
-        london: rawItems.filter(item => item.typeLabel === "SPOT"),
-        currently: rawItems.filter(item => ["LINK", "VIDEO", "BOOK", "MOVIES & TV", "NOTE"].includes(item.typeLabel)),
-        ambient: rawItems.filter(item => ["MUSIC", "PHOTO"].includes(item.typeLabel))
-    };
+        <!-- Trailing / Middle Interactive Stage -->
+        <section class="interactive-stage" id="stage">
+            <div class="card-hitbox" id="hitbox">
+                <div class="collection-cover-card" id="london-card">
+                    <div class="card-top">
+                        <span class="eyebrow">CAPSULE</span>
+                    </div>
 
-    let currentCollectionKey = 'london';
-    let currentItems = collectionData[currentCollectionKey];
-    let topCardIndex = 0;
-    let cardElements = [];
-
-    const stack = document.getElementById('stack');
-    const counter = document.getElementById('counter');
-    const picker = document.getElementById('collection-picker');
-
-    function loadCollection(collectionKey) {
-        stack.style.opacity = '0';
-        counter.style.opacity = '0';
-
-        setTimeout(() => {
-            currentCollectionKey = collectionKey;
-            currentItems = collectionData[collectionKey];
-            topCardIndex = 0;
-            stack.innerHTML = '';
-
-            currentItems.forEach(item => {
-                const el = document.createElement('div');
-                el.className = 'card';
-
-                if (item.typeLabel === "NOTE") {
-                    el.classList.add('is-note');
-                    el.innerHTML = `
-                        <div class="hero-quote">"${item.note}"</div>
-                        <div class="card-content">
-                            <div class="type-badge">${item.typeLabel}</div>
-                            <div class="subtitle">${item.subtitle}</div>
+                    <div class="polaroid-stack">
+                        <div class="cover-polaroid p2">
+                            <div class="p-thumb"><img src="photos/neals.jpg" alt="Chiltern"></div>
+                            <div class="p-title">Neal's Yard</div>
+                            <div class="p-sub">Covent Garden</div>
                         </div>
-                    `;
-                } else {
-                    el.style.backgroundImage = `url('${item.img}')`;
-                    el.innerHTML = `
-                        <div class="scrim"></div>
-                        <div class="card-content">
-                            <div class="type-badge">${item.typeLabel}</div>
-                            <div class="title">${item.title}</div>
-                            <div class="subtitle">${item.subtitle}</div>
-                            ${item.note ? `<div class="note">"${item.note}"</div>` : ''}
+                        <div class="cover-polaroid p1">
+                            <div class="p-thumb"><img src="photos/rams.jpg" alt="George Tavern"></div>
+                            <div class="p-title">The George Tavern</div>
+                            <div class="p-sub">Stepney Green</div>
                         </div>
-                    `;
-                }
-                stack.appendChild(el);
-            });
+                        <div class="cover-polaroid p0">
+                            <div class="p-thumb"><img src="photos/romance.jpg" alt="London Calling"></div>
+                            <div class="p-title">London Calling</div>
+                            <div class="p-sub">Playlist</div>
+                        </div>
+                    </div>
 
-            cardElements = Array.from(stack.querySelectorAll('.card'));
-            renderStack(0);
+                    <div class="card-bottom">
+                        <h2 class="collection-title">london summers</h2>
+                        <div class="collection-attr">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                            <span>SRU</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-            setTimeout(() => {
-                stack.style.opacity = '1';
-                counter.style.opacity = '1';
-            }, 50);
+    <!-- MASTER FLOATING UNIVERSE CONTAINER FIXED TO FULL VIEWPORT -->
+    <div id="universe-stage"></div>
 
-            resetAutoScroll();
-        }, 300);
-    }
+    <!-- APPLICATION LOGIC & FLUID MEDIUM RIPPLE ENGINE -->
+    <script>
+        // --- CURATED DATA & STRICT TRAILING 50% CONSTELLATION COORDS (X >= 52%) ---
+        const universeItemsData = [
+            { type: 'spot', title: 'Chiltern Firehouse', subtitle: 'Marylebone', img: 'photos/chiltern.jpg', desktop: { x: 0.55, y: 0.16 }, mobile: { x: 0.28, y: 0.28 } },
+            { type: 'music', title: 'Romance', subtitle: 'Fontaines D.C.', img: 'photos/romance.jpg', desktop: { x: 0.86, y: 0.16 }, mobile: { x: 0.74, y: 0.26 } },
+            { type: 'music', title: '360', subtitle: 'Charli xcx', img: 'photos/brat.jpg', desktop: { x: 0.88, y: 0.82 }, mobile: { x: 0.76, y: 0.74 } },
+            { type: 'link', title: "Frank's Cafe Peckham", subtitle: 'boldtendencies.com', img: 'photos/concrete_summer.png', desktop: { x: 0.68, y: 0.85 }, mobile: { x: 0.50, y: 0.78 } },
+            { type: 'spot', title: 'Jolene Bakery', subtitle: 'Newington Green', img: 'photos/jolene.jpg', desktop: { x: 0.54, y: 0.78 }, mobile: { x: 0.26, y: 0.74 } },
+            { type: 'photo', title: "Richmond '26", subtitle: "Photo", img: 'photos/london.jpg', desktop: { x: 0.54, y: 0.45 }, mobile: { x: 0.24, y: 0.58 } },
+            { type: 'music', title: 'Summer Margaritas', subtitle: 'Taqueria Sounds', img: 'photos/bandidos.jpg', desktop: { x: 0.72, y: 0.14 }, mobile: { x: 0.76, y: 0.40 } },
+            { type: 'spot', title: "Annabel's", subtitle: 'Mayfair', img: 'photos/annabels.jpg', desktop: { x: 0.64, y: 0.32 }, mobile: { x: 0.25, y: 0.42 } },
+            { type: 'photo', title: "Devon Diaries", subtitle: "Photo", img: 'photos/paula.jpg', desktop: { x: 0.84, y: 0.46 }, mobile: { x: 0.50, y: 0.24 } },
+            { type: 'spot', title: 'The Little Orange Door', subtitle: 'Clapham Common', img: 'photos/orange_door.jpg', desktop: { x: 0.72, y: 0.56 }, mobile: { x: 0.74, y: 0.58 } },
+            { type: 'note', title: 'Note', subtitle: 'Bring a canvas tote bag, cheap sunglasses, and a picnic blanket for Hampstead Heath.', img: null, desktop: { x: 0.86, y: 0.68 }, mobile: { x: 0.56, y: 0.60 } },
+            { type: 'spot', title: "Madison", subtitle: "St.Paul's", img: 'photos/madison.jpg', desktop: { x: 0.66, y: 0.68 }, mobile: { x: 0.42, y: 0.44 } }
+        ];
 
-    function renderStack(dragOffset = 0) {
-        if(!currentItems.length) return;
-        counter.innerText = `${topCardIndex + 1} / ${currentItems.length}`;
+        const stage = document.getElementById('stage');
+        const universeStage = document.getElementById('universe-stage');
+        const londonCard = document.getElementById('london-card');
+        const hitbox = document.getElementById('hitbox');
 
-        cardElements.forEach((card, index) => {
-            let distance = (index - topCardIndex + currentItems.length) % currentItems.length;
-            let offsetIndex = distance > Math.floor(currentItems.length / 2) ? distance - currentItems.length : distance;
-            let absOffset = Math.abs(offsetIndex);
+        const itemNodes = [];
 
-            let progress = Math.min(Math.abs(dragOffset) / 150, 1);
-            let signedProgress = (dragOffset >= 0 ? 1 : -1) * progress;
-            let isMovingUp = (offsetIndex === 1 && dragOffset < 0) || (offsetIndex === -1 && dragOffset > 0);
+        // Generate the 12 Floating Universe DOM Nodes
+        universeItemsData.forEach((item, idx) => {
+            const el = document.createElement('div');
+            el.className = 'universe-item';
+            el.id = `u-node-${idx}`;
 
-            let xOffset = offsetIndex === 0 ? dragOffset : (offsetIndex * 35) - (isMovingUp ? (offsetIndex * 35 * progress) : 0);
-            let yOffset = offsetIndex === 0 ? 0 : (absOffset * 8) - (isMovingUp ? (absOffset * 8 * progress) : 0);
-            let rotateZ = offsetIndex === 0 ? (dragOffset / 15) : (offsetIndex * 6) - (isMovingUp ? (offsetIndex * 6 * progress) : 0);
-            let scale = offsetIndex === 0 ? 1.0 : 1.0 - (absOffset * 0.08) + (isMovingUp ? progress * 0.08 : 0);
-            let rotateY = (offsetIndex === 0 || isMovingUp) ? (10 * signedProgress) : 0;
+            let innerContent = '';
+            if (item.type === 'note') {
+                innerContent = `
+                    <div class="universe-thumb type-note">
+                        <div class="note-content">${item.subtitle}</div>
+                    </div>
+                `;
+            } else {
+                const subHtml = item.subtitle ? `<div class="u-sub">${item.subtitle}</div>` : '';
+                innerContent = `
+                    <div class="universe-thumb type-${item.type}">
+                        <img src="${item.img}" alt="${item.title}">
+                    </div>
+                    <div class="universe-labels">
+                        <div class="u-title">${item.title}</div>
+                        ${subHtml}
+                    </div>
+                `;
+            }
 
-            let zIndex = currentItems.length - absOffset + (isMovingUp ? progress : 0);
-
-            card.style.zIndex = Math.round(zIndex * 100);
-            card.style.transform = `translateX(${xOffset}px) translateY(${yOffset}px) scale(${scale}) rotateZ(${rotateZ}deg) rotateY(${rotateY}deg)`;
+            el.innerHTML = innerContent;
+            universeStage.appendChild(el);
+            itemNodes.push(el);
         });
-    }
 
-    let isDragging = false, startX = 0, currentDrag = 0, idleTimeout, scrollInterval;
-    function stopAutoScroll() { clearTimeout(idleTimeout); clearInterval(scrollInterval); }
-    function resetAutoScroll() {
-        stopAutoScroll();
-        idleTimeout = setTimeout(() => {
-            topCardIndex = (topCardIndex + 1) % currentItems.length; renderStack();
-            scrollInterval = setInterval(() => {
-                topCardIndex = (topCardIndex + 1) % currentItems.length; renderStack();
-            }, 3500);
-        }, 8000);
-    }
+        // --- GLOBAL MOUSE & TOUCH TRACKING ---
+        let globalMouseX = -9999;
+        let globalMouseY = -9999;
 
-    function endDrag() {
-        if (!isDragging) return;
-        isDragging = false;
-        stack.classList.remove('dragging');
-        if (Math.abs(currentDrag) > 40) {
-            topCardIndex = currentDrag < 0 ? (topCardIndex + 1) % currentItems.length : (topCardIndex - 1 + currentItems.length) % currentItems.length;
+        // --- RESPONSIVE LAYOUT HELPER ---
+        function isMobileMode() {
+            return window.innerWidth <= 1100 || window.innerHeight > window.innerWidth;
         }
-        currentDrag = 0;
-        renderStack(0);
-        resetAutoScroll();
-    }
 
-    picker.addEventListener('change', (e) => { stopAutoScroll(); loadCollection(e.target.value); });
-    stack.addEventListener('pointerdown', (e) => { isDragging = true; startX = e.clientX; stack.classList.add('dragging'); stopAutoScroll(); });
-    window.addEventListener('pointermove', (e) => { if (!isDragging) return; currentDrag = e.clientX - startX; requestAnimationFrame(() => renderStack(currentDrag)); });
-    window.addEventListener('pointerup', endDrag);
-    window.addEventListener('pointercancel', endDrag);
+        window.addEventListener('pointermove', (e) => {
+            globalMouseX = e.clientX;
+            globalMouseY = e.clientY;
+            if (isMobileMode() || document.body.classList.contains('fission-active')) return;
+            const tiltX = (window.innerWidth / 2 - e.clientX) / 45;
+            const tiltY = (window.innerHeight / 2 - e.clientY) / 45;
+            gsap.to(londonCard, { rotateY: -tiltX, rotateX: tiltY, duration: 0.8, ease: "power2.out" });
+        });
 
-    loadCollection(currentCollectionKey);
-
-    // ==========================================
-    // AMBIENT 2000MS CYCLICAL BLUR PARAMETER LOOP
-    // ==========================================
-    const dynamicWords = ["song", "spot", "ritual", "moment", "experience", "feeling", "escape", "obsession"];
-    let wordIndex = 0;
-    const dynamicWordElement = document.getElementById('dynamic-word');
-
-    function animateDynamicWord() {
-        dynamicWordElement.classList.add('blur-out');
-
-        setTimeout(() => {
-            wordIndex = (wordIndex + 1) % dynamicWords.length;
-            dynamicWordElement.innerText = dynamicWords[wordIndex];
-            dynamicWordElement.classList.remove('blur-out');
-        }, 500);
-    }
-
-    setInterval(animateDynamicWord, 2000);
-
-    // ==========================================
-    // STRICT VIEWPORT ZOOM DISABLEMENT ENGINE
-    // ==========================================
-    document.addEventListener('touchstart', function (event) {
-        if (event.touches.length > 1) {
-            event.preventDefault();
+        // --- CONFIGURE COORDS FOR MASTER VIEWPORT ---
+        function getCardCenter() {
+            const rect = londonCard.getBoundingClientRect();
+            return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
         }
-    }, { passive: false });
 
-    document.addEventListener('gesturestart', function (event) {
-        event.preventDefault();
-    });
+        function configurePhysicsTargets() {
+            const isDesktop = !isMobileMode();
 
-    let lastTouchEnd = 0;
-    document.addEventListener('touchend', function (event) {
-        const now = (new Date()).getTime();
-        if (now - lastTouchEnd <= 300) {
-            event.preventDefault();
+            itemNodes.forEach((el, idx) => {
+                const data = universeItemsData[idx];
+                const layout = isDesktop ? data.desktop : data.mobile;
+                const elW = el.offsetWidth || 135;
+                const elH = el.offsetHeight || 170;
+
+                el._radius = Math.max(elW, elH) / 2;
+                el._targetScale = isDesktop ? 1 : 0.7;
+
+                // Center anchored target coordinate
+                el._targetX = layout.x * window.innerWidth - (elW / 2);
+                el._targetY = layout.y * window.innerHeight - (elH / 2);
+
+                el._freqX = 0.8 + Math.random() * 0.5;
+                el._freqY = 0.8 + Math.random() * 0.5;
+                el._phaseX = Math.random() * Math.PI * 2;
+                el._phaseY = Math.random() * Math.PI * 2;
+            });
         }
-        lastTouchEnd = now;
-    }, false);
-</script>
+
+        // --- SUPER SOFT RELAXATION & THICK MEDIUM RIPPLE ENGINE ---
+        let isFissioned = false;
+        let entranceCompleted = false;
+
+        function physicsLoop() {
+            if (isFissioned && entranceCompleted) {
+                const now = Date.now() * 0.001;
+                const total = itemNodes.length;
+                const isDesktop = !isMobileMode();
+
+                itemNodes.forEach((el) => {
+                    const driftX = Math.cos(now * el._freqX + el._phaseX) * 12;
+                    const driftY = Math.sin(now * el._freqY + el._phaseY) * 12;
+                    el._posX = el._targetX + driftX;
+                    el._posY = el._targetY + driftY;
+                });
+
+                // Soft geometric relaxation
+                for (let iter = 0; iter < 3; iter++) {
+                    for (let i = 0; i < total; i++) {
+                        const elA = itemNodes[i];
+                        for (let j = i + 1; j < total; j++) {
+                            const elB = itemNodes[j];
+                            const dx = elB._posX - elA._posX;
+                            const dy = elB._posY - elA._posY;
+                            const dist = Math.sqrt(dx*dx + dy*dy);
+                            const minDist = (elA._radius + elB._radius) + 16;
+
+                            if (dist < minDist && dist > 0.1) {
+                                const overlap = minDist - dist;
+                                const nudge = overlap * 0.15;
+                                const nx = dx / dist;
+                                const ny = dy / dist;
+
+                                elA._posX -= nx * nudge;
+                                elA._posY -= ny * nudge;
+                                elB._posX += nx * nudge;
+                                elB._posY += ny * nudge;
+                            }
+                        }
+                    }
+                }
+
+                // Strictly clamp X inside trailing 50% on Desktop & apply Fluid Medium Cursor Ripples
+                const minAllowedX = isDesktop ? (window.innerWidth * 0.51) : 10;
+
+                itemNodes.forEach((el) => {
+                    el._posX = Math.max(minAllowedX, el._posX);
+
+                    // Fluid medium cursor ripple displacement
+                    const elW = el.offsetWidth || 135;
+                    const elH = el.offsetHeight || 170;
+                    const cX = el._renderX + elW / 2;
+                    const cY = el._renderY + elH / 2;
+                    const mdx = cX - globalMouseX;
+                    const mdy = cY - globalMouseY;
+                    const mDist = Math.sqrt(mdx*mdx + mdy*mdy);
+
+                    if (mDist < 160 && mDist > 0.1) {
+                        const prox = 1 - (mDist / 160);
+                        const ripplePush = prox * 18; // Soft hydrodynamic push in thick medium
+                        el._posX += (mdx / mDist) * ripplePush;
+                        el._posY += (mdy / mDist) * ripplePush;
+                    }
+
+                    el._renderX += (el._posX - el._renderX) * 0.16;
+                    el._renderY += (el._posY - el._renderY) * 0.16;
+                    el.style.transform = `translate3d(${el._renderX.toFixed(1)}px, ${el._renderY.toFixed(1)}px, 0) scale(${el._targetScale})`;
+                });
+            }
+
+            requestAnimationFrame(physicsLoop);
+        }
+        requestAnimationFrame(physicsLoop);
+
+        // --- INDIVIDUAL DRAGGING & DISINTEGRATION CONTROLLER ---
+        let masterTimeline = null;
+
+        function setFissionState(active, isMobileFast = false) {
+            if (isFissioned === active) return;
+            isFissioned = active;
+            entranceCompleted = false;
+
+            if (masterTimeline) masterTimeline.kill();
+            masterTimeline = gsap.timeline();
+
+            const origin = getCardCenter();
+            const timeMult = isMobileFast ? 0.65 : 1.0;
+
+            if (active) {
+                configurePhysicsTargets();
+                document.body.classList.add('fission-active');
+
+                // Instant Disintegration Flash
+                masterTimeline.to(londonCard, { opacity: 0, duration: 0.1 * timeMult, ease: "power1.out" }, 0);
+
+                itemNodes.forEach((el, idx) => {
+                    const elW = el.offsetWidth || 135;
+                    const elH = el.offsetHeight || 170;
+                    const startX = origin.x - elW / 2;
+                    const startY = origin.y - elH / 2;
+
+                    el._renderX = startX; el._renderY = startY;
+
+                    const dx = el._targetX - startX;
+                    const dy = el._targetY - startY;
+                    const flightDist = Math.sqrt(dx*dx + dy*dy);
+
+                    // Majestic tidal wave insertion flight timing
+                    const baseDur = 0.65 + (flightDist / 1200) * 0.33;
+                    const dur = baseDur * timeMult;
+                    const stagger = ((idx % 4) * 0.03 + Math.random() * 0.02) * timeMult;
+                    const proxy = { p: 0 };
+
+                    masterTimeline.to(proxy, {
+                        p: 1,
+                        duration: dur,
+                        ease: "back.out(1.16)",
+                        onUpdate: () => {
+                            el._renderX = startX + (el._targetX - startX) * proxy.p;
+                            el._renderY = startY + (el._targetY - startY) * proxy.p;
+                            const currentScale = el._targetScale * proxy.p;
+                            el.style.opacity = proxy.p;
+                            el.style.transform = `translate3d(${el._renderX.toFixed(1)}px, ${el._renderY.toFixed(1)}px, 0) scale(${currentScale})`;
+                        },
+                        onComplete: () => {
+                            el._posX = el._renderX;
+                            el._posY = el._renderY;
+                            if (idx === itemNodes.length - 1) entranceCompleted = true;
+                        }
+                    }, stagger);
+                });
+            } else {
+                document.body.classList.remove('fission-active');
+
+                // Individual natural dragging suction toward card center
+                itemNodes.forEach((el, idx) => {
+                    const elW = el.offsetWidth || 135;
+                    const elH = el.offsetHeight || 170;
+                    const targetOriginX = origin.x - elW / 2;
+                    const targetOriginY = origin.y - elH / 2;
+
+                    const startX = el._renderX || targetOriginX;
+                    const startY = el._renderY || targetOriginY;
+                    const startScale = el._targetScale || 1;
+
+                    const dx = startX - targetOriginX;
+                    const dy = startY - targetOriginY;
+                    const returnDist = Math.sqrt(dx*dx + dy*dy);
+
+                    // Slower, majestic fusion flight timing
+                    const baseDur = 0.65 + (returnDist / 1200) * 0.33;
+                    const dur = baseDur * timeMult;
+                    const stagger = ((idx % 4) * 0.03 + Math.random() * 0.02) * timeMult;
+                    const proxy = { p: 1 };
+
+                    masterTimeline.to(proxy, {
+                        p: 0,
+                        duration: dur,
+                        ease: "power3.in",
+                        onUpdate: () => {
+                            el._renderX = targetOriginX + (startX - targetOriginX) * proxy.p;
+                            el._renderY = targetOriginY + (startY - targetOriginY) * proxy.p;
+                            el.style.opacity = proxy.p;
+                            el.style.transform = `translate3d(${el._renderX.toFixed(1)}px, ${el._renderY.toFixed(1)}px, 0) scale(${startScale * proxy.p})`;
+                        }
+                    }, stagger);
+                });
+
+                masterTimeline.to(londonCard, {
+                    opacity: 1,
+                    duration: 0.35 * timeMult,
+                    ease: "power2.out"
+                }, 0.7 * timeMult);
+            }
+        }
+
+        // --- DESKTOP HOVER ENGINE (> 1100px Landscape) ---
+        hitbox.addEventListener('mouseenter', () => { if (!isMobileMode() && !isFissioned) setFissionState(true); });
+        stage.addEventListener('mouseleave', () => { if (!isMobileMode() && isFissioned) setFissionState(false); });
+
+        // --- MOBILE & TABLET TOUCH LOCK ENGINE (<= 1100px or Portrait) ---
+        function handleMobileDown(e) {
+            if (isMobileMode()) {
+                if (e && e.cancelable) e.preventDefault();
+                setFissionState(true, true);
+            }
+        }
+
+        function handleMobileUp() {
+            if (isMobileMode() && isFissioned) {
+                setFissionState(false, true);
+            }
+        }
+
+        hitbox.addEventListener('pointerdown', handleMobileDown);
+        hitbox.addEventListener('touchstart', handleMobileDown, { passive: false });
+
+        window.addEventListener('pointerup', handleMobileUp);
+        window.addEventListener('pointercancel', handleMobileUp);
+        window.addEventListener('touchend', handleMobileUp);
+        window.addEventListener('touchcancel', handleMobileUp);
+
+        window.addEventListener('resize', () => { if (isFissioned) configurePhysicsTargets(); });
+    </script>
 </body>
 </html>

@@ -3,19 +3,25 @@
 <head>
 <!-- Standard Favicon -->
 <link rel="icon" type="image/png" href="photos/favicon.png">
-<!-- Fallback for older browsers -->
 <link rel="shortcut icon" type="image/x-icon" href="photos/favicon.ico">
-<!-- iOS Home Screen / Safari Premium Icon -->
 <link rel="apple-touch-icon" href="photos/apple-touch-icon.png">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
-<title>cercle — Terms of Service</title>
+<title>Capsule — Terms of Service</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+    /* --- APPLE GARAMOND TYPOGRAPHY --- */
+    @font-face {
+        font-family: 'AppleGaramond';
+        src: url('apple_garamond/AppleGaramond-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
+
     /* --- SYSTEM-ADAPTIVE COLOR SPECIFICATION --- */
     :root {
         --bg-color: #FAFAF8; 
@@ -53,6 +59,8 @@
         overflow-y: auto;
         overflow-x: hidden;
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
         transition: background-color 0.4s ease, color 0.4s ease;
     }
 
@@ -62,9 +70,10 @@
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
+        flex: 1;
     }
 
-    /* --- NAVIGATION (BLUE GET BUTTON LOCKED) --- */
+    /* --- NAVIGATION --- */
     .global-nav {
         display: flex;
         justify-content: space-between;
@@ -76,11 +85,13 @@
     }
     
     .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        letter-spacing: -0.05em; 
+        font-family: 'AppleGaramond', Georgia, serif;
+        font-size: 2.2rem;
+        font-weight: 300;
+        letter-spacing: -0.02em; 
         color: var(--text-main);
         text-decoration: none;
+        text-transform: capitalize;
     }
 
     .get-btn {
@@ -91,6 +102,7 @@
         padding: 6px 18px;
         font-size: 0.95rem;
         font-weight: 700;
+        text-decoration: none;
         cursor: pointer;
         transition: transform 0.2s ease, opacity 0.2s ease;
     }
@@ -123,65 +135,64 @@
     }
 
     .legal-meta {
-        font-size: 0.85rem;
-        color: var(--text-faint);
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        font-weight: 400;
     }
 
-    /* --- ASYMMETRIC LEGAL TWO-COLUMN GRID --- */
+    /* --- CONTENT SECTIONS --- */
     .legal-split {
         display: grid;
-        grid-template-columns: 0.5fr 1.5fr;
-        gap: 64px;
-        align-items: start;
-        margin-bottom: 64px;
+        grid-template-columns: 240px 1fr;
+        gap: 48px;
+        margin-bottom: 72px;
     }
 
     .section-label {
         font-size: 0.85rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: var(--text-main);
+        font-weight: 600;
+        color: var(--text-faint);
         position: sticky;
         top: 40px;
-    }
-
-    .section-content {
-        font-size: 1.05rem;
-        line-height: 1.6;
-        color: var(--text-muted);
+        align-self: start;
     }
 
     .section-content p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-muted);
         margin-bottom: 24px;
+        font-weight: 400;
     }
 
-    /* --- HIGHLIGHTED ARTIFACT CLAUSE BLOCK --- */
+    .section-content strong {
+        color: var(--text-main);
+        font-weight: 600;
+    }
+
     .critical-clause-box {
         background-color: var(--card-bg);
-        border: 1px solid var(--text-main);
+        border: var(--border-subtle);
+        border-radius: 20px;
         padding: 32px;
         margin: 32px 0;
-        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     }
 
     .critical-clause-box h4 {
         font-size: 1.1rem;
         font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
         color: var(--text-main);
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
 
     .critical-clause-box p {
-        font-size: 1rem;
-        color: var(--text-main);
-        font-weight: 500;
+        font-size: 0.95rem;
+        color: var(--text-muted);
         margin-bottom: 0;
     }
 
-    /* --- STEALTH FOOTER --- */
+    /* --- FOOTER --- */
     .stealth-footer {
         padding: 40px 32px; 
         display: flex; 
@@ -193,6 +204,7 @@
         text-transform: lowercase;
         border-top: var(--border-subtle);
         background-color: var(--bg-color);
+        margin-top: auto;
     }
 
     .footer-links { display: flex; gap: 32px; }
@@ -210,65 +222,67 @@
 <body>
 
     <nav class="global-nav">
-        <a href="/" class="logo">cercle</a>
-        <button class="get-btn">Get</button>
+        <a href="index.html" class="logo">Capsule</a>
+        <a href="https://apps.apple.com" target="_blank" class="get-btn">Get</a>
     </nav>
 
     <main class="legal-padding">
         <header class="legal-header">
             <span class="legal-label">Platform Protocol</span>
             <h1 class="legal-title">Terms of Service</h1>
-            <p class="legal-meta">Effective Execution: May 2026 &bull; Worldwide Jurisdiction</p>
+            <p class="legal-meta">Effective Date: June 2026 &bull; Governing Law: Delaware, USA</p>
         </header>
 
         <!-- SECTION 1 -->
         <div class="legal-split">
             <div class="section-label">01 / Agreement</div>
             <div class="section-content">
-                <p>Welcome to cercle. By accessing or downloading our platform, you explicitly enter a binding legal covenant governed by these Terms of Service. If you do not accept these provisions entirely, your right to interface with our digital systems is immediately rescinded.</p>
+                <p>Welcome to <strong>Capsule</strong>. By downloading, accessing, or using the Capsule iOS application or website, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+                <p>Capsule is intended strictly for individuals aged <strong>16 years and older</strong>. By creating an account, you affirm that you meet this age requirement.</p>
             </div>
         </div>
 
-        <!-- SECTION 2: SPECIFIC OWNERSHIP DISCLOSURE -->
+        <!-- SECTION 2: OWNERSHIP & LICENSE MODEL -->
         <div class="legal-split">
-            <div class="section-label">02 / Curation Rights</div>
+            <div class="section-label">02 / Ownership & Sharing</div>
             <div class="section-content">
-                <p>Cercle operates as a shared, interconnected multi-dimensional lookbook designed around user curation. While you retain native copyrights to raw assets you upload individually, the structural integration of public sharing shifts ownership dynamics to preserve the platform’s ecosystem continuity.</p>
+                <p><strong>You retain full ownership of all content you create.</strong> All lists, spots, notes, music tags, and photos you commit to your capsules remain your intellectual property. We do not claim ownership over your personal memories or curation.</p>
+                <p>By publishing content publicly or allowing your capsules to be shared on Capsule, you grant Sruper Inc. and our peer users a non-exclusive, worldwide, royalty-free license to host, display, synchronize, save, and fork that content solely within the application.</p>
                 
                 <div class="critical-clause-box">
-                    <h4>Public Artifact Ownership Architecture</h4>
-                    <p>When you intentionally save, log, or commit an item as a public artifact on cercle, you permanently relinquish sole ownership and control over that data instance. Consequently, if another platform member saves or incorporates your public artifact into their individual digital capsules or circles, the platform is not legally required, obligated, or bound to delete or scrub that asset instance from the network—even upon account termination, data erasure requests, or original profile deletion.</p>
+                    <h4>Account Deletion & Fork Attribution Logic</h4>
+                    <p>You may permanently delete your account at any time directly through the in-app settings menu. Upon account deletion or valid data erasure requests, your personal profile, account credentials, private capsules, and personal identifiers are permanently scrubbed from our active databases.</p>
+                    <p style="margin-top: 12px;">For public items that other users independently **forked** or saved into their own personal libraries prior to your account deletion: to protect the personal curation of those independent users without violating your privacy rights, Capsule retains only a de-identified, attribution-stripped copy of the underlying item metadata (such as spot coordinates or media catalog identifiers) while permanently scrubbing your author identity, username, and personal notes.</p>
                 </div>
-
-                <p>This structural arrangement ensures that shared environments, curated maps, and interconnected design matrices remain complete for the user base that received or built upon them.</p>
             </div>
         </div>
 
         <!-- SECTION 3 -->
         <div class="legal-split">
-            <div class="section-label">03 / Global Compliance</div>
+            <div class="section-label">03 / Governing Law & Rights</div>
             <div class="section-content">
-                <p><strong>United States (US):</strong> These terms incorporate compliance parameters governed by the Digital Millennium Copyright Act (DMCA) and state-specific fair practices code. Liability limitations apply to the maximum extent permitted by local statutory law.</p>
-                <p><strong>United Kingdom & European Union (UK/EU):</strong> Provisions are designed to conform directly with consumer contract regulations. The joint retention of shared items serves our legitimate operational interest to maintain infrastructure durability under standard transactional law frameworks.</p>
-                <p><strong>India:</strong> This platform is deployed in full compliance with the Information Technology Act, 2000, and related intermediate liability metrics. Our curation structure satisfies safe harbor definitions through absolute user-driven input mechanisms.</p>
+                <p>Capsule operates from our headquarters in London, United Kingdom, with parent entity Sruper Inc. registered in Delaware, United States. These terms are governed by and construed in accordance with the laws of the State of Delaware, without regard to conflict of law principles, with exclusive jurisdiction in the courts located in Delaware.</p>
+                <p>For international users across the United Kingdom, European Union (GDPR), and United States (CCPA), our software operates under standard safe harbor and consumer protection principles. We provide transparent mechanisms to access, export, or erase your data at any time.</p>
             </div>
         </div>
 
         <!-- SECTION 4 -->
         <div class="legal-split">
-            <div class="section-label">04 / Liability Core</div>
+            <div class="section-label">04 / Disclaimers & Contact</div>
             <div class="section-content">
-                <p>Cercle provides its software infrastructure on an "as-is" and "as-available" blueprint. Under no legal circumstances shall the platform, its founders, or corporate extensions be held liable for indirect, incidental, or consequential damages resulting from asset curation, network access failures, or data exposure globally.</p>
+                <p>Capsule is provided on an "as is" and "as available" basis without warranties of any kind. We are not liable for network sync interruptions, third-party API downtime, or data loss.</p>
+                <p>If you have questions regarding these terms, your license grants, or account termination procedures, please contact our legal team at <a href="mailto:info@sruper.com" style="color: var(--app-blue); text-decoration: none;">info@sruper.com</a>.</p>
             </div>
         </div>
     </main>
 
     <footer class="stealth-footer">
-        <div class="copyright">cercle © 2026</div>
+        <div class="copyright">sruper © 2026</div>
         <div class="footer-links">
+            <a href="invest.html">invest</a>
             <a href="terms.html">terms</a>
-            <a href="privacy.html">privacy</a>
-            <a href="#">contact</a>
+            <a href="privacy.html">policy</a>
+            <a href="contact.html">contact</a>
         </div>
     </footer>
 
