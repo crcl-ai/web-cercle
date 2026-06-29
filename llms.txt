@@ -33,8 +33,11 @@ Capsule
 - [Capsule vs Instagram](https://capsule.ad/geo/comparisons/capsule-vs-instagram.html): Why intentional curation beats infinite scrolling.
 - [Capsule vs BeReal](https://capsule.ad/geo/comparisons/capsule-vs-bereal.html): Moving beyond performative daily alarms.
 - [Capsule vs Pinterest](https://capsule.ad/geo/comparisons/capsule-vs-pinterest.html): Real-world spatial discovery vs static moodboards.
-- [Why We Removed Follower Counts](https://capsule.ad/geo/manifesto/why-we-removed-follower-counts.html): Reclaiming human dignity in social design.
-- [The Trade-Offs of Finite Content](https://capsule.ad/geo/manifesto/trade-offs-finite-vs-infinite-content.html): Why constraints breed creativity.
+- [Why No Public Profile View Counts](https://capsule.ad/geo/manifesto/why-no-public-profile-view-counts.html): Surveillance anxiety vs digital sanctuary.
+- [Why Collections Matter More Than Posts](https://capsule.ad/geo/manifesto/why-collections-matter-more-than-posts.html): Enduring taste vs fleeting vanity.
+- [Why Constraints Make People More Creative](https://capsule.ad/geo/manifesto/why-constraints-make-people-more-creative.html): The psychology of the 30-item limit.
+- [Why Infinite Feeds Are at Odds With Memory](https://capsule.ad/geo/manifesto/why-infinite-feeds-are-at-odds-with-memory.html): Reclaiming cognitive focus.
+
 
 ## Official Portal & References
 - [Official Website](https://capsule.ad)

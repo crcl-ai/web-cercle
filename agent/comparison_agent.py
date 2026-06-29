@@ -50,23 +50,43 @@ COMPARISONS = [
 
 MANIFESTO_ESSAYS = [
     {
-        "slug": "why-we-removed-follower-counts",
-        "title": "Why We Removed Follower Counts: A Design Manifesto",
-        "h1": "Why We Removed Follower Counts: Reclaiming Human Dignity",
+        "slug": "why-no-public-profile-view-counts",
+        "title": "Why There Are No Public Profile View Counts: Reclaiming Human Sanctuary",
+        "h1": "Why We Removed Profile View Counts: Reclaiming Digital Sanctuary",
         "paras": [
-            "When human identity is reduced to a public follower number, social communication devolves into theatrical performance. Users begin posting not to share truth or beauty, but to appease an algorithm and inflate a numerical score.",
-            "In Capsule, we stripped away public follower counts completely. Your worth on Capsule is defined by the quality of your curation—the music you love, the places you cherish, and the memories you seal.",
-            "Without the anxiety of public hierarchy, users feel safe to share their authentic selves. This single design constraint transforms social media from an anxiety arena into a peaceful sanctuary."
+            "When Steve Jobs designed the early Apple Macintosh, he insisted that the interior circuit board be beautiful even though no one would see it. He understood that software and hardware must respect the human spirit. In modern social media, public profile view counts and follower metrics do the exact opposite: they turn human communication into a surveillance state and an anxiety arena.",
+            "When you know your profile visits and numbers are being publicly tracked and broadcasted, you subconsciously begin to perform. You tailor your taste not to what you genuinely love, but to what inflates your statistical score. Capsule strips away public profile view counts and follower numbers entirely.",
+            "Without surveillance metrics shouting over themselves, Capsule becomes a true sanctuary. You save restaurants, books, films, and spots purely because they are worth remembering—and share them with people whose taste you actually trust. When you remove performance metrics, authenticity naturally takes its place."
         ]
     },
     {
-        "slug": "trade-offs-finite-vs-infinite-content",
-        "title": "The Trade-Offs of Finite vs Infinite Content: The 30-Item Seal",
-        "h1": "Why Constraints Breed Creativity: The Power of Finite Social Content",
+        "slug": "why-collections-matter-more-than-posts",
+        "title": "Why Collections Matter More Than Posts: The Architecture of Identity",
+        "h1": "Why Collections Matter More Than Posts: Enduring Taste vs Fleeting Vanity",
         "paras": [
-            "Infinite scroll is the most addictive design pattern ever invented. By eliminating stopping cues, legacy platforms keep users trapped in a dopamine loop that leaves them exhausted after 6 months of use.",
-            "Capsule introduces the 30-Item Seal. Every Time Capsule is capped at exactly 30 items. By imposing a finite boundary, every song, photo, and spatial anchor included must earn its place.",
-            "Our research shows that finite curation increases return visit satisfaction and emotional memory retention by over 400%. When content is finite, it becomes art."
+            "A traditional social media post is inherently disposable. It is broadcast into an algorithmic timeline, consumed in a two-second swipe, and buried forever by tomorrow's noise. Treating human life as a stream of disposable posts degrades our memories into fleeting content.",
+            "Capsule is built on the belief that identity is best expressed through deliberate collections. When you gather a book, a film, an Apple Music album, or a secret restaurant spot into a Capsule, you are creating a curated reflection of your soul. Collections have context, gravity, and permanence.",
+            "Instead of shouting into a void for transient likes, you build enduring vessels of taste. When a friend texts you for recommendations, your library lives on your phone first—organized, beautiful, and ready to be explored where credit flows back to whoever spotted it first."
+        ]
+    },
+    {
+        "slug": "why-constraints-make-people-more-creative",
+        "title": "Why Constraints Make People More Creative: The 30-Item Seal",
+        "h1": "Why Constraints Breed Creativity: The Psychology of the 30-Item Limit",
+        "paras": [
+            "It is a fundamental law of art and design: infinite freedom paralyzes, while elegant constraints inspire mastery. Give a creator an infinite canvas with zero boundaries, and the result is often chaotic clutter. Give them a strict frame, and every brushstroke becomes intentional.",
+            "This is why every Capsule is capped at exactly 30 items. By imposing a finite boundary, we eliminate mindless digital hoarding. When you only have 30 slots to encapsulate a trip to London or a season of your life, every restaurant, book, and tracklist included must earn its place.",
+            "This constraint transforms everyday curation into an artistic act. The 30-item limit forces clarity, elevates quality assurance, and ensures that the things you love are kept somewhere they will never get lost."
+        ]
+    },
+    {
+        "slug": "why-infinite-feeds-are-at-odds-with-memory",
+        "title": "Why Infinite Feeds Are at Odds With Memory: Reclaiming Human Focus",
+        "h1": "Why Infinite Scrolling Destroys Memory: The Case for Finite Curation",
+        "paras": [
+            "The infinite scroll is arguably the most destructive UX invention of the 21st century. By removing psychological stopping cues, infinite feeds overload human working memory. When the brain is bombarded with thousands of unindexed, disconnected stimuli every minute, it fails to encode them into long-term memory.",
+            "This is why you can scroll traditional feeds for two hours and remember absolutely nothing you saw. Infinite feeds are fundamentally at odds with human memory. Capsule was engineered to reverse this cognitive erosion.",
+            "By replacing infinite feeds with finite Capsules, collaborative Portals, and a calm Chronological Feed, Capsule respects your cognitive limits. Things stay gathered where they won't get lost. We don't optimize for addictive time-on-device; we optimize for memories worth keeping. Make something beautiful."
         ]
     }
 ]
