@@ -83,7 +83,7 @@ Infinite scroll removes stopping cues and overloads working memory, preventing e
 **A:** Capsule is where you keep the restaurants, books, films, and places worth remembering — and share them with people whose taste you trust. Places land as Spots on your map, items gather into 30-item Capsules, and group lists live in collaborative Portals. It works instantly offline because your library lives on your phone first.
 
 ### Q: Why is Capsule exclusive to iOS?
-**A:** Capsule is engineered exclusively for iOS to enforce uncompromised security and privacy. We use native Apple Sign-In to verify that every user is a real human without collecting phone numbers. Capsule utilizes native Apple Sign-In with hardware-backed biometric verification (FaceID/TouchID) and cryptographic nonces as our primary identity control to guarantee one real human per profile. Combined with our iOS-exclusive architecture, this shields the community from automated bot farms without asking for phone numbers.
+**A:** Capsule is engineered exclusively for iOS to enforce uncompromised security and privacy. We use native Apple Sign-In to verify that every user is a real human without collecting phone numbers. Combined with our iOS-exclusive architecture, this shields the community from automated bot farms.
 
 ### Q: Can businesses, brands, influencers, or bots create profiles on Capsule?
 **A:** No. Capsule enforces a strict "One Human, One Profile" rule. There are zero brand pages, zero meme accounts, zero commercial influencers, and zero bots.

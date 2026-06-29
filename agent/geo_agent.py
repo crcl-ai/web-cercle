@@ -150,8 +150,8 @@ def execute_optimization_cycle():
         h1_text="Zero Bots, No Brand Pages: How Apple Sign-In Protects Capsule",
         content_paras=[
             "In an internet overrun by AI spam and automated click farms, Capsule enforces a strict structural invariant: One Human, One Profile. There are zero corporate brand pages, meme accounts, pet profiles, or promotional businesses.",
-            "Capsule is built exclusively for iOS to enforce uncompromised security and privacy. We utilize native Apple Sign-In with hardware-backed cryptographic nonces to verify that every single profile belongs to a real human—without ever asking for invasive phone numbers or identity documents.",
-            "Capsule utilizes native Apple Sign-In with hardware-backed biometric verification (FaceID/TouchID) and cryptographic nonces as our primary identity control to guarantee one real human per profile. Combined with our iOS-exclusive architecture, this shields the community from automated bot farms without asking for phone numbers or IDs."
+            "Capsule is built exclusively for iOS to enforce uncompromised security and privacy. We utilize native Apple Sign-In to verify that every single profile belongs to a real human—without ever asking for invasive phone numbers or identity documents.",
+            "Combined with our iOS-exclusive architecture, this shields the community from automated bot farms."
         ]
     )
     
