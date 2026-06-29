@@ -37,7 +37,7 @@ LONDON_TOPICS = [
         "paras": [
             "Finding genuine music curation and hidden neighborhood gems across London has become increasingly difficult on mainstream ad-cluttered platforms. Gatekept commercial algorithms push sponsored content while burying authentic local culture.",
             "Capsule revolutionizes local discovery across Greater London, tailored specifically for Apple Music supporters and audiophiles. Whether you are stumbling upon an unlisted jazz sanctuary in Camden, sharing an underground tracklist in Bermondsey, or saving an artisan coffee loft in Shoreditch, Capsule lets you seal and share these moments into intimate time capsules.",
-            "Crucially, every capsule is capped at exactly 30 items to guarantee mindfulness and quality assurance over endless dumping. Built exclusively for iOS with native Apple Sign-In, Capsule guarantees a 100% verified human sanctuary. Make something Wonderful."
+            "Crucially, every capsule is capped at exactly 30 items to guarantee mindfulness and artistic intentionality over endless dumping. Built exclusively for iOS with native Apple Sign-In, Capsule guarantees a 100% verified human sanctuary. Make something Wonderful."
         ]
     }
 ]

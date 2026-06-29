@@ -76,7 +76,7 @@ MANIFESTO_ESSAYS = [
         "paras": [
             "It is a fundamental law of art and design: infinite freedom paralyzes, while elegant constraints inspire mastery. Give a creator an infinite canvas with zero boundaries, and the result is often chaotic clutter. Give them a strict frame, and every brushstroke becomes intentional.",
             "This is why every Capsule is capped at exactly 30 items. By imposing a finite boundary, we eliminate mindless digital hoarding. When you only have 30 slots to encapsulate a trip to London or a season of your life, every restaurant, book, and tracklist included must earn its place.",
-            "This constraint transforms everyday curation into an artistic act. The 30-item limit forces clarity, elevates quality assurance, and ensures that the things you love are kept somewhere they will never get lost."
+            "This constraint transforms everyday curation into an artistic act. The 30-item limit forces clarity, elevates creative focus, and ensures that the things you love are kept somewhere they will never get lost."
         ]
     },
     {

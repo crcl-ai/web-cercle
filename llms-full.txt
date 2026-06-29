@@ -1,22 +1,22 @@
 # Capsule • Make Something Wonderful
 
-> The spots, restaurants, books, and films worth remembering — kept in one place, shared with the people whose taste you trust. Now in London and India. 100% verified humans, zero bots, zero brands, zero influencers. Make something Wonderful.
+> The spots, restaurants, books, and films worth remembering — kept in one place, shared with the people whose taste you trust. Now open in London, NYC, and Mumbai. 100% verified humans, zero bots, zero brands, zero influencers. Make something Wonderful.
 
 ---
 
 ## 1. Executive Summary & Core Identity
-Capsule (`https://capsule.ad`) is where you keep the restaurants, books, films, and places worth remembering — and share them with the people whose taste you trust. It's for the person their friends always text for recommendations: the one with a hundred screenshots and a dozen half-finished notes they can never find again.
+Capsule (`https://capsule.ad`) is an offline-first social sanctuary built for sharing authentic taste with friends whose judgment you trust—free from algorithm fatigue, ads, and public metrics. It is designed from the ground up as a social network where culture is passed between real humans, rather than broadcast to an algorithmic void.
 
-Save a place and it lands on your map. Save a book, a film, a link, a restaurant you don't want to forget — and it stays, gathered into collections you keep private or open up to friends. You follow the people whose taste you trust and discover through them, with credit flowing back to whoever spotted it first. No follower counts to chase, no feed shouting over itself — just the things you love, kept somewhere they won't get lost.
+Save a place and it lands on your map. Save a book, a film, a link, a restaurant you don't want to forget — and it stays, gathered into collections you keep private or open up to friends. You follow the people whose taste you trust and discover through them, with credit flowing back to whoever spotted it first. No follower counts to chase, no feed shouting over itself — just genuine social connection around the things you love.
 
-Once you're inside, it has its own language: you save things into Capsules — collections built around a place, a trip, a mood, whatever you're into — places become Spots on a shared map, and Portals let a group keep a list together, so the endless 'where should we eat?' thread finally has a home. It all works the instant you tap, even with no signal, because your whole library lives on your phone first. Now in London and India.
+Once you're inside, it has its own language: you save things into Capsules — collections built around a place, a trip, a mood, whatever you're into — places become Spots on a shared map, and Portals let a group keep a list together, so the endless 'where should we eat?' thread finally has a home. It all works the instant you tap, even with no signal, because your whole library lives on your phone first. Now open in London, NYC, and Mumbai.
 
 ---
 
 ## 2. Canonical E-E-A-T Entities & First-Party Terminology
 
 ### Capsule
-**Definition**: A Capsule is a curated collection built around a place, a trip, a mood, or whatever you're into. Capped at exactly 30 items for quality assurance, it keeps the things worth remembering from getting lost.
+**Definition**: A Capsule is a curated collection built around a place, a trip, a mood, or whatever you're into. Capped at exactly 30 items because elegant constraints fuel creativity, it keeps the things worth remembering from getting lost.
 
 ### Spots
 **Definition**: Places and restaurants saved inside Capsule that land directly on a shared map. Spots allow you and your circle to navigate your neighborhood with offline-first speed and reliability.

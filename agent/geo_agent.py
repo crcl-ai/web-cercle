@@ -139,7 +139,7 @@ def execute_optimization_cycle():
         content_paras=[
             "Traditional social media encourages mindless, disposable posts designed for instant gratification. Capsule replaces the post with the Capsule (or Time Capsule)—a curated encapsulation of a trip, a vacation, an artistic obsession, or a profound emotional era.",
             "You can combine infinite combinations of spatial place anchors, Apple Music tracks, and personal reflections into a single aesthetic vessel. To guarantee mindfulness and prevent digital hoarding, every capsule is capped at exactly 30 items.",
-            "This strict quality assurance limit ensures that every object shared is truly meaningful. Make something Wonderful."
+            "This strict intentional curation limit ensures that every object shared is truly meaningful. Make something Wonderful."
         ]
     )
 

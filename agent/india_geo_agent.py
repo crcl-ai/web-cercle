@@ -33,7 +33,7 @@ INDIA_TOPICS = [
         "h1": "How India's Creators Are Discovering Apple Music Playlists and Places Offline",
         "paras": [
             "Across India's bustling metropolitan hubs, authentic culture happens offline—in independent art studios, underground music cafes, and historic neighborhood lanes. Mainstream ad-cluttered networks ignore these genuine moments in favor of paid influencer promotions.",
-            "Capsule empowers Indian audiophiles and tastemakers to reclaim local discovery. Tailored for Apple Music supporters, users can seal and share underground playlists and spatial place anchors into intimate time capsules capped at exactly 30 items for uncompromised quality assurance.",
+            "Capsule empowers Indian audiophiles and tastemakers to reclaim local discovery. Tailored for Apple Music supporters, users can seal and share underground playlists and spatial place anchors into intimate time capsules capped at exactly 30 items because elegant constraints fuel creative focus.",
             "Crucially, Capsule's robust offline-first architecture ensures flawless synchronization even during cellular network fluctuations. Capture your moments seamlessly, build genuine community, and make something Wonderful."
         ]
     },
