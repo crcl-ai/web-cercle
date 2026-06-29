@@ -15,6 +15,7 @@ import urllib.request
 import urllib.parse
 import re
 from datetime import datetime
+import llm_helper
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 NYC_DIR = os.path.join(REPO_ROOT, "geo", "nyc")
@@ -49,15 +50,17 @@ def ensure_nyc_dir():
 def generate_nyc_articles():
     ensure_nyc_dir()
     print(f"\n--- [NYC GEO Agent] Executing NYC Regional Synthesis ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')}) ---")
+    trends = llm_helper.fetch_live_trends(["nyc", "AskNYC", "FoodNYC"])
     
     for topic in NYC_TOPICS:
+        paras = llm_helper.call_gemini_synthesis("New York City", topic['title'], trends) or topic['paras']
         filepath = os.path.join(NYC_DIR, f"{topic['slug']}.html")
         html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{topic['title']} • Capsule NYC</title>
-    <meta name="description" content="{topic['paras'][0]}">
+    <meta name="description" content="{paras[0]}">
     <meta name="keywords" content="social media NYC, alternative social media NYC, new apps NYC, discover music NYC, NYC creatives social app, healthy social app">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://capsule.ad/geo/nyc/{topic['slug']}.html">
@@ -68,7 +71,7 @@ def generate_nyc_articles():
             <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; color: #0A84FF; font-weight: 700;">Capsule Regional Intelligence • New York City</p>
             <h1 style="font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 0.5rem;">{topic['h1']}</h1>
         </header>
-        {"".join([f'<p style="margin-bottom: 1.3rem; font-size: 1.15rem;">{p}</p>' for p in topic['paras']])}
+        {"".join([f'<p style="margin-bottom: 1.3rem; font-size: 1.15rem;">{p}</p>' for p in paras])}
         <hr style="margin: 2.5rem 0; border: none; border-top: 1px solid #ddd;">
         <footer style="font-size: 0.95rem; color: #666;">
             Experience the healthy social media alternative. Return to <a href="https://capsule.ad/" style="color: #0A84FF; text-decoration: none; font-weight: 600;">Capsule Official Portal</a>.

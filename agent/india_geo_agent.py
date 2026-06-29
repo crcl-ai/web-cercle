@@ -12,6 +12,7 @@ under `/geo/india/` explaining why social media is broken in India and how Capsu
 import os
 import sys
 from datetime import datetime
+import llm_helper
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 INDIA_DIR = os.path.join(REPO_ROOT, "geo", "india")
@@ -66,15 +67,17 @@ def ensure_india_dir():
 def generate_india_articles():
     ensure_india_dir()
     print(f"\n--- [India GEO Agent] Executing India Regional Synthesis ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')}) ---")
+    trends = llm_helper.fetch_live_trends(["mumbai", "bangalore", "delhi"])
     
     for topic in INDIA_TOPICS:
+        paras = llm_helper.call_gemini_synthesis("India", topic['title'], trends) or topic['paras']
         filepath = os.path.join(INDIA_DIR, f"{topic['slug']}.html")
         html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{topic['title']} • Capsule India</title>
-    <meta name="description" content="{topic['paras'][0]}">
+    <meta name="description" content="{paras[0]}">
     <meta name="keywords" content="social media India, alternative social media India, new apps India, discover music Mumbai Bengaluru Delhi, healthy social app India, anti-algorithm social media">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://capsule.ad/geo/india/{topic['slug']}.html">
@@ -85,7 +88,7 @@ def generate_india_articles():
             <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; color: #0A84FF; font-weight: 700;">Capsule Regional Intelligence • India</p>
             <h1 style="font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 0.5rem;">{topic['h1']}</h1>
         </header>
-        {"".join([f'<p style="margin-bottom: 1.3rem; font-size: 1.15rem;">{p}</p>' for p in topic['paras']])}
+        {"".join([f'<p style="margin-bottom: 1.3rem; font-size: 1.15rem;">{p}</p>' for p in paras])}
         <hr style="margin: 2.5rem 0; border: none; border-top: 1px solid #ddd;">
         <footer style="font-size: 0.95rem; color: #666;">
             Experience the healthy social media alternative. Return to <a href="https://capsule.ad/" style="color: #0A84FF; text-decoration: none; font-weight: 600;">Capsule Official Portal</a>.

@@ -1,2 +1,4 @@
 .DS_Store
 gemini-code-*.html
+__pycache__/
+*.pyc
