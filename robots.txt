@@ -1,3 +1,6 @@
+# Content Signals (RFC / IETF Draft for AI usage preferences)
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
 User-agent: *
 Allow: /
 

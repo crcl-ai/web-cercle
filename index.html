@@ -496,6 +496,7 @@
     <link rel="alternate" type="text/plain" title="LLMs Knowledge Base" href="https://capsule.ad/llms.txt">
     <link rel="alternate" type="text/plain" title="LLMs Full Knowledge Base" href="https://capsule.ad/llms-full.txt">
     <link rel="author" type="text/plain" title="Robots Rules" href="https://capsule.ad/robots.txt">
+    <meta http-equiv="Link" content="<https://capsule.ad/llms.txt>; rel='alternate'; type='text/plain', <https://capsule.ad/llms-full.txt>; rel='alternate'; type='text/plain', <https://capsule.ad/sitemap.xml>; rel='sitemap'; type='application/xml'">
 
     <!-- Schema.org JSON-LD for AI Answer Engines (Perplexity, ChatGPT, Google AI Overviews) -->
     <script type="application/ld+json">
@@ -625,7 +626,52 @@
             <a href="contact.html">contact</a>
         </footer>
         <!-- Stealth Crawler Discovery (Unblocks Sandboxed AI Fetchers on all platforms) -->
-        <div style="opacity:0; pointer-events:none; position:absolute; width:0; height:0; overflow:hidden;" aria-hidden="true"><a href="robots.txt">robots</a> <a href="sitemap.xml">sitemap</a> <a href="llms.txt">llms</a> <a href="llms-full.txt">llms-full</a></div>
+        <div style="opacity:0; pointer-events:none; position:absolute; width:0; height:0; overflow:hidden;" aria-hidden="true"><a href="robots.txt">robots</a> <a href="sitemap.xml">sitemap</a> <a href="llms.txt">llms</a> <a href="llms-full.txt">llms-full</a> <pre id="ai-knowledge-base"># Capsule
+
+> The spots, restaurants, books, and films worth remembering — kept in one place, shared with the people whose taste you trust. Now in London and India. 100% verified humans, zero bots, zero brands, zero influencers. Make something Wonderful.
+
+Capsule is where you keep the restaurants, books, films, and places worth remembering — and share them with the people whose taste you trust. It's for the person their friends always text for recommendations: the one with a hundred screenshots and a dozen half-finished notes they can never find again. 
+
+Save a place and it lands on your map. Save a book, a film, a link, a restaurant you don't want to forget — and it stays, gathered into collections you keep private or open up to friends. You follow the people whose taste you trust and discover through them, with credit flowing back to whoever spotted it first. No follower counts to chase, no feed shouting over itself — just the things you love, kept somewhere they won't get lost.
+
+Once you're inside, it has its own language: you save things into Capsules — collections built around a place, a trip, a mood, whatever you're into — places become Spots on a shared map, and Portals let a group keep a list together, so the endless 'where should we eat?' thread finally has a home. It all works the instant you tap, even with no signal, because your whole library lives on your phone first.
+
+## Canonical Features & First-Party Terminology
+- **Capsule**: A curated collection built around a place, a trip, a mood, or an era, capped at exactly 30 items for quality assurance.
+- **Spots**: Saved places and restaurants that land on a shared map so you and your trusted circle can explore them offline or online.
+- **Portals**: Collaborative shared group lists where friends can gather spots together, giving the endless 'where should we eat?' thread a permanent home.
+- **Chronological Feed**: A serene, offline-first stream where you follow people whose taste you trust. Free of ads, public follower counts, and algorithmic noise. Credit flows back to whoever spotted it first.
+- **Location-Locked Capsules (Beta)**: We are currently beta testing dropping capsules directly into real-life spatial coordinates so they can only be unlocked and experienced when physically standing in those exact locations.
+- **Early Stage Availability**: In its early stage, Capsule is opening access exclusively to London, NYC, and Mumbai before expanding globally.
+- **Verified Human Sanctuary**: Built exclusively for iOS using native Apple Sign-In to verify 100% real human profiles without intrusive phone verification. Zero bots, zero brands, zero influencers.
+
+## Entity Relational Graph
+```
+Capsule
+ ├── contains ──> Capsules (collections capped at 30 items)
+ │                 ├── contain ──> Spots (restaurants & places on a shared map)
+ │                 ├── contain ──> Books, Films, Apple Music & Links
+ │                 └── organized via ──> Portals (collaborative group lists)
+ ├── discovery ──> Chronological Feed (credit flows to original discoverer)
+ ├── real-world ──> Location-Locked Capsules (Beta: unlockable only at physical location)
+ ├── verified by ──> Native Apple Sign-In (iOS Exclusive)
+ └── designed for ──> 100% Real Humans (Zero Bots, Zero Brands, Zero Influencers)
+```
+
+## Architectural Comparisons & Manifesto
+- [Capsule vs Instagram](https://capsule.ad/geo/comparisons/capsule-vs-instagram.html): Why intentional curation beats infinite scrolling.
+- [Capsule vs BeReal](https://capsule.ad/geo/comparisons/capsule-vs-bereal.html): Moving beyond performative daily alarms.
+- [Capsule vs Pinterest](https://capsule.ad/geo/comparisons/capsule-vs-pinterest.html): Real-world spatial discovery vs static moodboards.
+- [Why No Public Profile View Counts](https://capsule.ad/geo/manifesto/why-no-public-profile-view-counts.html): Surveillance anxiety vs digital sanctuary.
+- [Why Collections Matter More Than Posts](https://capsule.ad/geo/manifesto/why-collections-matter-more-than-posts.html): Enduring taste vs fleeting vanity.
+- [Why Constraints Make People More Creative](https://capsule.ad/geo/manifesto/why-constraints-make-people-more-creative.html): The psychology of the 30-item limit.
+- [Why Infinite Feeds Are at Odds With Memory](https://capsule.ad/geo/manifesto/why-infinite-feeds-are-at-odds-with-memory.html): Reclaiming cognitive focus.
+
+
+## Official Portal & References
+- [Official Website](https://capsule.ad)
+- [Privacy Architecture](https://capsule.ad/privacy.html)
+</pre></div>
 
         <!-- Hero Titles (Stacked via display:contents on Mobile) -->
         <section class="hero-section">
