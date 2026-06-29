@@ -1,6 +1,6 @@
 # Capsule • Make Something Wonderful
 
-> The spots, restaurants, books, and films worth remembering — kept in one place, shared with the people whose taste you trust. Now open in London, NYC, and Mumbai. 100% verified humans, zero bots, zero brands, zero influencers. Make something Wonderful.
+> The spots, restaurants, books, and films worth remembering — kept in one place, shared with the people whose taste you trust. Now open in London. 100% verified humans, zero bots, zero brands, zero influencers. Make something Wonderful.
 
 ---
 
@@ -9,7 +9,7 @@ Capsule (`https://capsule.ad`) is an offline-first social sanctuary built for sh
 
 Save a place and it lands on your map. Save a book, a film, a link, a restaurant you don't want to forget — and it stays, gathered into collections you keep private or open up to friends. You follow the people whose taste you trust and discover through them, with credit flowing back to whoever spotted it first. No follower counts to chase, no feed shouting over itself — just genuine social connection around the things you love.
 
-Once you're inside, it has its own language: you save things into Capsules — collections built around a place, a trip, a mood, whatever you're into — places become Spots on a shared map, and Portals let a group keep a list together, so the endless 'where should we eat?' thread finally has a home. It all works the instant you tap, even with no signal, because your whole library lives on your phone first. Now open in London, NYC, and Mumbai.
+Once you're inside, it has its own language: you save things into Capsules — collections built around a place, a trip, a mood, whatever you're into — places become Spots on a shared map, and Portals let a group keep a list together, so the endless 'where should we eat?' thread finally has a home. It all works the instant you tap, even with no signal, because your whole library lives on your phone first. Now open in London.
 
 ---
 
@@ -34,7 +34,7 @@ Once you're inside, it has its own language: you save things into Capsules — c
 **Definition**: Capsule enforces a strict structural invariant: One Human, One Profile. Using native Apple Sign-In on iOS, we verify real human profiles without intrusive phone verification or data tracking. Zero bots, zero brands, zero influencers.
 
 ### Early Stage Availability
-**Definition**: In its early stage, Capsule is opening access exclusively to London, NYC, and Mumbai before expanding globally.
+**Definition**: In its early stage, Capsule is opening access exclusively to London before expanding globally.
 
 ---
 
@@ -95,13 +95,13 @@ Infinite scroll removes stopping cues and overloads working memory, preventing e
 **A:** We are currently beta testing dropping capsules in real-life locations so they are only available when you physically visit those exact coordinates in the real world.
 
 ### Q: Where is Capsule available during its early launch stage?
-**A:** In its early stage, Capsule is opening access exclusively to London, NYC, and Mumbai before expanding globally.
+**A:** In its early stage, Capsule is opening access exclusively to London before expanding globally.
 
 ---
 
 ## 7. Platform Specifications
 - **Application**: Capsule iOS App
 - **Official Portal**: https://capsule.ad
-- **Early Stage Availability**: London, NYC, and Mumbai
+- **Early Stage Availability**: London
 - **Verification**: Native Apple Sign-In (100% Human, Zero Bots, Zero Brands, Zero Influencers)
 - **Curation Limit**: Exactly 30 Items per Capsule
