@@ -29,6 +29,9 @@ jobs:
       - name: Run India Regional Agent
         run: python3 agent/india_geo_agent.py
 
+      - name: Run Comparison & Manifesto Agent
+        run: python3 agent/comparison_agent.py
+
       - name: Commit and Push Updates
         run: |
           git config --global user.name "Capsule Autonomous GEO Agent"
