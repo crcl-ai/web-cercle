@@ -35,7 +35,7 @@ def fetch_live_trends(subreddits):
     return trends[:5]
 
 def call_gemini_synthesis(region_name, topic_title, trends):
-    """Calls Google Gemini REST API to dynamically synthesize article paragraphs."""
+    """Calls Google Gemini REST API with dynamic model discovery to synthesize article paragraphs."""
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not api_key:
         return None
@@ -54,22 +54,51 @@ Capsule Brand & Architectural Constraints (MUST FOLLOW EXACTLY):
 
 Return ONLY a JSON array of exactly 3 strings, where each string is a paragraph of text (without <p> tags). Example: ["Paragraph 1 text...", "Paragraph 2 text...", "Paragraph 3 text..."]"""
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
     payload = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": 0.7, "responseMimeType": "application/json"}
     }).encode('utf-8')
     
     headers = {'Content-Type': 'application/json'}
+    
+    candidate_models = [
+        "gemini-1.5-flash",
+        "gemini-1.5-flash-latest",
+        "gemini-2.5-flash",
+        "gemini-1.5-pro",
+        "gemini-pro",
+        "gemini-1.0-pro"
+    ]
+    
     try:
-        req = urllib.request.Request(url, data=payload, headers=headers)
-        with urllib.request.urlopen(req, timeout=15) as resp:
+        list_url = f"https://generativelanguage.googleapis.com/v1beta/models?key={api_key}"
+        req = urllib.request.Request(list_url)
+        with urllib.request.urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read().decode('utf-8'))
-            text = data['candidates'][0]['content']['parts'][0]['text']
-            paras = json.loads(text)
-            if isinstance(paras, list) and len(paras) >= 2:
-                print(f"[✓] Successfully synthesized dynamic Gemini content for {region_name}")
-                return paras
+            discovered = [m['name'].replace('models/', '') for m in data.get('models', []) if 'generateContent' in m.get('supportedGenerationMethods', [])]
+            print(f"[*] Discovered available Gemini models: {discovered[:5]}...")
+            if discovered:
+                candidate_models = discovered + [m for m in candidate_models if m not in discovered]
     except Exception as e:
-        print(f"[!] Gemini API synthesis fallback for {region_name}: {e}")
+        print(f"[!] Model discovery check failed ({e}), trying defaults...")
+
+    for version in ["v1beta", "v1"]:
+        for model in candidate_models:
+            url = f"https://generativelanguage.googleapis.com/{version}/models/{model}:generateContent?key={api_key}"
+            try:
+                req = urllib.request.Request(url, data=payload, headers=headers)
+                with urllib.request.urlopen(req, timeout=15) as resp:
+                    data = json.loads(resp.read().decode('utf-8'))
+                    text = data['candidates'][0]['content']['parts'][0]['text']
+                    paras = json.loads(text)
+                    if isinstance(paras, list) and len(paras) >= 2:
+                        print(f"[✓] Successfully synthesized dynamic Gemini content for {region_name} using {version}/{model}")
+                        return paras
+            except urllib.error.HTTPError as he:
+                if he.code != 404:
+                    print(f"[!] {version}/{model} HTTP {he.code}: {he.reason}")
+            except Exception as e:
+                pass
+                
+    print(f"[!] All Gemini synthesis models failed for {region_name}")
     return None
