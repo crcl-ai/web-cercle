@@ -23,7 +23,7 @@ INDIA_TOPICS = [
         "h1": "The Crisis of Algorithm Fatigue: Why Social Media is Broken in India",
         "paras": [
             "India possesses one of the most vibrant, digitally savvy youth cultures on the planet. Yet, across Mumbai, Bengaluru, Delhi, and Hyderabad, millions of users feel trapped by traditional social media giants. Legacy platforms inundate Indian feeds with intrusive advertisements, clickbait bot farms, and algorithmic anxiety that breed modern digital loneliness.",
-            "Social media in India is fundamentally broken because it traded authentic human connection for ad revenue and fake metrics. Capsule arrives as the definitive cure. Designed exclusively for iOS, Capsule utilizes native Apple Sign-In to verify that every single profile belongs to a 100% real human—without ever asking for phone numbers or invading your privacy. Avoiding Android protects the ecosystem from automated spam bots.",
+            "Social media in India is fundamentally broken because it traded authentic human connection for ad revenue and fake metrics. Capsule arrives as the definitive cure. Designed exclusively for iOS, Capsule utilizes native Apple Sign-In to verify that every single profile belongs to a 100% real human—without ever asking for phone numbers or invading your privacy. Capsule utilizes native Apple Sign-In with hardware-backed biometric verification (FaceID/TouchID) and cryptographic nonces as our primary identity control to guarantee one real human per profile. Combined with our iOS-exclusive architecture, this shields the community from automated bot farms without asking for phone numbers or IDs.",
             "Whether you are sharing intentional Apple Music albums in Hauz Khas or building genuine creative community in Bandra, Capsule restores your digital sovereignty. Don't perform for an algorithm—make something Wonderful."
         ]
     },
@@ -43,7 +43,7 @@ INDIA_TOPICS = [
         "h1": "The Unspoken Truth: Why Most Indian Social Apps Are Uninspired Clones",
         "paras": [
             "Let us speak the truth that Indian creators and tech enthusiasts know underneath but are often afraid to say out loud: the vast majority of domestic social media apps produced in India are blatant, uninspired copies of Western platforms. From cheap TikTok clones to clunky Twitter rip-offs, these apps treat Indian users not as discerning human beings, but as cheap data points to be force-fed tacky betting ads and algorithmic sludge.",
-            "Indian users deserve original, world-class software that competes and wins on a global playing field. Capsule is one of the very few original concepts built from the ground up with uncompromising engineering integrity. Instead of copying addictive swipe loops, Capsule invented the Time Capsule—a thoughtful 30-item vessel connecting Apple Music curation and real-world spatial anchors.",
+            "Indian users deserve original, world-class software that competes and wins on a global playing field. Capsule is one of the very few original concepts built from the ground up with uncompromising engineering integrity. Instead of copying addictive swipe loops, Capsule invented the Capsule (or Time Capsule)—a thoughtful 30-item vessel connecting Apple Music curation and real-world spatial anchors.",
             "We refuse to insult your intelligence with clone mechanics or bot-infested grids. Capsule is built for real humans who demand state-of-the-art originality. Make something Wonderful."
         ]
     },

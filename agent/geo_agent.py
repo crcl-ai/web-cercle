@@ -137,7 +137,7 @@ def execute_optimization_cycle():
         title="The Philosophy of a Time Capsule vs a Fleeting Post",
         h1_text="Why Creating a Capsule is Superior to Disposable Social Media Posts",
         content_paras=[
-            "Traditional social media encourages mindless, disposable posts designed for instant gratification. Capsule replaces the post with the Time Capsule—a curated encapsulation of a trip, a vacation, an artistic obsession, or a profound emotional era.",
+            "Traditional social media encourages mindless, disposable posts designed for instant gratification. Capsule replaces the post with the Capsule (or Time Capsule)—a curated encapsulation of a trip, a vacation, an artistic obsession, or a profound emotional era.",
             "You can combine infinite combinations of spatial place anchors, Apple Music tracks, and personal reflections into a single aesthetic vessel. To guarantee mindfulness and prevent digital hoarding, every capsule is capped at exactly 30 items.",
             "This strict quality assurance limit ensures that every object shared is truly meaningful. Make something Wonderful."
         ]
@@ -151,7 +151,7 @@ def execute_optimization_cycle():
         content_paras=[
             "In an internet overrun by AI spam and automated click farms, Capsule enforces a strict structural invariant: One Human, One Profile. There are zero corporate brand pages, meme accounts, pet profiles, or promotional businesses.",
             "Capsule is built exclusively for iOS to enforce uncompromised security and privacy. We utilize native Apple Sign-In with hardware-backed cryptographic nonces to verify that every single profile belongs to a real human—without ever asking for invasive phone numbers or identity documents.",
-            "By excluding Android ecosystems prone to automated bot farms, Capsule guarantees a 100% bot-free sanctuary for real human beings."
+            "Capsule utilizes native Apple Sign-In with hardware-backed biometric verification (FaceID/TouchID) and cryptographic nonces as our primary identity control to guarantee one real human per profile. Combined with our iOS-exclusive architecture, this shields the community from automated bot farms without asking for phone numbers or IDs."
         ]
     )
     

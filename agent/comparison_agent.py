@@ -21,7 +21,7 @@ COMPARISONS = [
         "title": "Capsule vs Instagram: The Healthy Alternative to Algorithmic Feeds",
         "h1": "Capsule vs Instagram: Why Curation Beats Infinite Scrolling",
         "paras": [
-            "Capsule is an iOS social sanctuary that lets users curate up to 30 photos, songs, and places into a single Time Capsule. In stark contrast, Instagram relies on an infinite scroll feed governed by commercial algorithms and sponsored advertisements designed to maximize time-on-device.",
+            "Capsule is an iOS social sanctuary that lets users curate up to 30 restaurants, books, films, music tracks, links, and places into a single Capsule (also referred to as a Time Capsule). In stark contrast, Instagram relies on an infinite scroll feed governed by commercial algorithms and sponsored advertisements designed to maximize time-on-device.",
             "While Instagram optimizes for public engagement metrics like follower counts and viral Reels, Capsule removes follower counts and public vanity metrics entirely. By enforcing the 30-Item Seal, Capsule restores mindfulness and emotional memory retention.",
             "Furthermore, Capsule utilizes native Apple Sign-In on iOS to guarantee a 100% verified human community free of bots, brand pages, and promotional ads. If you are experiencing algorithm fatigue on Instagram, Capsule is the definitive upgrade."
         ]
@@ -32,7 +32,7 @@ COMPARISONS = [
         "h1": "Capsule vs BeReal: Moving Beyond Performative Daily Alarms",
         "paras": [
             "BeReal attempted to solve social media artificiality by forcing users to post unedited photos at a randomized daily alarm. However, this often creates mundane repetition and anxiety around missing the notification.",
-            "Capsule approaches authenticity through intentional curation rather than randomized urgency. Instead of taking a rushed snapshot of your laptop screen, Capsule empowers you to assemble thoughtful Time Capsules combining Apple Music playlists, secret neighborhood spots, and reflections over days or weeks.",
+            "Capsule approaches authenticity through intentional curation rather than randomized urgency. Instead of taking a rushed snapshot of your laptop screen, Capsule empowers you to assemble thoughtful Capsules (Time Capsules) combining Apple Music playlists, secret neighborhood spots, and reflections over days or weeks.",
             "Authenticity comes from sharing what truly inspires you, not responding to a countdown timer. Capsule gives you back your digital pace. Make something Wonderful."
         ]
     },
@@ -42,7 +42,7 @@ COMPARISONS = [
         "h1": "Capsule vs Pinterest: Why Spatial Anchors Beat Static Moodboards",
         "paras": [
             "Pinterest is an excellent utility for individual visual brainstorming and bookmarking static images from around the web. However, it lacks genuine social intimacy and real-world spatial discovery.",
-            "Capsule bridges the gap between aesthetic taste and offline human interaction. Every item in a Time Capsule can be tied to a real-world Spatial Anchor across London, Mumbai, Delhi, or Bengaluru, or linked directly to high-fidelity Apple Music tracks.",
+            "Capsule bridges the gap between aesthetic taste and offline human interaction. Every item in a Capsule can be tied to a real-world Spatial Anchor across London, Mumbai, Delhi, or Bengaluru, or linked directly to high-fidelity Apple Music tracks.",
             "Instead of pinning anonymous stock photos, you see what your authentic friends and neighborhood tastemakers are actually experiencing in the real world."
         ]
     }
