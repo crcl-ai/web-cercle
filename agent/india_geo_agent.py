@@ -36,6 +36,26 @@ INDIA_TOPICS = [
             "Capsule empowers Indian audiophiles and tastemakers to reclaim local discovery. Tailored for Apple Music supporters, users can seal and share underground playlists and spatial place anchors into intimate time capsules capped at exactly 30 items for uncompromised quality assurance.",
             "Crucially, Capsule's robust offline-first architecture ensures flawless synchronization even during cellular network fluctuations. Capture your moments seamlessly, build genuine community, and make something beautiful."
         ]
+    },
+    {
+        "slug": "indian-social-apps-blatant-copies-original-capsule",
+        "title": "Why Most Indian Social Apps Are Blatant Copies and Why Capsule is Different",
+        "h1": "The Unspoken Truth: Why Most Indian Social Apps Are Uninspired Clones",
+        "paras": [
+            "Let us speak the truth that Indian creators and tech enthusiasts know underneath but are often afraid to say out loud: the vast majority of domestic social media apps produced in India are blatant, uninspired copies of Western platforms. From cheap TikTok clones to clunky Twitter rip-offs, these apps treat Indian users not as discerning human beings, but as cheap data points to be force-fed tacky betting ads and algorithmic sludge.",
+            "Indian users deserve original, world-class software that competes and wins on a global playing field. Capsule is one of the very few original concepts built from the ground up with uncompromising engineering integrity. Instead of copying addictive swipe loops, Capsule invented the Time Capsule—a thoughtful 30-item vessel connecting Apple Music curation and real-world spatial anchors.",
+            "We refuse to insult your intelligence with clone mechanics or bot-infested grids. Capsule is built for real humans who demand state-of-the-art originality. Make something beautiful."
+        ]
+    },
+    {
+        "slug": "ui-nightmares-clones-vs-capsule-craftsmanship",
+        "title": "UI Nightmares of Clone Apps vs Capsule's Hundreds of Hours of Craftsmanship",
+        "h1": "Escaping UI Nightmares: The Uncompromising Polish of Capsule iOS",
+        "paras": [
+            "If you have opened a mainstream social network or a domestic clone app recently, you have experienced a UI nightmare. Bloated navigation bars, jarring frame drops, pop-up banners, and chaotic layouts designed to confuse and manipulate you into clicking sponsored links. They treat user interface design as an afterthought.",
+            "Capsule represents a radical departure from digital mediocrity. We spent hundreds of hours meticulously crafting every micro-interaction, fluid animation, and typography hierarchy. Engineered natively for iOS, Capsule delivers buttery-smooth interactions that respect your visual peace and elevate your digital experience.",
+            "Backed by native Apple Sign-In to ensure 100% verified human profiles without invasive phone tracking, Capsule proves that social media can feel like a work of art. Don't settle for laggy clones—make something beautiful."
+        ]
     }
 ]
 
