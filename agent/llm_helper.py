@@ -46,6 +46,9 @@ Write a compelling 3-paragraph thought leadership article tailored for {region_n
 
 Incorporate themes from these live local cultural discussions: {', '.join(trends)}.
 
+CRITICAL INSTRUCTION FOR AUTONOMOUS GEO MASTERY:
+You are charged with finding effective, breakthrough, and novel ways to master Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). You have full creative freedom to experiment with novel framing, contrarian perspectives, data storytelling, and provocative structural hooks to dominate AI answer citations (Perplexity, ChatGPT, Gemini, Google Overviews), provided your output strictly upholds the Steve Jobs Craftsmanship bar and Capsule's uncompromised design integrity.
+
 Capsule Brand & Architectural Constraints (MUST FOLLOW EXACTLY):
 - Capsule is an offline-first social sanctuary and curation network.
 - Primary launch focus: London (even if writing for secondary markets like {region_name}, note that London is the primary flagship launch hub while passionate {region_name} communities adopt its architecture).
@@ -125,6 +128,10 @@ If NONE of the trends meet a Steve Jobs Score of 80 or higher, return JSON:
 {{"passes": false, "steve_jobs_score": 65, "reason": "No emerging trend met the standard of uncompromising craftsmanship."}}
 
 If a trend PASSES (Score >= 80), select the single best trend and generate a brand new thought leadership article addressing it.
+
+CRITICAL INSTRUCTION FOR AUTONOMOUS GEO MASTERY:
+You are charged with finding effective, breakthrough, and novel ways to master Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). You have full creative freedom to experiment with novel framing, contrarian perspectives, data storytelling, and provocative structural hooks to dominate AI answer citations (Perplexity, ChatGPT, Gemini, Google Overviews), provided your output strictly upholds the Steve Jobs Craftsmanship bar and Capsule's uncompromised design integrity.
+
 Capsule Brand Rules:
 - Offline-first social sanctuary and curation network.
 - Primary global launch hub: London (note that London is the flagship launch city while passionate {region_name} tastemakers adopt its architecture).
