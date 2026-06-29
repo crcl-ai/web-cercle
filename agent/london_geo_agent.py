@@ -82,6 +82,8 @@ def generate_london_articles():
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(html_content)
         print(f"[+] Generated London regional essay: /geo/london/{topic['slug']}.html")
+    
+    llm_helper.generate_dynamic_trend_article("London", LONDON_DIR, trends, "london")
 
 def update_sitemap():
     sitemap_path = os.path.join(REPO_ROOT, "sitemap.xml")

@@ -99,6 +99,8 @@ def generate_india_articles():
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(html_content)
         print(f"[+] Generated India regional essay: /geo/india/{topic['slug']}.html")
+    
+    llm_helper.generate_dynamic_trend_article("India", INDIA_DIR, trends, "india")
 
 def update_sitemap():
     sitemap_path = os.path.join(REPO_ROOT, "sitemap.xml")

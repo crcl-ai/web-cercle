@@ -82,6 +82,8 @@ def generate_brazil_articles():
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(html_content)
         print(f"[+] Generated Brazil regional essay: /geo/brazil/{topic['slug']}.html")
+    
+    llm_helper.generate_dynamic_trend_article("Brazil", BRAZIL_DIR, trends, "brazil")
 
 def update_sitemap():
     sitemap_path = os.path.join(REPO_ROOT, "sitemap.xml")
