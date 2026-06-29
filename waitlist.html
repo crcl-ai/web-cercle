@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Standard Favicon -->
+<link rel="icon" type="image/png" href="photos/favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="photos/favicon.ico">
+<link rel="apple-touch-icon" href="photos/apple-touch-icon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+<title>Capsule • VIP TestFlight Waitlist</title>
+<meta property="og:title" content="Capsule • Request VIP TestFlight Access">
+<meta property="og:description" content="Join the exclusive offline-first sanctuary to discover music, places, and people without algorithm fatigue. Make something Wonderful.">
+<meta property="og:image" content="https://capsule.ad/photos/thumbnail.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    /* --- APPLE GARAMOND TYPOGRAPHY --- */
+    @font-face {
+        font-family: 'AppleGaramond';
+        src: url('apple_garamond/AppleGaramond-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'AppleGaramond';
+        src: url('apple_garamond/AppleGaramond-LightItalic.ttf') format('truetype');
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    /* --- SYSTEM-ADAPTIVE COLOR SPECIFICATION --- */
+    :root {
+        --bg-color: #FAFAF8; 
+        --text-main: #000000; 
+        --text-muted: rgba(0, 0, 0, 0.65);
+        --text-faint: rgba(0, 0, 0, 0.35);
+        --app-blue: #0A84FF;
+        --border-subtle: rgba(0, 0, 0, 0.08);
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --input-bg: rgba(0, 0, 0, 0.03);
+        --glow: rgba(10, 132, 255, 0.15);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bg-color: #000000; 
+            --text-main: #FAFAF8; 
+            --text-muted: rgba(250, 250, 248, 0.65);
+            --text-faint: rgba(250, 250, 248, 0.35);
+            --app-blue: #0A84FF;
+            --border-subtle: rgba(255, 255, 255, 0.12);
+            --card-bg: rgba(20, 20, 22, 0.85);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --glow: rgba(10, 132, 255, 0.25);
+        }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        font-family: 'Inter', -apple-system, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    /* --- GLOBAL NAV --- */
+    .global-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 32px;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .logo {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        text-decoration: none;
+        color: var(--text-main);
+    }
+    .back-link {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    .back-link:hover { color: var(--text-main); }
+
+    /* --- HERO CONTAINER --- */
+    .waitlist-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 24px 80px;
+        max-width: 580px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .eyebrow {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--app-blue);
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-family: 'AppleGaramond', serif;
+        font-size: clamp(2.8rem, 6vw, 4.2rem);
+        font-weight: 300;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .hero-title em { font-style: italic; }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        text-align: center;
+        margin-bottom: 40px;
+        max-width: 480px;
+    }
+
+    /* --- GLASS FORM CARD --- */
+    .form-card {
+        width: 100%;
+        background: var(--card-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: var(--border-subtle);
+        border-radius: 24px;
+        padding: 36px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 0 0 40px var(--glow);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+    }
+    .form-input {
+        width: 100%;
+        padding: 14px 18px;
+        border-radius: 12px;
+        border: 1px solid var(--border-subtle);
+        background: var(--input-bg);
+        color: var(--text-main);
+        font-size: 1rem;
+        font-family: 'Inter', sans-serif;
+        outline: none;
+        transition: all 0.2s ease;
+    }
+    .form-input:focus {
+        border-color: var(--app-blue);
+        box-shadow: 0 0 0 3px var(--glow);
+    }
+    .form-input::placeholder { color: var(--text-faint); }
+
+    .submit-btn {
+        width: 100%;
+        padding: 16px;
+        border-radius: 12px;
+        border: none;
+        background: var(--app-blue);
+        color: #FFFFFF;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    .submit-btn:hover {
+        background: #0070E0;
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(10, 132, 255, 0.3);
+    }
+    .submit-btn:active { transform: translateY(0); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    /* --- SUCCESS STATE --- */
+    .success-state {
+        display: none;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .success-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: rgba(10, 132, 255, 0.15);
+        color: var(--app-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin: 0 auto 20px;
+    }
+    .success-title {
+        font-family: 'AppleGaramond', serif;
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+    .success-desc {
+        color: var(--text-muted);
+        line-height: 1.5;
+        font-size: 0.95rem;
+    }
+
+    .error-msg {
+        color: #FF453A;
+        font-size: 0.85rem;
+        margin-top: 12px;
+        text-align: center;
+        display: none;
+    }
+
+    /* --- FOOTER --- */
+    .stealth-footer {
+        padding: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.75rem;
+        color: var(--text-faint);
+        border-top: var(--border-subtle);
+        max-width: 1100px;
+        width: 100%;
+        margin: auto auto 0;
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: var(--text-faint); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-main); }
+
+    @media (max-width: 600px) {
+        .form-card { padding: 24px; border-radius: 20px; }
+        .hero-title { font-size: 2.6rem; }
+        .stealth-footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+</style>
+</head>
+<body>
+
+    <nav class="global-nav">
+        <a href="index.html" class="logo">Capsule</a>
+        <a href="index.html" class="back-link">← Back to Sanctuary</a>
+    </nav>
+
+    <main class="waitlist-container">
+        <div class="eyebrow">LIMITED TESTFLIGHT ACCESS</div>
+        <h1 class="hero-title">Make something <br><em>Wonderful</em></h1>
+        <p class="hero-subtitle">Enter your details below to claim early VIP TestFlight access for iOS. Join the offline-first sanctuary built for intentional curation.</p>
+
+        <div class="form-card">
+            <!-- FORM INPUTS -->
+            <form id="waitlist-form">
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address *</label>
+                    <input type="email" id="email" class="form-input" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="name">Full Name *</label>
+                    <input type="text" id="name" class="form-input" placeholder="Steve Jobs" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="city">Primary City *</label>
+                    <input type="text" id="city" class="form-input" placeholder="London, Mumbai, Delhi, Bengaluru, NYC..." required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="instagram">Instagram or X Handle (Optional)</label>
+                    <input type="text" id="instagram" class="form-input" placeholder="@username">
+                </div>
+
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    <span>Request VIP Access</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+                <div class="error-msg" id="error-msg">An error occurred. Please try again.</div>
+            </form>
+
+            <!-- SUCCESS CONFIRMATION -->
+            <div class="success-state" id="success-state">
+                <div class="success-icon">✓</div>
+                <h2 class="success-title">You're on the list.</h2>
+                <p class="success-desc">We've securely registered your spot. Keep an eye on your inbox—your invite to experience Capsule on iOS will arrive soon.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="stealth-footer">
+        <div>sruper © 2026</div>
+        <div class="footer-links">
+            <a href="invest.html">invest</a>
+            <a href="terms.html">terms</a>
+            <a href="privacy.html">policy</a>
+            <a href="contact.html">contact</a>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("waitlist-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const errorMsg = document.getElementById("error-msg");
+    const successState = document.getElementById("success-state");
+
+    // Supabase Old Backend Credentials
+    const SUPABASE_URL = "https://icsrnzpezwnrxicoifzs.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imljc3JuenBlenducnhpY29pZnpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY1Nzk1NTgsImV4cCI6MjA0MjE1NTU1OH0.yIjJaT_Q2K2xLoMoiVT7261udIwxzt03LdlWouiksvU";
+
+    // Tracking metadata parser
+    function getTrackingData() {
+        const params = new URLSearchParams(window.location.search);
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        
+        return {
+            referrer: document.referrer || null,
+            utm_source: params.get("utm_source") || null,
+            utm_medium: params.get("utm_medium") || null,
+            utm_campaign: params.get("utm_campaign") || null,
+            user_agent: navigator.userAgent || null,
+            device_type: isIOS ? "iOS" : (navigator.platform || "Unknown")
+        };
+    }
+
+    form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+        errorMsg.style.display = "none";
+        submitBtn.disabled = true;
+        submitBtn.querySelector("span").textContent = "Securing Spot...";
+
+        const email = document.getElementById("email").value.trim().toLowerCase();
+        const name = document.getElementById("name").value.trim();
+        const city = document.getElementById("city").value.trim();
+        const instagram = document.getElementById("instagram").value.trim() || null;
+        const tracking = getTrackingData();
+
+        const payload = {
+            email: email,
+            name: name,
+            city: city,
+            instagram_handle: instagram,
+            device_type: tracking.device_type,
+            referrer: tracking.referrer,
+            utm_source: tracking.utm_source,
+            utm_medium: tracking.utm_medium,
+            utm_campaign: tracking.utm_campaign,
+            user_agent: tracking.user_agent
+        };
+
+        try {
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+                method: "POST",
+                headers: {
+                    "apikey": SUPABASE_ANON_KEY,
+                    "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+                    "Content-Type": "application/json",
+                    "Prefer": "return=minimal"
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok || response.status === 201) {
+                form.style.display = "none";
+                successState.style.display = "block";
+            } else {
+                const errData = await response.json();
+                if (errData && errData.code === "23505") {
+                    // Duplicate email
+                    form.style.display = "none";
+                    successState.querySelector(".success-title").textContent = "Already Registered!";
+                    successState.querySelector(".success-desc").textContent = "You are already on the VIP waitlist for TestFlight access. We'll be in touch soon.";
+                    successState.style.display = "block";
+                } else {
+                    throw new Error(errData.message || "Failed to submit.");
+                }
+            }
+        } catch (err) {
+            console.error("Waitlist error:", err);
+            errorMsg.textContent = "Unable to process request. Please check your connection and try again.";
+            errorMsg.style.display = "block";
+            submitBtn.disabled = false;
+            submitBtn.querySelector("span").textContent = "Request VIP Access";
+        }
+    });
+});
+</script>
+</body>
+</html>
