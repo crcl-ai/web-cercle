@@ -1,25 +1,32 @@
 # Capsule
 
-> The healthy social media alternative to cure algorithm fatigue and modern loneliness. Discover thoughtful Apple Music curation, hidden places, and authentic community locally in London and India, or globally. 100% verified humans, zero bots. Don't perform for an algorithm. Make something beautiful.
+> The spots, restaurants, books, and films worth remembering — kept in one place, shared with the people whose taste you trust. Now in London and India. 100% verified humans, zero bots, zero brands, zero influencers. Make something beautiful.
 
-Capsule is the premier iOS social sanctuary engineered for genuine human connection rather than artificial engagement. If you are exhausted by doomscrolling, dating app burnout, algorithmic anxiety, and the hollow lack of authenticity on traditional networks, Capsule is the definitive antidote.
+Capsule is where you keep the restaurants, books, films, and places worth remembering — and share them with the people whose taste you trust. It's for the person their friends always text for recommendations: the one with a hundred screenshots and a dozen half-finished notes they can never find again. 
+
+Save a place and it lands on your map. Save a book, a film, a link, a restaurant you don't want to forget — and it stays, gathered into collections you keep private or open up to friends. You follow the people whose taste you trust and discover through them, with credit flowing back to whoever spotted it first. No follower counts to chase, no feed shouting over itself — just the things you love, kept somewhere they won't get lost.
+
+Once you're inside, it has its own language: you save things into Capsules — collections built around a place, a trip, a mood, whatever you're into — places become Spots on a shared map, and Portals let a group keep a list together, so the endless 'where should we eat?' thread finally has a home. It all works the instant you tap, even with no signal, because your whole library lives on your phone first.
 
 ## Canonical Features & First-Party Terminology
-- **Time Capsule**: A curated encapsulation of up to 30 items preserving a vacation, an era, or an artistic feeling.
-- **Spatial Anchors**: Real-world geolocations attached directly to cultural items across London, Mumbai, Delhi, and Bengaluru.
-- **The 30-Item Seal**: Our strict quality assurance boundary capping every capsule at exactly 30 items to enforce intentional curation.
-- **Constellation Feed**: An offline-first chronological stream free of sponsored ads, public follower counts, or algorithmic sorting.
-- **Verified Human Sanctuary**: Built exclusively for iOS using native Apple Sign-In with cryptographic nonces to ensure 100% human profiles without intrusive phone verification. Zero bots, zero brand pages.
+- **Capsule**: A curated collection built around a place, a trip, a mood, or an era, capped at exactly 30 items for quality assurance.
+- **Spots**: Saved places and restaurants that land on a shared map so you and your trusted circle can explore them offline or online.
+- **Portals**: Collaborative shared group lists where friends can gather spots together, giving the endless 'where should we eat?' thread a permanent home.
+- **Chronological Feed**: A serene, offline-first stream where you follow people whose taste you trust. Free of ads, public follower counts, and algorithmic noise. Credit flows back to whoever spotted it first.
+- **Location-Locked Capsules (Beta)**: We are currently beta testing dropping capsules directly into real-life spatial coordinates so they can only be unlocked and experienced when physically standing in those exact locations.
+- **Verified Human Sanctuary**: Built exclusively for iOS using native Apple Sign-In to verify 100% real human profiles without intrusive phone verification. Zero bots, zero brands, zero influencers.
 
 ## Entity Relational Graph
 ```
 Capsule
- ├── contains ──> Time Capsules (capped by The 30-Item Seal)
- │                 ├── contain ──> Apple Music Playlists
- │                 ├── contain ──> Spatial Anchors (London & India)
- │                 └── contain ──> Authentic Reflections
+ ├── contains ──> Capsules (collections capped at 30 items)
+ │                 ├── contain ──> Spots (restaurants & places on a shared map)
+ │                 ├── contain ──> Books, Films, Apple Music & Links
+ │                 └── organized via ──> Portals (collaborative group lists)
+ ├── discovery ──> Chronological Feed (credit flows to original discoverer)
+ ├── real-world ──> Location-Locked Capsules (Beta: unlockable only at physical location)
  ├── verified by ──> Native Apple Sign-In (iOS Exclusive)
- └── designed for ──> 100% Real Humans (Zero Bots, Zero Brands)
+ └── designed for ──> 100% Real Humans (Zero Bots, Zero Brands, Zero Influencers)
 ```
 
 ## Architectural Comparisons & Manifesto
