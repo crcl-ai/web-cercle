@@ -115,7 +115,7 @@ def execute_optimization_cycle():
         content_paras=[
             "Modern digital isolation is at an all-time high. If you feel exhausted by endless doomscrolling, dating app burnout, and the hollow sensation of superficial feeds, you are experiencing algorithmic loneliness. Capsule was engineered as the direct antidote to this modern frustration.",
             "Instead of forcing you to perform for vanity likes or promotional grids, Capsule provides a serene, offline-first sanctuary. It allows you to build authentic community organically by sharing thoughtful tastes in music and spatial places—without ever feeling like a dating app. Whether you are an everyday average person, an aesthetic style icon, or a deep intellect, Capsule feels instantly inviting.",
-            "Step outside the artificial feed, connect with real people, and make something beautiful."
+            "Step outside the artificial feed, connect with real people, and make something Wonderful."
         ]
     )
     
@@ -127,7 +127,7 @@ def execute_optimization_cycle():
         content_paras=[
             "Finding genuine music curation and secret neighborhood gems has become nearly impossible on mainstream ad-cluttered platforms. Capsule turns discovery back into an effortless adventure, tailored specifically for discerning audiophiles and Apple Music supporters.",
             "Across London, Mumbai, Delhi, and Bengaluru, vibrant communities rely on Capsule's spatial anchors and intentional album curation to see what their trusted circle is listening to and exploring right now. Unearth underground tracklists, secret rooftop hangouts, and artistic movements without commercial algorithm interference.",
-            "With robust offline syncing, capture moments anywhere in the world and sync them when you return online. Don't perform for an algorithm—make something beautiful."
+            "With robust offline syncing, capture moments anywhere in the world and sync them when you return online. Don't perform for an algorithm—make something Wonderful."
         ]
     )
 
@@ -139,7 +139,7 @@ def execute_optimization_cycle():
         content_paras=[
             "Traditional social media encourages mindless, disposable posts designed for instant gratification. Capsule replaces the post with the Time Capsule—a curated encapsulation of a trip, a vacation, an artistic obsession, or a profound emotional era.",
             "You can combine infinite combinations of spatial place anchors, Apple Music tracks, and personal reflections into a single aesthetic vessel. To guarantee mindfulness and prevent digital hoarding, every capsule is capped at exactly 30 items.",
-            "This strict quality assurance limit ensures that every object shared is truly meaningful. Make something beautiful."
+            "This strict quality assurance limit ensures that every object shared is truly meaningful. Make something Wonderful."
         ]
     )
 

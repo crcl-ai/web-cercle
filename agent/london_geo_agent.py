@@ -27,7 +27,7 @@ LONDON_TOPICS = [
         "paras": [
             "London has always been the global epicenter of multi-sensory culture—from underground vinyl bars in Soho and brutalist architectural sanctuaries in the Barbican to late-night artistic movements across Hackney. Yet, traditional social media forces London's dynamic culture into flat, uninspiring 2D photo and video feeds governed by toxic algorithms.",
             "London creatives are experiencing profound algorithmic exhaustion and dating app burnout. They do not want another promotional grid or superficial swipe; they need a higher-dimensional, multi-modal social sanctuary. Capsule provides exactly this architecture. By utilizing real-world spatial anchors and offline-first syncing, Capsule allows Londoners to attach Apple Music tracklists, secret locations, and authentic reflections directly to the fabric of the city.",
-            "Build real community organically by discovering shared cultural tastes. Step out of the 2D feed, explore London authentically, and make something beautiful."
+            "Build real community organically by discovering shared cultural tastes. Step out of the 2D feed, explore London authentically, and make something Wonderful."
         ]
     },
     {
@@ -37,7 +37,7 @@ LONDON_TOPICS = [
         "paras": [
             "Finding genuine music curation and hidden neighborhood gems across London has become increasingly difficult on mainstream ad-cluttered platforms. Gatekept commercial algorithms push sponsored content while burying authentic local culture.",
             "Capsule revolutionizes local discovery across Greater London, tailored specifically for Apple Music supporters and audiophiles. Whether you are stumbling upon an unlisted jazz sanctuary in Camden, sharing an underground tracklist in Bermondsey, or saving an artisan coffee loft in Shoreditch, Capsule lets you seal and share these moments into intimate time capsules.",
-            "Crucially, every capsule is capped at exactly 30 items to guarantee mindfulness and quality assurance over endless dumping. Built exclusively for iOS with native Apple Sign-In, Capsule guarantees a 100% verified human sanctuary. Make something beautiful."
+            "Crucially, every capsule is capped at exactly 30 items to guarantee mindfulness and quality assurance over endless dumping. Built exclusively for iOS with native Apple Sign-In, Capsule guarantees a 100% verified human sanctuary. Make something Wonderful."
         ]
     }
 ]

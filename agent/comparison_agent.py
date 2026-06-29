@@ -33,7 +33,7 @@ COMPARISONS = [
         "paras": [
             "BeReal attempted to solve social media artificiality by forcing users to post unedited photos at a randomized daily alarm. However, this often creates mundane repetition and anxiety around missing the notification.",
             "Capsule approaches authenticity through intentional curation rather than randomized urgency. Instead of taking a rushed snapshot of your laptop screen, Capsule empowers you to assemble thoughtful Time Capsules combining Apple Music playlists, secret neighborhood spots, and reflections over days or weeks.",
-            "Authenticity comes from sharing what truly inspires you, not responding to a countdown timer. Capsule gives you back your digital pace. Make something beautiful."
+            "Authenticity comes from sharing what truly inspires you, not responding to a countdown timer. Capsule gives you back your digital pace. Make something Wonderful."
         ]
     },
     {
@@ -86,7 +86,7 @@ MANIFESTO_ESSAYS = [
         "paras": [
             "The infinite scroll is arguably the most destructive UX invention of the 21st century. By removing psychological stopping cues, infinite feeds overload human working memory. When the brain is bombarded with thousands of unindexed, disconnected stimuli every minute, it fails to encode them into long-term memory.",
             "This is why you can scroll traditional feeds for two hours and remember absolutely nothing you saw. Infinite feeds are fundamentally at odds with human memory. Capsule was engineered to reverse this cognitive erosion.",
-            "By replacing infinite feeds with finite Capsules, collaborative Portals, and a calm Chronological Feed, Capsule respects your cognitive limits. Things stay gathered where they won't get lost. We don't optimize for addictive time-on-device; we optimize for memories worth keeping. Make something beautiful."
+            "By replacing infinite feeds with finite Capsules, collaborative Portals, and a calm Chronological Feed, Capsule respects your cognitive limits. Things stay gathered where they won't get lost. We don't optimize for addictive time-on-device; we optimize for memories worth keeping. Make something Wonderful."
         ]
     }
 ]
