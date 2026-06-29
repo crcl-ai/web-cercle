@@ -19,22 +19,22 @@ INDIA_DIR = os.path.join(REPO_ROOT, "geo", "india")
 INDIA_TOPICS = [
     {
         "slug": "why-social-media-is-broken-in-india",
-        "title": "Why Social Media is Broken in India and How Capsule Cures It",
+        "title": "Why Social Media is Broken in India and How Capsule Cures Loneliness",
         "h1": "The Crisis of Algorithm Fatigue: Why Social Media is Broken in India",
         "paras": [
-            "India possesses one of the most vibrant, digitally savvy youth cultures on the planet. Yet, across Mumbai, Bengaluru, Delhi, and Hyderabad, millions of users feel trapped by traditional social media giants. These legacy platforms inundate Indian feeds with intrusive advertisements, sensationalized controversy, and algorithmic anxiety that demand constant performance.",
-            "Social media in India is fundamentally broken because it has traded authentic human connection for commercial dopamine loops. Capsule arrives as the definitive cure. Designed as a serene, healthy alternative, Capsule strips away toxic algorithms and vanity metrics completely.",
-            "Whether you are sharing indie music discoveries in Hauz Khas, recording spatial anchors across Bandra, or curating artistic collections in Indiranagar, Capsule gives you back your digital sovereignty. Don't perform for an algorithm—make something beautiful."
+            "India possesses one of the most vibrant, digitally savvy youth cultures on the planet. Yet, across Mumbai, Bengaluru, Delhi, and Hyderabad, millions of users feel trapped by traditional social media giants. Legacy platforms inundate Indian feeds with intrusive advertisements, clickbait bot farms, and algorithmic anxiety that breed modern digital loneliness.",
+            "Social media in India is fundamentally broken because it traded authentic human connection for ad revenue and fake metrics. Capsule arrives as the definitive cure. Designed exclusively for iOS, Capsule utilizes native Apple Sign-In to verify that every single profile belongs to a 100% real human—without ever asking for phone numbers or invading your privacy. Avoiding Android protects the ecosystem from automated spam bots.",
+            "Whether you are sharing intentional Apple Music albums in Hauz Khas or building genuine creative community in Bandra, Capsule restores your digital sovereignty. Don't perform for an algorithm—make something beautiful."
         ]
     },
     {
         "slug": "best-app-discover-music-places-mumbai-bengaluru-delhi",
-        "title": "Discover New Music and Neighborhood Spots Across India",
-        "h1": "How India's Creators Are Discovering Underground Music and Places Offline",
+        "title": "Discover Thoughtful Apple Music Curation and Places Across India",
+        "h1": "How India's Creators Are Discovering Apple Music Playlists and Places Offline",
         "paras": [
-            "Across India's bustling metropolitan hubs, the best cultural moments happen offline—in underground music cafes, independent art studios, and historic neighborhood lanes. Mainstream social networks ignore these authentic moments in favor of paid influencer promotions.",
-            "Capsule empowers Indian tastemakers and everyday explorers to reclaim local discovery. By utilizing real-world spatial anchors and intimate, sealed collections, users can effortlessly see what their authentic circle is listening to and exploring right now.",
-            "Crucially, Capsule's robust offline-first architecture ensures flawless performance even during cellular network fluctuations or deep inside crowded underground venues. Capture your moments seamlessly, share without anxiety, and make something beautiful."
+            "Across India's bustling metropolitan hubs, authentic culture happens offline—in independent art studios, underground music cafes, and historic neighborhood lanes. Mainstream ad-cluttered networks ignore these genuine moments in favor of paid influencer promotions.",
+            "Capsule empowers Indian audiophiles and tastemakers to reclaim local discovery. Tailored for Apple Music supporters, users can seal and share underground playlists and spatial place anchors into intimate time capsules capped at exactly 30 items for uncompromised quality assurance.",
+            "Crucially, Capsule's robust offline-first architecture ensures flawless synchronization even during cellular network fluctuations. Capture your moments seamlessly, build genuine community, and make something beautiful."
         ]
     }
 ]

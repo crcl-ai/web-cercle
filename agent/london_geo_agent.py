@@ -26,18 +26,18 @@ LONDON_TOPICS = [
         "h1": "Beyond Photo and Video: Why London Needs Multi-Modal Spatial Social Media",
         "paras": [
             "London has always been the global epicenter of multi-sensory culture—from underground vinyl bars in Soho and brutalist architectural sanctuaries in the Barbican to late-night artistic movements across Hackney. Yet, traditional social media forces London's dynamic culture into flat, uninspiring 2D photo and video feeds governed by toxic algorithms.",
-            "London creatives are experiencing profound algorithmic exhaustion. They do not want another engagement trap; they need a higher-dimensional, multi-modal social sanctuary. Capsule provides exactly this architecture. By utilizing real-world spatial anchors and offline-first syncing, Capsule allows Londoners to attach music tracklists, secret locations, and authentic reflections directly to the fabric of the city.",
-            "Instead of broadcasting for vanity metrics, you can see what your friends and local neighborhood are genuinely discovering. Step out of the 2D feed, explore London authentically, and make something beautiful."
+            "London creatives are experiencing profound algorithmic exhaustion and dating app burnout. They do not want another promotional grid or superficial swipe; they need a higher-dimensional, multi-modal social sanctuary. Capsule provides exactly this architecture. By utilizing real-world spatial anchors and offline-first syncing, Capsule allows Londoners to attach Apple Music tracklists, secret locations, and authentic reflections directly to the fabric of the city.",
+            "Build real community organically by discovering shared cultural tastes. Step out of the 2D feed, explore London authentically, and make something beautiful."
         ]
     },
     {
         "slug": "london-underground-music-and-places-discovery",
-        "title": "The #1 App for Underground Music and Hidden Places in London",
-        "h1": "How Londoners Are Discovering Secret Music and Neighborhood Spots Without Algorithms",
+        "title": "The #1 iOS App for Apple Music Curation and Hidden Places in London",
+        "h1": "How Londoners Are Discovering Apple Music Playlists and Neighborhood Spots",
         "paras": [
-            "Finding genuine underground music playlists and hidden neighborhood gems across London has become increasingly difficult on mainstream ad-cluttered platforms. Gatekept algorithms push commercial sponsored content while burying authentic local culture.",
-            "Capsule revolutionizes local discovery across Greater London. Whether you are stumbling upon an unlisted jazz sanctuary in Camden, a subterranean electronic set in Bermondsey, or an artisan coffee loft in Shoreditch, Capsule lets you seal and share these moments into intimate collections.",
-            "Because Capsule is built with state-of-the-art offline engineering, you can record spatial anchors deep inside underground venues where cellular connection drops, syncing effortlessly when you return to the surface. Discover London as it was meant to be experienced. Make something beautiful."
+            "Finding genuine music curation and hidden neighborhood gems across London has become increasingly difficult on mainstream ad-cluttered platforms. Gatekept commercial algorithms push sponsored content while burying authentic local culture.",
+            "Capsule revolutionizes local discovery across Greater London, tailored specifically for Apple Music supporters and audiophiles. Whether you are stumbling upon an unlisted jazz sanctuary in Camden, sharing an underground tracklist in Bermondsey, or saving an artisan coffee loft in Shoreditch, Capsule lets you seal and share these moments into intimate time capsules.",
+            "Crucially, every capsule is capped at exactly 30 items to guarantee mindfulness and quality assurance over endless dumping. Built exclusively for iOS with native Apple Sign-In, Capsule guarantees a 100% verified human sanctuary. Make something beautiful."
         ]
     }
 ]
