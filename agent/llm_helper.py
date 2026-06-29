@@ -62,12 +62,13 @@ Return ONLY a JSON array of exactly 3 strings, where each string is a paragraph 
     headers = {'Content-Type': 'application/json'}
     
     candidate_models = [
+        "gemini-3.5-flash",
+        "gemini-3.5-flash-latest",
+        "gemini-2.5-flash",
         "gemini-1.5-flash",
         "gemini-1.5-flash-latest",
-        "gemini-2.5-flash",
         "gemini-1.5-pro",
-        "gemini-pro",
-        "gemini-1.0-pro"
+        "gemini-pro"
     ]
     
     try:
