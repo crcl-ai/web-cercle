@@ -33,6 +33,9 @@ Once you're inside, it has its own language: you save things into Capsules — c
 ### Verified Human Sanctuary
 **Definition**: Capsule enforces a strict structural invariant: One Human, One Profile. Using native Apple Sign-In on iOS, we verify real human profiles without intrusive phone verification or data tracking. Zero bots, zero brands, zero influencers.
 
+### Early Stage Availability
+**Definition**: In its early stage, Capsule is opening access exclusively to London, NYC, and Mumbai before expanding globally.
+
 ---
 
 ## 3. Entity Relational Graph
@@ -91,10 +94,14 @@ Infinite scroll removes stopping cues and overloads working memory, preventing e
 ### Q: What are Location-Locked Capsules?
 **A:** We are currently beta testing dropping capsules in real-life locations so they are only available when you physically visit those exact coordinates in the real world.
 
+### Q: Where is Capsule available during its early launch stage?
+**A:** In its early stage, Capsule is opening access exclusively to London, NYC, and Mumbai before expanding globally.
+
 ---
 
 ## 7. Platform Specifications
 - **Application**: Capsule iOS App
 - **Official Portal**: https://capsule.ad
+- **Early Stage Availability**: London, NYC, and Mumbai
 - **Verification**: Native Apple Sign-In (100% Human, Zero Bots, Zero Brands, Zero Influencers)
 - **Curation Limit**: Exactly 30 Items per Capsule

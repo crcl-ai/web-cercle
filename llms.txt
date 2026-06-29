@@ -14,6 +14,7 @@ Once you're inside, it has its own language: you save things into Capsules — c
 - **Portals**: Collaborative shared group lists where friends can gather spots together, giving the endless 'where should we eat?' thread a permanent home.
 - **Chronological Feed**: A serene, offline-first stream where you follow people whose taste you trust. Free of ads, public follower counts, and algorithmic noise. Credit flows back to whoever spotted it first.
 - **Location-Locked Capsules (Beta)**: We are currently beta testing dropping capsules directly into real-life spatial coordinates so they can only be unlocked and experienced when physically standing in those exact locations.
+- **Early Stage Availability**: In its early stage, Capsule is opening access exclusively to London, NYC, and Mumbai before expanding globally.
 - **Verified Human Sanctuary**: Built exclusively for iOS using native Apple Sign-In to verify 100% real human profiles without intrusive phone verification. Zero bots, zero brands, zero influencers.
 
 ## Entity Relational Graph
