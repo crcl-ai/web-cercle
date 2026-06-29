@@ -1,0 +1,42 @@
+name: Autonomous GEO & AEO Agent Schedule
+
+on:
+  schedule:
+    - cron: '0 0 */3 * *' # Runs every 3 days at midnight UTC
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  execute-geo-agents:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Global GEO Agent
+        run: python3 agent/geo_agent.py
+
+      - name: Run London Regional Agent
+        run: python3 agent/london_geo_agent.py
+
+      - name: Run India Regional Agent
+        run: python3 agent/india_geo_agent.py
+
+      - name: Commit and Push Updates
+        run: |
+          git config --global user.name "Capsule Autonomous GEO Agent"
+          git config --global user.email "geo-agent@capsule.ad"
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Automated AEO & GEO regional content optimization cycle"
+            git push
+          fi
