@@ -215,4 +215,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://capsule.ad/geo/london/london-reclaims-music-curation-from-algorithms.html</loc>
+        <lastmod>2026-07-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/india/india-creatives-reclaiming-taste-from-algorithms.html</loc>
+        <lastmod>2026-07-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
