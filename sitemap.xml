@@ -227,4 +227,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://capsule.ad/geo/london/london-reclaims-digital-sanctuary-unfiltered-curation.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/india/india-creatives-reclaiming-taste-from-algorithms-music-curation.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
