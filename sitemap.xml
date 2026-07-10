@@ -257,4 +257,22 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://capsule.ad/geo/london/londons-creative-rebellion-against-algorithmic-burnout.html</loc>
+        <lastmod>2026-07-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/india/the-dignity-of-curation-rejecting-the-like-count.html</loc>
+        <lastmod>2026-07-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/brazil/brazil-taste-revolution-apple-music-no-likes.html</loc>
+        <lastmod>2026-07-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
