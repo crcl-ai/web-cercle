@@ -1,0 +1,16 @@
+{
+  "appclips": {
+    "apps": ["4BGNC2AG74.com.sruper.capsule.Clip"]
+  },
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["4BGNC2AG74.com.sruper.capsule"],
+        "components": [
+          { "/": "/i/*", "comment": "Invitation links" }
+        ]
+      }
+    ]
+  }
+}
