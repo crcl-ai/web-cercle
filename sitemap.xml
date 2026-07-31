@@ -335,4 +335,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://capsule.ad/geo/india/india-tastemakers-reclaiming-curation-from-metrics.html</loc>
+        <lastmod>2026-07-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/nyc/manhattan-third-places-death-of-algorithmic-feed.html</loc>
+        <lastmod>2026-07-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
