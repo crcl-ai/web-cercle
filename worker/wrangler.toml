@@ -1,0 +1,9 @@
+name = "capsule-invite-ticket"
+main = "invite-ticket.js"
+compatibility_date = "2026-08-01"
+
+# Only invitation links go through the worker; everything else on capsule.ad
+# is served by GitHub Pages as before.
+routes = [
+  { pattern = "capsule.ad/i/*", zone_name = "capsule.ad" }
+]
