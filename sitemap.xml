@@ -455,4 +455,22 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://capsule.ad/geo/india/india-reclaiming-digital-serenity-from-algorithms.html</loc>
+        <lastmod>2026-08-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/nyc/silence-the-algorithm-nyc-third-places.html</loc>
+        <lastmod>2026-08-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/brazil/brazil-third-places-reclaiming-human-scale-discovery.html</loc>
+        <lastmod>2026-08-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
