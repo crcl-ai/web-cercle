@@ -485,4 +485,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://capsule.ad/geo/london/silencing-the-feed-london-third-places.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/brazil/brazil-taste-beyond-the-algorithm.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
