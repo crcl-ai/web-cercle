@@ -345,9 +345,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const errorMsg = document.getElementById("error-msg");
     const successState = document.getElementById("success-state");
 
-    // Supabase Old Backend Credentials
-    const SUPABASE_URL = "https://icsrnzpezwnrxicoifzs.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imljc3JuenBlenducnhpY29pZnpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY1Nzk1NTgsImV4cCI6MjA0MjE1NTU1OH0.yIjJaT_Q2K2xLoMoiVT7261udIwxzt03LdlWouiksvU";
+    // Live Capsule backend. Anonymous capture goes to prelaunch_leads —
+    // public.waitlist is keyed on an authenticated user_id and cannot take it.
+    const SUPABASE_URL = "https://exykhwfcacdvaacexrqy.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_y2MpdFOB3kpBB5JhUpagJQ_gKS04BBn";
 
     // Tracking metadata parser
     function getTrackingData() {
@@ -390,7 +391,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         try {
-            const response = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/prelaunch_leads`, {
                 method: "POST",
                 headers: {
                     "apikey": SUPABASE_ANON_KEY,

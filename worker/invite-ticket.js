@@ -1,19 +1,54 @@
-// capsule.ad/i/<CODE> — the invitation ticket.
+// capsule.ad — the two paths GitHub Pages cannot serve correctly itself.
 //
-// Cloudflare runs this in front of the site for /i/* only. The page itself is
-// rendered by the `invite-page` edge function (it holds the keys to look the
-// code up); this worker exists so the invitation is served from capsule.ad
-// under our own headers — Supabase forces text/plain and a sandbox CSP on
-// function responses, which no browser would render.
+//   /i/<CODE>                                  the invitation ticket
+//   /.well-known/apple-app-site-association    the domain association
+//
+// The site is hosted on GitHub Pages, which has no way to set a response
+// content-type: it serves the extension-less association file as
+// application/octet-stream, and Apple requires application/json. The repo's
+// `_headers` file cannot fix that — that is a Cloudflare Pages feature and
+// Pages is not what serves this domain. So Cloudflare runs this worker in
+// front of those two paths and nothing else.
 //
 // Deploy:  npx wrangler login  &&  npx wrangler deploy   (from this folder)
 
 const RENDERER = "https://exykhwfcacdvaacexrqy.functions.supabase.co/invite-page";
 const SITE = "https://capsule.ad";
 
+// Served inline rather than proxied from the origin: a subrequest to a path
+// this worker itself claims would loop. Keep in sync with the copy at
+// /.well-known/apple-app-site-association — this one is what Apple actually reads.
+const AASA = {
+  appclips: {
+    apps: ["4BGNC2AG74.com.sruper.capsule.Clip"],
+  },
+  applinks: {
+    apps: [],
+    details: [
+      {
+        appIDs: ["4BGNC2AG74.com.sruper.capsule"],
+        components: [{ "/": "/i/*", comment: "Invitation links" }],
+      },
+    ],
+  },
+};
+
 export default {
   async fetch(request) {
-    const code = new URL(request.url).pathname.replace(/^\/i\/?/, "").split("/")[0];
+    const url = new URL(request.url);
+
+    if (url.pathname === "/.well-known/apple-app-site-association") {
+      return new Response(JSON.stringify(AASA), {
+        headers: {
+          // The whole reason this route exists.
+          "content-type": "application/json",
+          "cache-control": "public, max-age=3600",
+          "access-control-allow-origin": "*",
+        },
+      });
+    }
+
+    const code = url.pathname.replace(/^\/i\/?/, "").split("/")[0];
 
     try {
       const upstream = await fetch(`${RENDERER}?code=${encodeURIComponent(code)}`, {
