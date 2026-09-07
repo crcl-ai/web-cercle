@@ -509,4 +509,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://capsule.ad/geo/nyc/silence-the-algorithm-new-york-third-places.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/brazil/brazil-taste-algorithmic-burnout-capsule.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
