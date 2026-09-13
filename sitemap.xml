@@ -539,4 +539,10 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://capsule.ad/geo/brazil/brazil-reclaiming-taste-algorithmic-silence.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
