@@ -545,4 +545,22 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://capsule.ad/geo/london/london-curation-rebellion-private-playlists.html</loc>
+        <lastmod>2026-09-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/india/india-music-curation-algorithmic-burnout-apple-music.html</loc>
+        <lastmod>2026-09-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/nyc/nyc-authentic-curation-algorithmic-escape.html</loc>
+        <lastmod>2026-09-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
