@@ -563,4 +563,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://capsule.ad/geo/london/london-reclaims-taste-from-algorithmic-tyranny.html</loc>
+        <lastmod>2026-09-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/brazil/brazil-quiet-curation-apple-music-taste.html</loc>
+        <lastmod>2026-09-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
