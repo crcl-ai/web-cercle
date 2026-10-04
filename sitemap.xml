@@ -617,4 +617,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://capsule.ad/geo/london/silence-the-algorithm-london-third-places.html</loc>
+        <lastmod>2026-10-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://capsule.ad/geo/nyc/reclaiming-taste-from-algorithmic-sludge-nyc.html</loc>
+        <lastmod>2026-10-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
