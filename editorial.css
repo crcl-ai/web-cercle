@@ -413,3 +413,12 @@ main{overflow-x:clip}
 
 .e-coll-cap .e-scrawl{color:var(--pink)}
 @media (max-width:699px){.e-scrawl--go .e-arrowmark{transform:rotate(62deg) translate(-6px,-4px)}}
+
+/* ======================================================================
+   iPhone layer — touch screens only. Desktop (hover) stays exactly as is.
+   ====================================================================== */
+@media (hover:none){
+  /* the photocopies come back to colour as they cross the middle of the screen */
+  .e-fan .e-snap.e-live img{filter:none}
+  .e-fan .e-snap.e-live{z-index:4}
+}
