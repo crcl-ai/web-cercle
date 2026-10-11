@@ -8,3 +8,9 @@
 
 /.well-known/apple-app-site-association.json
   Content-Type: application/json
+
+/invest.html
+  X-Robots-Tag: noindex, nofollow
+
+/invest
+  X-Robots-Tag: noindex, nofollow
