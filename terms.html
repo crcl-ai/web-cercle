@@ -7,7 +7,7 @@
 <link rel="apple-touch-icon" href="photos/apple-touch-icon.png">
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Circle — Terms of Service</title>
 <meta name="description" content="The terms governing access to and use of Circle.">
 <link rel="canonical" href="https://sruper.com/terms">
@@ -18,214 +18,14 @@
 <meta property="og:image" content="https://sruper.com/photos/thumbnail.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
 <style>
-    /* --- APPLE GARAMOND TYPOGRAPHY --- */
-    @font-face {
-        font-family: 'AppleGaramond';
-        src: url('apple_garamond/AppleGaramond-Light.ttf') format('truetype');
-        font-weight: 300;
-        font-style: normal;
-    }
-
-    /* --- SYSTEM-ADAPTIVE COLOR SPECIFICATION --- */
-    :root {
-        --bg-color: #FAFAF8; 
-        --text-main: #000000; 
-        --text-muted: rgba(0, 0, 0, 0.65);
-        --text-faint: rgba(0, 0, 0, 0.35);
-        --app-blue: #0A84FF;
-        --border-subtle: 1px solid rgba(0, 0, 0, 0.06);
-        --card-bg: #FFFFFF;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --bg-color: #000000; 
-            --text-main: #FAFAF8; 
-            --text-muted: rgba(250, 250, 248, 0.65);
-            --text-faint: rgba(250, 250, 248, 0.35);
-            --border-subtle: 1px solid rgba(250, 250, 248, 0.06);
-            --card-bg: #111111;
-        }
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-        background-color: var(--bg-color);
-        color: var(--text-main);
-        font-family: 'Inter', -apple-system, sans-serif;
-        overflow-y: auto;
-        overflow-x: hidden;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
-    /* --- LAYOUT UTILITIES --- */
-    .legal-padding {
-        padding: 80px 48px 140px 48px;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-        flex: 1;
-    }
-
-    /* --- NAVIGATION --- */
-    .global-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 24px 32px;
-        z-index: 100;
-        flex-shrink: 0; 
-        border-bottom: var(--border-subtle);
-    }
-    
-    .logo {
-        font-family: 'AppleGaramond', Georgia, serif;
-        font-size: 2.2rem;
-        font-weight: 300;
-        letter-spacing: -0.02em; 
-        color: var(--text-main);
-        text-decoration: none;
-        text-transform: capitalize;
-    }
-
-    .get-btn {
-            white-space: nowrap;
-        background-color: #007AFF;
-        color: #FFFFFF;
-        border: none;
-        border-radius: 16px;
-        padding: 6px 18px;
-        font-size: 0.95rem;
-        font-weight: 700;
-        text-decoration: none;
-        cursor: pointer;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-    .get-btn:hover { transform: scale(1.05); opacity: 0.9; }
-
-    /* --- EDITORIAL HEADER --- */
-    .legal-header {
-        margin-bottom: 80px;
-        border-bottom: var(--border-subtle);
-        padding-bottom: 40px;
-    }
-
-    .legal-label {
-        font-size: 0.7rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: var(--app-blue);
-        margin-bottom: 12px;
-        display: block;
-    }
-
-    .legal-title {
-        font-size: clamp(2rem, 5vw, 3.2rem);
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        line-height: 1.1;
-        color: var(--text-main);
-        margin-bottom: 16px;
-    }
-
-    .legal-meta {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        font-weight: 400;
-    }
-
-    /* --- CONTENT SECTIONS --- */
-    .legal-split {
-        display: grid;
-        grid-template-columns: 240px 1fr;
-        gap: 48px;
-        margin-bottom: 72px;
-    }
-
-    .section-label {
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--text-faint);
-        position: sticky;
-        top: 40px;
-        align-self: start;
-    }
-
-    .section-content p {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        color: var(--text-muted);
-        margin-bottom: 24px;
-        font-weight: 400;
-    }
-
-    .section-content strong {
-        color: var(--text-main);
-        font-weight: 600;
-    }
-
-    .critical-clause-box {
-        background-color: var(--card-bg);
-        border: var(--border-subtle);
-        border-radius: 20px;
-        padding: 32px;
-        margin: 32px 0;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-    }
-
-    .critical-clause-box h4 {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: var(--text-main);
-        margin-bottom: 12px;
-    }
-
-    .critical-clause-box p {
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        margin-bottom: 0;
-    }
-
-    /* --- FOOTER --- */
-    .stealth-footer {
-        padding: 40px 32px; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center;
-        font-size: 0.75rem; 
-        font-weight: 500; 
-        letter-spacing: 0.05em;
-        text-transform: lowercase;
-        border-top: var(--border-subtle);
-        background-color: var(--bg-color);
-        margin-top: auto;
-    }
-
-    .footer-links { display: flex; gap: 32px; }
-    .footer-links a, .copyright { color: var(--text-faint); text-decoration: none; transition: color 0.3s ease; }
-    .footer-links a:hover { color: var(--text-main); }
-
-    @media (max-width: 768px) {
-        .legal-split { grid-template-columns: 1fr; gap: 16px; }
-        .section-label { position: static; border-bottom: 1px dashed var(--text-faint); padding-bottom: 8px; }
-        .legal-padding { padding: 60px 24px; }
-        .stealth-footer { flex-direction: column; gap: 16px; text-align: center; }
-    }
+@font-face{font-family:"Apple Garamond";src:url("apple_garamond/AppleGaramond-Light.ttf") format("truetype");font-weight:300;font-display:swap}
+@font-face{font-family:"Apple Garamond";src:url("apple_garamond/AppleGaramond-LightItalic.ttf") format("truetype");font-weight:300;font-style:italic;font-display:swap}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden}img{display:block;max-width:100%}a{color:inherit}button,input,textarea{font:inherit}
 </style>
+<link rel="stylesheet" href="editorial.css">
+<link rel="stylesheet" href="pages.css">
 
 <!-- AI Crawler & Answer Engine Discovery Links (Sandboxed Fetcher Unblockers) -->
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sruper.com/sitemap.xml">
@@ -236,12 +36,10 @@
 </head>
 <body>
 
-    <nav class="global-nav">
-        <a href="index.html" class="logo">Circle</a>
-        <a href="https://apps.apple.com/app/id6782602610" class="get-btn">GET</a>
-    </nav>
+    <a class="skip" href="#main">Skip to content</a>
+<header class="e-head"><a class="e-brand" href="index.html" aria-label="Circle home">Circle</a><nav aria-label="Primary"><ul class="e-nav e-label"><li><a href="index.html#demo">The app</a></li><li><a href="index.html#save-anything">Features</a></li><li><a href="index.html#download">Get Circle</a></li></ul></nav><a class="e-get" href="https://apps.apple.com/app/id6782602610">GET</a></header>
 
-    <main class="legal-padding">
+    <main class="legal-padding" id="main">
         <header class="legal-header">
             <span class="legal-label">Platform Protocol</span>
             <h1 class="legal-title">Terms of Service</h1>
@@ -341,19 +139,12 @@
                     <p style="margin-top: 12px;"><strong>UK/EU Consumer Carve-Out:</strong> Nothing in these terms shall contract out or deprive consumers residing in the United Kingdom or European Union of mandatory statutory consumer protections granted by their habitual country of residence. For UK and EU consumers, claims and disputes may be resolved before the competent local courts of their habitual residence. For international users across the United Kingdom, European Union (GDPR), and United States (CCPA), our data architecture aligns with the EU-US Data Privacy Framework and international consumer protection standards. We provide transparent in-app mechanisms to access, export, or permanently erase your data at any time.</p>
                 </div>
                 
-                <p>If you have questions regarding these terms, your license grants, or account termination procedures, please contact our legal team at <a href="mailto:info@sruper.com" style="color: var(--app-blue); text-decoration: none;">info@sruper.com</a>.</p>
+                <p>If you have questions regarding these terms, your license grants, or account termination procedures, please contact our legal team at <a href="mailto:info@sruper.com">info@sruper.com</a>.</p>
             </div>
         </div>
     </main>
 
-    <footer class="stealth-footer">
-        <div class="copyright">sruper © 2026</div>
-        <div class="footer-links">
-            <a href="terms.html">terms</a>
-            <a href="privacy.html">policy</a>
-            <a href="contact.html">contact</a>
-        </div>
-    </footer>
+    <footer class="e-foot"><span class="e-foot-word" aria-hidden="true">Circle</span><div class="e-foot-row"><nav class="e-foot-nav e-label" aria-label="Legal"><a href="terms.html" aria-current="page">Terms</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a></nav><p class="e-foot-note">Made for iOS. © 2026 Sruper Inc.</p></div></footer>
 
 <!-- Stealth Crawler Discovery --><div style="opacity:0; pointer-events:none; position:absolute; width:0; height:0; overflow:hidden;" aria-hidden="true"><a href="robots.txt">robots</a> <a href="sitemap.xml">sitemap</a> <a href="llms.txt">llms</a> <a href="llms-full.txt">llms-full</a></div>
 </body>

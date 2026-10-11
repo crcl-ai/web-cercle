@@ -295,3 +295,61 @@ picture{display:block}
   .e-close{min-height:100svh}
   .e-close .e-actions{margin-top:44px}
 }
+
+/* ======================================================================
+   Punk layer — pass 2
+   ====================================================================== */
+
+/* marker: a second, thinner pass so it reads as hand-drawn */
+.e-mark path.e-mark-2{stroke-width:3;opacity:.55;transition-delay:.6s}
+
+/* misregistered print: a pink plate a hair off the black/white one */
+.e-cover h1,.e-close .e-h{text-shadow:.04em .035em 0 rgba(255,122,205,.55)}
+.e-cover h1 .e-it,.e-close .e-h .e-it{text-shadow:none}
+
+/* caution-tape ticker */
+.e-ticker{position:relative;z-index:5;margin:-14px -24px -10px;transform:rotate(-1.6deg);box-shadow:0 10px 0 -4px rgba(0,0,0,.12)}
+
+/* torn paper where coloured spreads begin */
+.e-save:before,.e-coll:before,.e-local:before,.e-people:before{content:"";position:absolute;left:0;right:0;top:-17px;height:18px;z-index:2;background:inherit;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='18' viewBox='0 0 240 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V9l9-4 7 6 11-8 8 7 13-6 6 5 12-9 9 8 10-3 8 6 12-8 7 7 14-5 9 4 8-7 11 9 10-6 8 3 13-8 9 7 7-4 11 6 9-5 10 4 9 1V18Z'/%3E%3C/svg%3E") 0 0/240px 18px repeat-x;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='18' viewBox='0 0 240 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V9l9-4 7 6 11-8 8 7 13-6 6 5 12-9 9 8 10-3 8 6 12-8 7 7 14-5 9 4 8-7 11 9 10-6 8 3 13-8 9 7 7-4 11 6 9-5 10 4 9 1V18Z'/%3E%3C/svg%3E") 0 0/240px 18px repeat-x}
+.e-people{background:var(--paper)}
+
+/* photocopied polaroids that come back to colour on hover */
+.e-fan .e-snap img{filter:grayscale(1) contrast(1.45) brightness(1.06);transition:filter .6s var(--ease)}
+.e-fan .e-snap:hover img,.e-fan .e-snap:focus-within img{filter:none}
+.e-snap{transition:transform .5s var(--ease)}
+@media (hover:hover){.e-collage .e-snap:hover,.e-fan .e-snap:hover{transform:rotate(0) translateY(-6px) scale(1.03);z-index:5}}
+
+/* safety pin */
+.e-pin{position:absolute;z-index:5;top:-12px;left:50%;width:96px;height:auto;transform:translateX(-50%) rotate(-8deg);filter:drop-shadow(0 2px 1px rgba(0,0,0,.35))}
+
+/* rubber stamp over the receipt */
+.e-receipt-wrap{position:relative}
+.e-stamp{position:absolute;z-index:3;right:-6px;top:-22px;padding:6px 14px 4px;border:4px solid var(--pink);border-radius:8px;color:var(--pink);font:900 var(--t-l)/1 var(--grot);font-stretch:125%;letter-spacing:.02em;text-transform:uppercase;transform:rotate(-12deg);mix-blend-mode:multiply;opacity:.92;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3.2 2.4'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3.2 2.4'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* struck-out edit in the contents */
+.e-strike{position:relative;margin-right:.2em;color:var(--mute);font-family:var(--serif);font-weight:300;font-style:italic;letter-spacing:-.01em}
+.e-strike:after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:.13em;background:var(--pink);border-radius:2px;transform:rotate(-3deg)}
+
+/* ransom note */
+.e-ransom{display:flex;flex-wrap:wrap;align-items:center;gap:10px .34em;margin:34px 0 0;font-size:var(--t-l);line-height:1}
+.e-rw{display:inline-flex;align-items:center;gap:3px;white-space:nowrap}
+.e-rp{display:inline-flex;align-items:center;gap:.3em;white-space:nowrap}
+.e-ransom>span{display:contents}
+.e-r{display:inline-grid;place-items:center;min-width:.7em;padding:.08em .14em .05em;text-transform:uppercase;box-shadow:0 1px 2px rgba(0,0,0,.18)}
+.e-r:nth-child(3n){transform:rotate(-4deg)}
+.e-r:nth-child(3n+1){transform:rotate(3deg) translateY(2px)}
+.e-r:nth-child(4n+2){transform:rotate(-1.5deg) translateY(-3px)}
+.e-r.r1{background:var(--ink);color:var(--paper);font-weight:900;font-family:var(--grot);font-stretch:125%}
+.e-r.r2{background:#fff;color:var(--ink);font-family:var(--serif);font-style:italic;font-weight:300;text-transform:none;border:1px solid var(--rule)}
+.e-r.r3{background:var(--pink);color:var(--ink);font-weight:900;font-family:var(--grot);font-stretch:75%}
+.e-r.r4{background:var(--sky);color:var(--ink);font-weight:800;font-family:var(--grot);font-stretch:100%}
+.e-r.r5{background:var(--peach);color:var(--ink);font-family:var(--serif);font-weight:400}
+.e-r.r6{background:#fff;color:#fff;font-weight:900;font-family:var(--grot);font-stretch:112%;-webkit-text-stroke:1.5px var(--ink)}
+
+/* keep tilted bands and stamps from widening the page */
+main{overflow-x:clip}
