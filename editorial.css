@@ -353,3 +353,63 @@ picture{display:block}
 
 /* keep tilted bands and stamps from widening the page */
 main{overflow-x:clip}
+
+/* ======================================================================
+   Punk layer — pass 3
+   ====================================================================== */
+
+/* kickers become label-maker tape */
+.e-kicker{display:inline-flex;justify-self:start;align-self:flex-start;width:max-content;max-width:100%;margin:0;padding:6px 10px 5px;background:var(--ink);color:#f4f4f0;font-stretch:112%;letter-spacing:.09em;transform:rotate(-1.2deg);box-shadow:0 2px 0 rgba(0,0,0,.22)}
+.e-kicker:before{display:none}
+.e-kicker.e-pink{background:var(--pink);color:var(--ink)}
+.e-coll .e-kicker,.e-demo .e-kicker:not(.e-pink),.e-close .e-kicker:not(.e-pink){background:var(--paper);color:var(--ink)}
+.e-letter-copy .e-kicker{margin-bottom:8px}
+
+/* marker scrawls */
+.e-scrawl{font-family:"Permanent Marker",var(--grot);font-weight:400;color:var(--pink);font-size:var(--t-m);line-height:1;letter-spacing:.01em;white-space:nowrap;pointer-events:none;transform:rotate(-7deg)}
+.e-arrowmark{display:inline-block;flex:none;width:34px;height:auto;overflow:visible}
+.e-arrowmark path{fill:none;stroke:var(--pink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.e-arrowmark--left{width:58px}
+.e-cover-type{position:relative}
+.e-scrawl--you{position:absolute;right:var(--g);top:-4px;text-shadow:0 1px 10px rgba(0,0,0,.55)}
+.e-contents-head{position:relative}
+.e-scrawl--issue{position:absolute;right:6px;top:-30px;transform:rotate(-9deg)}
+.e-contents-snap{display:none}
+.e-scrawl--wise{align-self:flex-start;margin-bottom:4px;transform:rotate(-5deg)}
+.e-scrawl--real{display:inline-flex;align-items:flex-end;gap:8px;margin-top:10px;transform:rotate(-4deg);justify-self:start}
+.e-scrawl--go{display:inline-flex;align-items:center;gap:8px;transform:rotate(-6deg)}
+
+/* starburst sticker */
+.e-coll-art{position:relative}
+.e-burst{position:absolute;z-index:7;right:2%;top:-34px;width:104px;transform:rotate(12deg);filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+.e-burst polygon{fill:var(--pink)}
+.e-burst text{font:900 34px var(--grot);font-stretch:112%;letter-spacing:-.04em;fill:var(--ink)}
+.e-burst text.e-burst-sub{font-size:13px;letter-spacing:.12em}
+
+/* cover photo torn where it meets the black block (stacked layouts) */
+@media (max-width:1024px){
+  .e-cover-photo{-webkit-mask:linear-gradient(#000,#000) top/100% calc(100% - 17px) no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='18' viewBox='0 0 240 18' preserveAspectRatio='none'%3E%3Cpath d='M0 0V9l9 4 7 -6 11 8 8 -7 13 6 6 -5 12 9 9 -8 10 3 8 -6 12 8 7 -7 14 5 9 -4 8 7 11 -9 10 6 8 -3 13 8 9 -7 7 4 11 -6 9 5 10 -4 9 -1V0Z'/%3E%3C/svg%3E") bottom/240px 18px repeat-x;
+                 mask:linear-gradient(#000,#000) top/100% calc(100% - 17px) no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='18' viewBox='0 0 240 18' preserveAspectRatio='none'%3E%3Cpath d='M0 0V9l9 4 7 -6 11 8 8 -7 13 6 6 -5 12 9 9 -8 10 3 8 -6 12 8 7 -7 14 5 9 -4 8 7 11 -9 10 6 8 -3 13 8 9 -7 7 4 11 -6 9 5 10 -4 9 -1V0Z'/%3E%3C/svg%3E") bottom/240px 18px repeat-x}
+}
+
+/* demo: the active step gets a marker scribble */
+.e-demo .step strong{padding-bottom:.45em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M2 9C30 3 52 12 80 7S130 4 160 8S190 6 198 5' fill='none' stroke='%23ff7acd' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 0 100%/0 .5em;transition:background-size .5s var(--ease)}
+.e-demo .step.active strong{background-size:100% .5em}
+
+/* a little misregistration on hover */
+@media (hover:hover){
+  .e-nav a:hover,.e-link:hover,.e-foot-nav a:hover{animation:e-glitch .35s steps(2) 1;text-shadow:-.07em 0 var(--pink),.07em 0 #5ac8fa}
+}
+@keyframes e-glitch{0%{transform:translate(1px,-1px)}50%{transform:translate(-1px,1px)}100%{transform:none}}
+@media (prefers-reduced-motion:reduce){.e-nav a:hover,.e-link:hover,.e-foot-nav a:hover{animation:none}}
+
+@media (min-width:1025px){
+  .e-scrawl--issue{position:static;margin:14px 0 0 1.4em}
+  .e-contents-snap{display:block;width:min(300px,78%);margin-top:44px;transform:rotate(-3deg)}
+  .e-contents-snap img{aspect-ratio:4/5}
+  .e-contents-snap figcaption{font-size:var(--t-s)}
+  .e-burst{width:128px;top:-44px;right:6%}
+}
+
+.e-coll-cap .e-scrawl{color:var(--pink)}
+@media (max-width:699px){.e-scrawl--go .e-arrowmark{transform:rotate(62deg) translate(-6px,-4px)}}
