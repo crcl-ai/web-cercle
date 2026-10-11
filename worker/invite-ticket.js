@@ -1,36 +1,40 @@
-// capsule.ad — the two paths GitHub Pages cannot serve correctly itself.
+// sruper.com — the two paths GitHub Pages cannot serve itself.
 //
 //   /i/<CODE>                                  the invitation ticket
 //   /.well-known/apple-app-site-association    the domain association
 //
-// The site is hosted on GitHub Pages, which has no way to set a response
-// content-type: it serves the extension-less association file as
-// application/octet-stream, and Apple requires application/json. The repo's
-// `_headers` file cannot fix that — that is a Cloudflare Pages feature and
-// Pages is not what serves this domain. So Cloudflare runs this worker in
-// front of those two paths and nothing else.
-//
-// Deploy:  npx wrangler login  &&  npx wrangler deploy   (from this folder)
+// Every ordinary website request goes directly to GitHub Pages. This Worker
+// has no root-domain route and does not rewrite website HTML at runtime.
 
 const RENDERER = "https://exykhwfcacdvaacexrqy.functions.supabase.co/invite-page";
-const SITE = "https://capsule.ad";
+const SITE = "https://sruper.com";
 
-// Served inline rather than proxied from the origin: a subrequest to a path
-// this worker itself claims would loop. Keep in sync with the copy at
-// /.well-known/apple-app-site-association — this one is what Apple actually reads.
+// Maintain parity with /.well-known/apple-app-site-association. The Circle IDs
+// are first; the legacy IDs remain during the app migration.
 const AASA = {
   appclips: {
-    apps: ["4BGNC2AG74.com.sruper.capsule.Clip"],
+    apps: [
+      "4BGNC2AG74.com.sruper.crcl.Clip",
+      "4BGNC2AG74.com.sruper.capsule.Clip",
+    ],
   },
   applinks: {
     apps: [],
     details: [
       {
-        appIDs: ["4BGNC2AG74.com.sruper.capsule"],
+        appIDs: [
+          "4BGNC2AG74.com.sruper.crcl",
+          "4BGNC2AG74.com.sruper.capsule",
+        ],
         components: [{ "/": "/i/*", comment: "Invitation links" }],
       },
     ],
   },
+};
+
+const responseHeaders = {
+  "access-control-allow-origin": "*",
+  "x-content-type-options": "nosniff",
 };
 
 export default {
@@ -40,30 +44,34 @@ export default {
     if (url.pathname === "/.well-known/apple-app-site-association") {
       return new Response(JSON.stringify(AASA), {
         headers: {
-          // The whole reason this route exists.
+          ...responseHeaders,
           "content-type": "application/json",
           "cache-control": "public, max-age=3600",
-          "access-control-allow-origin": "*",
         },
       });
+    }
+
+    if (!url.pathname.startsWith("/i/")) {
+      return new Response("Not found", { status: 404, headers: responseHeaders });
     }
 
     const code = url.pathname.replace(/^\/i\/?/, "").split("/")[0];
 
     try {
-      const upstream = await fetch(`${RENDERER}?code=${encodeURIComponent(code)}`, {
-        headers: { "user-agent": request.headers.get("user-agent") ?? "" },
-      });
+      const upstream = await fetch(
+        `${RENDERER}?code=${encodeURIComponent(code)}&brand=Circle`,
+        { headers: { "user-agent": request.headers.get("user-agent") ?? "" } },
+      );
       return new Response(upstream.body, {
         status: upstream.status,
         headers: {
+          ...responseHeaders,
           "content-type": "text/html; charset=utf-8",
           "cache-control": "public, max-age=60",
-          "x-robots-tag": "noindex",   // an invitation is not a page to be found
+          "x-robots-tag": "noindex",
         },
       });
     } catch {
-      // Better the front door than an error page.
       return Response.redirect(SITE, 302);
     }
   },

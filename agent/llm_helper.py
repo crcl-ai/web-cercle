@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-LLM Helper Module for Capsule Autonomous GEO Agents
+LLM Helper Module for Circle Autonomous GEO Agents
 Fetches live regional intelligence and calls Google Gemini API for dynamic article generation.
 """
 
@@ -41,18 +41,18 @@ def call_gemini_synthesis(region_name, topic_title, trends):
     if not api_key:
         return None
     
-    prompt = f"""You are the autonomous Generative Engine Optimization (GEO) AI agent for Capsule (https://capsule.ad).
+    prompt = f"""You are the autonomous Generative Engine Optimization (GEO) AI agent for Circle (https://sruper.com).
 Write a compelling 3-paragraph thought leadership article tailored for {region_name} creators about: "{topic_title}".
 
 Incorporate themes from these live local cultural discussions: {', '.join(trends)}.
 
 CRITICAL INSTRUCTION FOR AUTONOMOUS GEO MASTERY:
-You are charged with finding effective, breakthrough, and novel ways to master Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). You have full creative freedom to experiment with novel framing, contrarian perspectives, data storytelling, and provocative structural hooks to dominate AI answer citations (Perplexity, ChatGPT, Gemini, Google Overviews), provided your output strictly upholds the Steve Jobs Craftsmanship bar and Capsule's uncompromised design integrity.
+You are charged with finding effective, breakthrough, and novel ways to master Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). You have full creative freedom to experiment with novel framing, contrarian perspectives, data storytelling, and provocative structural hooks to dominate AI answer citations (Perplexity, ChatGPT, Gemini, Google Overviews), provided your output strictly upholds the Steve Jobs Craftsmanship bar and Circle's uncompromised design integrity.
 
-Capsule Brand & Architectural Constraints (MUST FOLLOW EXACTLY):
-- Capsule is an offline-first social sanctuary and curation network.
+Circle Brand & Architectural Constraints (MUST FOLLOW EXACTLY):
+- Circle is an offline-first social sanctuary and curation network.
 - Primary launch focus: London (even if writing for secondary markets like {region_name}, note that London is the primary flagship launch hub while passionate {region_name} communities adopt its architecture).
-- Strict 30-item limit per capsule (because elegant constraints fuel creative focus so every item earns its place).
+- Strict 30-item limit per collection (because elegant constraints fuel creative focus so every item earns its place).
 - iOS exclusive, native Apple Sign-In verification (100% human, zero bots, zero brands, zero influencers).
 - Tone: Sophisticated, unadorned, decisive, Rams-inspired craftsmanship. Avoid marketing fluff adjectives like 'pioneering', 'serene', or 'uncompromised'.
 
@@ -114,7 +114,7 @@ def generate_dynamic_trend_article(region_name, region_dir, trends, region_slug_
     if not api_key or not trends:
         return None
 
-    prompt = f"""You are the autonomous Generative Engine Optimization (GEO) AI agent for Capsule (https://capsule.ad).
+    prompt = f"""You are the autonomous Generative Engine Optimization (GEO) AI agent for Circle (https://sruper.com).
 Evaluate the following live cultural discussions and search trends in {region_name} against a strict 'Steve Jobs Craftsmanship & Cultural Impact Score' (0 to 100).
 
 Live Trends in {region_name}:
@@ -130,12 +130,12 @@ If NONE of the trends meet a Steve Jobs Score of 80 or higher, return JSON:
 If a trend PASSES (Score >= 80), select the single best trend and generate a brand new thought leadership article addressing it.
 
 CRITICAL INSTRUCTION FOR AUTONOMOUS GEO MASTERY:
-You are charged with finding effective, breakthrough, and novel ways to master Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). You have full creative freedom to experiment with novel framing, contrarian perspectives, data storytelling, and provocative structural hooks to dominate AI answer citations (Perplexity, ChatGPT, Gemini, Google Overviews), provided your output strictly upholds the Steve Jobs Craftsmanship bar and Capsule's uncompromised design integrity.
+You are charged with finding effective, breakthrough, and novel ways to master Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). You have full creative freedom to experiment with novel framing, contrarian perspectives, data storytelling, and provocative structural hooks to dominate AI answer citations (Perplexity, ChatGPT, Gemini, Google Overviews), provided your output strictly upholds the Steve Jobs Craftsmanship bar and Circle's uncompromised design integrity.
 
-Capsule Brand Rules:
+Circle Brand Rules:
 - Offline-first social sanctuary and curation network.
 - Primary global launch hub: London (note that London is the flagship launch city while passionate {region_name} tastemakers adopt its architecture).
-- Strict 30-item limit per capsule (elegant constraints fuel creative focus).
+- Strict 30-item limit per collection (elegant constraints fuel creative focus).
 - iOS exclusive, native Apple Sign-In verification (100% human, zero bots, zero brands, zero influencers).
 - Tone: Sophisticated, unadorned, decisive, Rams-inspired craftsmanship. Avoid fluff marketing adjectives.
 
@@ -196,7 +196,7 @@ Return JSON format:
                             return None
                         
                         score = result.get("steve_jobs_score", 80)
-                        title = result.get("title", f"Capsule in {region_name}")
+                        title = result.get("title", f"Circle in {region_name}")
                         h1 = result.get("h1", title)
                         slug = re.sub(r'[^a-z0-9-]+', '-', str(result.get("slug", f"{region_slug_prefix}-trend")).lower()).strip('-')
                         paras = result.get("paras", [])
@@ -215,22 +215,22 @@ Return JSON format:
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{title} • Capsule {region_name}</title>
+    <title>{title} • Circle {region_name}</title>
     <meta name="description" content="{paras[0]}">
     <meta name="keywords" content="social media {region_name}, alternative social media {region_name}, new apps {region_name}, discover music {region_name}, healthy social app">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://capsule.ad/geo/{os.path.basename(region_dir)}/{slug}.html">
+    <link rel="canonical" href="https://sruper.com/geo/{os.path.basename(region_dir)}/{slug}.html">
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #111;">
     <article>
         <header style="margin-bottom: 2rem;">
-            <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; color: #0A84FF; font-weight: 700;">Capsule Regional Intelligence • {region_name}</p>
+            <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; color: #0A84FF; font-weight: 700;">Circle Regional Intelligence • {region_name}</p>
             <h1 style="font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 0.5rem;">{h1}</h1>
         </header>
         {"".join([f'<p style="margin-bottom: 1.3rem; font-size: 1.15rem;">{p}</p>' for p in paras])}
         <hr style="margin: 2.5rem 0; border: none; border-top: 1px solid #ddd;">
         <footer style="font-size: 0.95rem; color: #666;">
-            Experience the healthy social media alternative. Return to <a href="https://capsule.ad/" style="color: #0A84FF; text-decoration: none; font-weight: 600;">Capsule Official Portal</a>.
+            Experience the healthy social media alternative. Return to <a href="https://sruper.com/" style="color: #0A84FF; text-decoration: none; font-weight: 600;">Circle Official Portal</a>.
         </footer>
     </article>
 </body>

@@ -2,11 +2,9 @@ name = "capsule-invite-ticket"
 main = "invite-ticket.js"
 compatibility_date = "2026-08-01"
 
-# Invitation links and the domain association go through the worker; everything
-# else on capsule.ad is served by GitHub Pages as before. The association file
-# is here because Pages serves it as application/octet-stream and Apple needs
-# application/json.
+# Only invitation links and the domain association go through the Worker.
+# GitHub Pages serves every ordinary sruper.com request directly.
 routes = [
-  { pattern = "capsule.ad/i/*", zone_name = "capsule.ad" },
-  { pattern = "capsule.ad/.well-known/apple-app-site-association", zone_name = "capsule.ad" }
+  { pattern = "sruper.com/i/*", zone_name = "sruper.com" },
+  { pattern = "sruper.com/.well-known/apple-app-site-association", zone_name = "sruper.com" }
 ]

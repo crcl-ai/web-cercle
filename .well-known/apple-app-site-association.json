@@ -1,12 +1,18 @@
 {
   "appclips": {
-    "apps": ["4BGNC2AG74.com.sruper.capsule.Clip"]
+    "apps": [
+      "4BGNC2AG74.com.sruper.crcl.Clip",
+      "4BGNC2AG74.com.sruper.capsule.Clip"
+    ]
   },
   "applinks": {
     "apps": [],
     "details": [
       {
-        "appIDs": ["4BGNC2AG74.com.sruper.capsule"],
+        "appIDs": [
+          "4BGNC2AG74.com.sruper.crcl",
+          "4BGNC2AG74.com.sruper.capsule"
+        ],
         "components": [
           { "/": "/i/*", "comment": "Invitation links" }
         ]

@@ -33,4 +33,4 @@ User-agent: Applebot-Extended
 Allow: /
 
 # Sitemap & AI Knowledge Base Endpoints
-Sitemap: https://capsule.ad/sitemap.xml
+Sitemap: https://sruper.com/sitemap.xml

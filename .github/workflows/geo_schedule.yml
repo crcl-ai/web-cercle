@@ -44,8 +44,8 @@ jobs:
 
       - name: Commit and Push Updates
         run: |
-          git config --global user.name "Capsule Autonomous GEO Agent"
-          git config --global user.email "geo-agent@capsule.ad"
+          git config --global user.name "Circle Autonomous GEO Agent"
+          git config --global user.email "geo-agent@sruper.com"
           git add .
           if git diff --staged --quiet; then
             echo "No changes to commit."

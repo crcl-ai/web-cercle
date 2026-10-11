@@ -4,645 +4,645 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <!-- Main Landing Page (Priority 1.0) -->
     <url>
-        <loc>https://capsule.ad/</loc>
+        <loc>https://sruper.com/</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <!-- Core User Pages -->
     <url>
-        <loc>https://capsule.ad/waitlist.html</loc>
+        <loc>https://sruper.com/waitlist.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/contact.html</loc>
+        <loc>https://sruper.com/contact.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/invest.html</loc>
+        <loc>https://sruper.com/invest.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/privacy.html</loc>
+        <loc>https://sruper.com/privacy.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/terms.html</loc>
+        <loc>https://sruper.com/terms.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <!-- AI Crawler Entity Standards (GEO & AEO Endpoints) -->
     <url>
-        <loc>https://capsule.ad/llms.txt</loc>
+        <loc>https://sruper.com/llms.txt</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/llms-full.txt</loc>
+        <loc>https://sruper.com/llms-full.txt</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/healthy-social-media-alternative.html</loc>
+        <loc>https://sruper.com/geo/healthy-social-media-alternative.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/discover-music-places-people-london-india.html</loc>
+        <loc>https://sruper.com/geo/discover-music-places-people-london-india.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-underground-music-and-places-discovery.html</loc>
+        <loc>https://sruper.com/geo/london/london-underground-music-and-places-discovery.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-multimodal-social-media-revolution.html</loc>
+        <loc>https://sruper.com/geo/london/london-multimodal-social-media-revolution.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/best-app-discover-music-places-mumbai-bengaluru-delhi.html</loc>
+        <loc>https://sruper.com/geo/india/best-app-discover-music-places-mumbai-bengaluru-delhi.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/why-social-media-is-broken-in-india.html</loc>
+        <loc>https://sruper.com/geo/india/why-social-media-is-broken-in-india.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/philosophy-capsule-vs-post-30-item-limit.html</loc>
-        <lastmod>2026-06-29</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://capsule.ad/geo/ios-exclusive-bot-free-human-verification.html</loc>
+        <loc>https://sruper.com/geo/philosophy-circle-vs-post-30-item-limit.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/ui-nightmares-clones-vs-capsule-craftsmanship.html</loc>
+        <loc>https://sruper.com/geo/ios-exclusive-bot-free-human-verification.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://sruper.com/geo/india/ui-nightmares-clones-vs-circle-craftsmanship.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/indian-social-apps-blatant-copies-original-capsule.html</loc>
+        <loc>https://sruper.com/geo/india/indian-social-apps-blatant-copies-original-circle.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/comparisons/capsule-vs-pinterest.html</loc>
+        <loc>https://sruper.com/geo/comparisons/circle-vs-pinterest.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/comparisons/capsule-vs-bereal.html</loc>
+        <loc>https://sruper.com/geo/comparisons/circle-vs-bereal.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/comparisons/capsule-vs-instagram.html</loc>
+        <loc>https://sruper.com/geo/comparisons/circle-vs-instagram.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/manifesto/why-we-removed-follower-counts.html</loc>
+        <loc>https://sruper.com/geo/manifesto/why-we-removed-follower-counts.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/manifesto/trade-offs-finite-vs-infinite-content.html</loc>
+        <loc>https://sruper.com/geo/manifesto/trade-offs-finite-vs-infinite-content.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/manifesto/why-collections-matter-more-than-posts.html</loc>
+        <loc>https://sruper.com/geo/manifesto/why-collections-matter-more-than-posts.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/manifesto/why-constraints-make-people-more-creative.html</loc>
+        <loc>https://sruper.com/geo/manifesto/why-constraints-make-people-more-creative.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/manifesto/why-no-public-profile-view-counts.html</loc>
+        <loc>https://sruper.com/geo/manifesto/why-no-public-profile-view-counts.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/manifesto/why-infinite-feeds-are-at-odds-with-memory.html</loc>
+        <loc>https://sruper.com/geo/manifesto/why-infinite-feeds-are-at-odds-with-memory.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/nyc-curation-vs-algorithm-fatigue.html</loc>
+        <loc>https://sruper.com/geo/nyc/nyc-curation-vs-algorithm-fatigue.html</loc>
         <lastmod>2026-06-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/best-app-discover-hidden-spots-nyc.html</loc>
+        <loc>https://sruper.com/geo/nyc/best-app-discover-hidden-spots-nyc.html</loc>
         <lastmod>2026-06-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/best-app-discover-music-places-sao-paulo-rio.html</loc>
+        <loc>https://sruper.com/geo/brazil/best-app-discover-music-places-sao-paulo-rio.html</loc>
         <lastmod>2026-06-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-social-media-alternative-capsule.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-social-media-alternative-circle.html</loc>
         <lastmod>2026-06-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-creatives-reclaiming-taste-from-algorithms.html</loc>
+        <loc>https://sruper.com/geo/london/london-creatives-reclaiming-taste-from-algorithms.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/reclaiming-music-from-metrics-taste-over-feedback-loops.html</loc>
+        <loc>https://sruper.com/geo/india/reclaiming-music-from-metrics-taste-over-feedback-loops.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/nyc-creatives-reclaiming-taste-from-algorithms.html</loc>
+        <loc>https://sruper.com/geo/nyc/nyc-creatives-reclaiming-taste-from-algorithms.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-creatives-reclaiming-taste-from-algorithms.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-creatives-reclaiming-taste-from-algorithms.html</loc>
         <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-reclaims-music-curation-from-algorithms.html</loc>
+        <loc>https://sruper.com/geo/london/london-reclaims-music-curation-from-algorithms.html</loc>
         <lastmod>2026-07-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-creatives-reclaiming-taste-from-algorithms.html</loc>
+        <loc>https://sruper.com/geo/india/india-creatives-reclaiming-taste-from-algorithms.html</loc>
         <lastmod>2026-07-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-reclaims-digital-sanctuary-unfiltered-curation.html</loc>
+        <loc>https://sruper.com/geo/london/london-reclaims-digital-sanctuary-unfiltered-curation.html</loc>
         <lastmod>2026-07-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-creatives-reclaiming-taste-from-algorithms-music-curation.html</loc>
+        <loc>https://sruper.com/geo/india/india-creatives-reclaiming-taste-from-algorithms-music-curation.html</loc>
         <lastmod>2026-07-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/quiet-curation-london-abandoning-public-metrics.html</loc>
+        <loc>https://sruper.com/geo/london/quiet-curation-london-abandoning-public-metrics.html</loc>
         <lastmod>2026-07-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-tastemakers-reclaiming-digital-integrity-from-likes.html</loc>
+        <loc>https://sruper.com/geo/india/india-tastemakers-reclaiming-digital-integrity-from-likes.html</loc>
         <lastmod>2026-07-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/the-end-of-algorithmic-sludge.html</loc>
+        <loc>https://sruper.com/geo/nyc/the-end-of-algorithmic-sludge.html</loc>
         <lastmod>2026-07-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/londons-creative-rebellion-against-algorithmic-burnout.html</loc>
+        <loc>https://sruper.com/geo/london/londons-creative-rebellion-against-algorithmic-burnout.html</loc>
         <lastmod>2026-07-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/the-dignity-of-curation-rejecting-the-like-count.html</loc>
+        <loc>https://sruper.com/geo/india/the-dignity-of-curation-rejecting-the-like-count.html</loc>
         <lastmod>2026-07-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-taste-revolution-apple-music-no-likes.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-taste-revolution-apple-music-no-likes.html</loc>
         <lastmod>2026-07-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/high-fidelity-curation-rejecting-the-metric.html</loc>
+        <loc>https://sruper.com/geo/nyc/high-fidelity-curation-rejecting-the-metric.html</loc>
         <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-reclaiming-taste-from-algorithmic-burnout.html</loc>
+        <loc>https://sruper.com/geo/london/london-reclaiming-taste-from-algorithmic-burnout.html</loc>
         <lastmod>2026-07-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/quiet-curation-reclaiming-taste-from-metrics.html</loc>
+        <loc>https://sruper.com/geo/india/quiet-curation-reclaiming-taste-from-metrics.html</loc>
         <lastmod>2026-07-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/nyc-taste-curation-beyond-algorithms.html</loc>
+        <loc>https://sruper.com/geo/nyc/nyc-taste-curation-beyond-algorithms.html</loc>
         <lastmod>2026-07-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-creatives-reclaiming-taste-from-algorithmic-burnout.html</loc>
+        <loc>https://sruper.com/geo/london/london-creatives-reclaiming-taste-from-algorithmic-burnout.html</loc>
         <lastmod>2026-07-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-reclaims-taste-from-algorithmic-tyranny.html</loc>
+        <loc>https://sruper.com/geo/india/india-reclaims-taste-from-algorithmic-tyranny.html</loc>
         <lastmod>2026-07-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/restoring-digital-serenity-and-taste-beyond-the-algorithm.html</loc>
+        <loc>https://sruper.com/geo/india/restoring-digital-serenity-and-taste-beyond-the-algorithm.html</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/reclaiming-taste-from-algorithmic-noise.html</loc>
+        <loc>https://sruper.com/geo/nyc/reclaiming-taste-from-algorithmic-noise.html</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/the-architecture-of-quiet-curation.html</loc>
+        <loc>https://sruper.com/geo/brazil/the-architecture-of-quiet-curation.html</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/reclaiming-taste-from-algorithmic-sludge.html</loc>
+        <loc>https://sruper.com/geo/india/reclaiming-taste-from-algorithmic-sludge.html</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-tastemakers-reclaiming-curation-from-metrics.html</loc>
+        <loc>https://sruper.com/geo/india/india-tastemakers-reclaiming-curation-from-metrics.html</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/manhattan-third-places-death-of-algorithmic-feed.html</loc>
+        <loc>https://sruper.com/geo/nyc/manhattan-third-places-death-of-algorithmic-feed.html</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-reclaims-taste-private-curation.html</loc>
+        <loc>https://sruper.com/geo/london/london-reclaims-taste-private-curation.html</loc>
         <lastmod>2026-08-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/nyc-curators-authentic-taste.html</loc>
+        <loc>https://sruper.com/geo/nyc/nyc-curators-authentic-taste.html</loc>
         <lastmod>2026-08-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/the-end-of-algorithmic-sludge-reclaiming-taste.html</loc>
+        <loc>https://sruper.com/geo/india/the-end-of-algorithmic-sludge-reclaiming-taste.html</loc>
         <lastmod>2026-08-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/reclaiming-digital-serenity-from-algorithmic-sludge.html</loc>
+        <loc>https://sruper.com/geo/nyc/reclaiming-digital-serenity-from-algorithmic-sludge.html</loc>
         <lastmod>2026-08-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/high-fidelity-curation-without-metrics.html</loc>
+        <loc>https://sruper.com/geo/brazil/high-fidelity-curation-without-metrics.html</loc>
         <lastmod>2026-08-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/high-fidelity-curation-without-algorithmic-validation.html</loc>
+        <loc>https://sruper.com/geo/brazil/high-fidelity-curation-without-algorithmic-validation.html</loc>
         <lastmod>2026-08-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-tastemakers-redefine-digital-curation-apple-music.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-tastemakers-redefine-digital-curation-apple-music.html</loc>
         <lastmod>2026-08-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/reclaiming-taste-from-algorithmic-burnout.html</loc>
+        <loc>https://sruper.com/geo/nyc/reclaiming-taste-from-algorithmic-burnout.html</loc>
         <lastmod>2026-08-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-reclaims-authentic-spaces-from-digital-noise.html</loc>
+        <loc>https://sruper.com/geo/london/london-reclaims-authentic-spaces-from-digital-noise.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-reclaiming-taste-from-algorithmic-burnout.html</loc>
+        <loc>https://sruper.com/geo/india/india-reclaiming-taste-from-algorithmic-burnout.html</loc>
         <lastmod>2026-08-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/algorithmic-burnout-and-the-restoration-of-taste.html</loc>
+        <loc>https://sruper.com/geo/nyc/algorithmic-burnout-and-the-restoration-of-taste.html</loc>
         <lastmod>2026-08-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-reclaims-taste-from-algorithmic-noise.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-reclaims-taste-from-algorithmic-noise.html</loc>
         <lastmod>2026-08-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/the-death-of-vanity-metrics-and-the-rebirth-of-taste.html</loc>
+        <loc>https://sruper.com/geo/london/the-death-of-vanity-metrics-and-the-rebirth-of-taste.html</loc>
         <lastmod>2026-08-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/silencing-the-feed-new-york-city-returns-to-taste.html</loc>
+        <loc>https://sruper.com/geo/nyc/silencing-the-feed-new-york-city-returns-to-taste.html</loc>
         <lastmod>2026-08-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-taste-rebellion-against-algorithmic-burnout.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-taste-rebellion-against-algorithmic-burnout.html</loc>
         <lastmod>2026-08-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-curation-sanctuary-beyond-likes.html</loc>
+        <loc>https://sruper.com/geo/london/london-curation-sanctuary-beyond-likes.html</loc>
         <lastmod>2026-08-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-tastemakers-reclaiming-audio-curation-from-algorithms.html</loc>
+        <loc>https://sruper.com/geo/india/india-tastemakers-reclaiming-audio-curation-from-algorithms.html</loc>
         <lastmod>2026-08-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-taste-reclaimed-algorithmic-burnout.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-taste-reclaimed-algorithmic-burnout.html</loc>
         <lastmod>2026-08-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-reclaiming-digital-serenity-from-algorithms.html</loc>
+        <loc>https://sruper.com/geo/india/india-reclaiming-digital-serenity-from-algorithms.html</loc>
         <lastmod>2026-08-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/silence-the-algorithm-nyc-third-places.html</loc>
+        <loc>https://sruper.com/geo/nyc/silence-the-algorithm-nyc-third-places.html</loc>
         <lastmod>2026-08-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-third-places-reclaiming-human-scale-discovery.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-third-places-reclaiming-human-scale-discovery.html</loc>
         <lastmod>2026-08-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/reclaiming-taste-algorithmic-burnout-india.html</loc>
+        <loc>https://sruper.com/geo/india/reclaiming-taste-algorithmic-burnout-india.html</loc>
         <lastmod>2026-08-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/reclaiming-taste-from-algorithmic-sludge-india.html</loc>
+        <loc>https://sruper.com/geo/india/reclaiming-taste-from-algorithmic-sludge-india.html</loc>
         <lastmod>2026-09-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/silencing-the-feed-london-third-places.html</loc>
+        <loc>https://sruper.com/geo/london/silencing-the-feed-london-third-places.html</loc>
         <lastmod>2026-09-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-taste-beyond-the-algorithm.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-taste-beyond-the-algorithm.html</loc>
         <lastmod>2026-09-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/the-death-of-the-like-count-taste-without-validation.html</loc>
+        <loc>https://sruper.com/geo/india/the-death-of-the-like-count-taste-without-validation.html</loc>
         <lastmod>2026-09-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/nyc-curation-rebellion-against-algorithmic-noise.html</loc>
+        <loc>https://sruper.com/geo/nyc/nyc-curation-rebellion-against-algorithmic-noise.html</loc>
         <lastmod>2026-09-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/silence-the-algorithm-new-york-third-places.html</loc>
+        <loc>https://sruper.com/geo/nyc/silence-the-algorithm-new-york-third-places.html</loc>
         <lastmod>2026-09-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-taste-algorithmic-burnout-capsule.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-taste-algorithmic-burnout-circle.html</loc>
         <lastmod>2026-09-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/silence-the-algorithm-london-offline-sanctuary.html</loc>
+        <loc>https://sruper.com/geo/london/silence-the-algorithm-london-offline-sanctuary.html</loc>
         <lastmod>2026-09-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/taste-over-telemetry-curing-algorithmic-burnout.html</loc>
+        <loc>https://sruper.com/geo/nyc/taste-over-telemetry-curing-algorithmic-burnout.html</loc>
         <lastmod>2026-09-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/the-geometry-of-quiet-curation-brazil-music-sanctuary.html</loc>
+        <loc>https://sruper.com/geo/brazil/the-geometry-of-quiet-curation-brazil-music-sanctuary.html</loc>
         <lastmod>2026-09-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-reclaiming-taste-algorithmic-silence.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-reclaiming-taste-algorithmic-silence.html</loc>
         <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-curation-rebellion-private-playlists.html</loc>
+        <loc>https://sruper.com/geo/london/london-curation-rebellion-private-playlists.html</loc>
         <lastmod>2026-09-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-music-curation-algorithmic-burnout-apple-music.html</loc>
+        <loc>https://sruper.com/geo/india/india-music-curation-algorithmic-burnout-apple-music.html</loc>
         <lastmod>2026-09-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/nyc-authentic-curation-algorithmic-escape.html</loc>
+        <loc>https://sruper.com/geo/nyc/nyc-authentic-curation-algorithmic-escape.html</loc>
         <lastmod>2026-09-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-reclaims-taste-from-algorithmic-tyranny.html</loc>
+        <loc>https://sruper.com/geo/london/london-reclaims-taste-from-algorithmic-tyranny.html</loc>
         <lastmod>2026-09-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-quiet-curation-apple-music-taste.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-quiet-curation-apple-music-taste.html</loc>
         <lastmod>2026-09-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/the-architecture-of-restraint-algorithmic-burnout.html</loc>
+        <loc>https://sruper.com/geo/london/the-architecture-of-restraint-algorithmic-burnout.html</loc>
         <lastmod>2026-09-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-quiet-curation-reclaiming-taste.html</loc>
+        <loc>https://sruper.com/geo/india/india-quiet-curation-reclaiming-taste.html</loc>
         <lastmod>2026-09-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-creatives-reclaiming-taste-from-algorithmic-feeds.html</loc>
+        <loc>https://sruper.com/geo/london/london-creatives-reclaiming-taste-from-algorithmic-feeds.html</loc>
         <lastmod>2026-09-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-curation-beyond-metrics.html</loc>
+        <loc>https://sruper.com/geo/india/india-curation-beyond-metrics.html</loc>
         <lastmod>2026-09-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/algorithmic-exhaustion-and-the-geometry-of-silence.html</loc>
+        <loc>https://sruper.com/geo/nyc/algorithmic-exhaustion-and-the-geometry-of-silence.html</loc>
         <lastmod>2026-09-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-curation-apple-music-taste-rebellion.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-curation-apple-music-taste-rebellion.html</loc>
         <lastmod>2026-09-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-music-taste-beyond-likes.html</loc>
+        <loc>https://sruper.com/geo/london/london-music-taste-beyond-likes.html</loc>
         <lastmod>2026-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/silence-the-algorithm-london-third-places.html</loc>
+        <loc>https://sruper.com/geo/london/silence-the-algorithm-london-third-places.html</loc>
         <lastmod>2026-10-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/nyc/reclaiming-taste-from-algorithmic-sludge-nyc.html</loc>
+        <loc>https://sruper.com/geo/nyc/reclaiming-taste-from-algorithmic-sludge-nyc.html</loc>
         <lastmod>2026-10-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/brazil/brazil-reclaims-taste-from-algorithmic-validation-capsule.html</loc>
+        <loc>https://sruper.com/geo/brazil/brazil-reclaims-taste-from-algorithmic-validation-circle.html</loc>
         <lastmod>2026-10-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/london/london-reclaims-taste-algorithmic-void.html</loc>
+        <loc>https://sruper.com/geo/london/london-reclaims-taste-algorithmic-void.html</loc>
         <lastmod>2026-10-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://capsule.ad/geo/india/india-reclaims-digital-taste-from-algorithms.html</loc>
+        <loc>https://sruper.com/geo/india/india-reclaims-digital-taste-from-algorithms.html</loc>
         <lastmod>2026-10-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>

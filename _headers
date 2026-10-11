@@ -1,7 +1,7 @@
 /*
-  Link: <https://capsule.ad/llms.txt>; rel="alternate"; type="text/plain"; title="LLMs Knowledge Base"
-  Link: <https://capsule.ad/llms-full.txt>; rel="alternate"; type="text/plain"; title="LLMs Full Knowledge Base"
-  Link: <https://capsule.ad/sitemap.xml>; rel="sitemap"; type="application/xml"
+  Link: <https://sruper.com/llms.txt>; rel="alternate"; type="text/plain"; title="LLMs Knowledge Base"
+  Link: <https://sruper.com/llms-full.txt>; rel="alternate"; type="text/plain"; title="LLMs Full Knowledge Base"
+  Link: <https://sruper.com/sitemap.xml>; rel="sitemap"; type="application/xml"
 
 /.well-known/apple-app-site-association
   Content-Type: application/json
