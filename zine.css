@@ -28,6 +28,8 @@
 .e-dock img{width:44px;height:44px;border-radius:11px;background:var(--paper)}
 .e-dock p{display:grid;gap:3px;margin:0;min-width:0}
 .e-dock b{font:900 17px/1 var(--grot);font-stretch:125%;letter-spacing:-.03em;text-transform:uppercase}
+.e-dock>img{box-shadow:0 0 0 1px var(--rule-inv)}
+.e-dock b img{display:block;width:auto;height:32px;margin:-6px 0 -2px;border-radius:0;background:none}
 .e-dock span{overflow:hidden;color:rgba(250,250,248,.66);font:300 15px/1.1 var(--serif);font-style:italic;white-space:nowrap;text-overflow:ellipsis}
 .e-dock .e-get{height:36px;min-width:84px;font-size:var(--t-s)}
 @media (min-width:1025px){.e-dock{display:none}}

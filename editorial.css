@@ -62,6 +62,8 @@ picture{display:block}
 .e-head{position:relative;z-index:20;display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;padding:20px var(--g)}
 /* punk wordmark: extra-wide black grotesk, sized to fill the space beside GET */
 .e-brand{justify-self:start;color:var(--ink);font:900 min(96px,calc((100vw - 2 * var(--g) - 92px) / 4.56))/.8 var(--grot);font-stretch:125%;letter-spacing:-.05em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+/* the wordmark: its marker loop hangs into the header's padding, so the header keeps its height */
+.e-brand img{--lh:min(84px,calc((100vw - 2 * var(--g) - 92px) * .32));display:block;width:auto;height:var(--lh);margin:calc(var(--lh) * -.226) 0}
 .e-head>nav{display:none}
 .e-get{position:relative;justify-self:end;display:grid;place-items:center;height:30px;min-width:74px;padding:0 16px;border-radius:999px;background:var(--pink);color:var(--ink);font:700 var(--t-s)/1 var(--sans);text-decoration:none;text-transform:uppercase;-webkit-tap-highlight-color:transparent;transition:background .15s,opacity .15s}
 .e-get:before{content:"";position:absolute;inset:-7px -4px}
@@ -242,6 +244,7 @@ picture{display:block}
 
 /* ---------- footer ---------- */
 .e-foot{padding:56px var(--g) 36px;background:var(--ink);color:var(--paper);overflow:hidden}
+.e-foot-word img{display:block;width:100%;height:auto}
 .e-foot-word{display:block;margin:0 0 34px;font:900 calc((100vw - 2 * var(--g)) / 4.6)/.78 var(--grot);font-stretch:125%;letter-spacing:-.05em;text-transform:uppercase;white-space:nowrap}
 .e-foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding-top:22px;border-top:1px solid var(--rule-inv)}
 .e-foot-nav{display:flex;gap:4px 22px;flex-wrap:wrap}
@@ -263,6 +266,7 @@ picture{display:block}
   .e-issue{display:flex;justify-content:space-between;gap:24px;padding:12px var(--g);border-bottom:1px solid var(--rule)}
   .e-head{grid-template-columns:1fr auto 1fr;padding:24px var(--g);border-bottom:2px solid var(--ink)}
   .e-brand{font-size:clamp(56px,6.2vw,96px)}
+  .e-brand img{--lh:clamp(84px,8vw,116px);margin:calc(var(--lh) * -.19) 0}
   .e-head>nav{display:block}
   .e-nav{display:flex;gap:30px;margin:0;padding:0;list-style:none}
   .e-nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);text-decoration:none}
