@@ -229,7 +229,49 @@
     new IntersectionObserver(([e]) => { atClose = e.isIntersecting; set(); }, { rootMargin: '0px 0px -20% 0px' }).observe(close);
   }
 
-  /* ---------- 3. save: tap a polaroid to stamp it ---------- */
+  /* ---------- 3. save: tap a polaroid to stamp it; the receipt rewrites itself ----------
+     Every combination of the four reads as its own little story, so one more
+     (or one fewer) thing changes what the whole collection is about. */
+  const RECEIPT = {
+    'link':                ['The piece you keep meaning to finish.', 'Sent at 2am. Reading it properly on Sunday.'],
+    'place':               ['The café with the orange chairs.', 'Sit outside, even in December. Especially in December.'],
+    'song':                ['MM..FOOD, front to back.', 'No skipping. It only makes sense as a whole.'],
+    'book':                ['The Dieter Rams book.', 'Less, but better. Borrowed it twice, finally bought my own.'],
+    'link+place':          ['Read this, then meet me here', 'Bring your take on the article. First round’s on me.'],
+    'link+song':           ['Headphones on, tabs open', 'The essay reads better with this playing. Trust me.'],
+    'link+book':           ['Before I start my own thing', 'The piece that made me want to. The book that shows me how.'],
+    'place+song':          ['Sunday, nowhere to be', 'Window seat, one coffee, the whole album. No rush.'],
+    'place+book':          ['Lunch for one, on purpose', 'Order slowly. A chapter between courses.'],
+    'song+book':           ['Make something this weekend', 'Rams on the desk, DOOM on repeat. Less, but louder.'],
+    'link+place+song':     ['A Saturday, in order', 'Read it on the bus. Find the café. Put the record on.'],
+    'link+place+book':     ['A quiet day of good ideas', 'Coffee, a chapter, the essay everyone’s quoting. No soundtrack needed.'],
+    'link+song+book':      ['Staying in, thinking big', 'Everything I need is already on this desk.'],
+    'place+song+book':     ['A slow Sunday, done properly', 'The café first. The book after. The album all the way home.'],
+    'link+place+song+book':['Me, lately', 'If you want to know who I am right now, start here.']
+  };
+  const KINDS = ['link', 'place', 'song', 'book'];
+  const wrap = document.querySelector('.e-save .e-receipt-wrap');
+  const receipt = wrap && wrap.querySelector('.e-receipt');
+  const saved = new Set();
+  const render = () => {
+    if (!receipt) return;
+    const label = receipt.querySelector('.e-label'), title = receipt.querySelector('strong'), note = receipt.querySelector('p:not(.e-label)');
+    const key = KINDS.filter(k => saved.has(k)).join('+');
+    if (!key) {
+      label.textContent = 'Nothing saved yet';
+      title.textContent = 'Tap what you’d keep.';
+      note.textContent = '“It lands here, with a line on why it mattered.”';
+    } else {
+      const [t, n] = RECEIPT[key];
+      label.textContent = saved.size === 1 ? '✓ Saved · a ' + key : '✓ New collection · ' + saved.size + ' things';
+      title.textContent = t;
+      note.textContent = '“' + n + '”';
+    }
+    wrap.classList.toggle('is-empty', !key);
+    wrap.classList.toggle('is-set', saved.size > 1);
+    if (!reduce) { wrap.classList.remove('is-print'); void wrap.offsetWidth; wrap.classList.add('is-print'); }
+  };
+  if (receipt) receipt.setAttribute('aria-live', 'polite');
   document.querySelectorAll('.e-collage .e-snap').forEach(snap => {
     const what = (snap.querySelector('figcaption') || {}).textContent || 'this';
     snap.setAttribute('role', 'button');
@@ -244,8 +286,9 @@
     const toggle = () => {
       const on = snap.classList.toggle('is-saved');
       snap.setAttribute('aria-pressed', String(on));
+      if (snap.dataset.kind) { on ? saved.add(snap.dataset.kind) : saved.delete(snap.dataset.kind); render(); }
       if (on && !reduce) { snap.classList.remove('is-thunk'); void snap.offsetWidth; snap.classList.add('is-thunk'); }
-      if (on && navigator.vibrate) navigator.vibrate(12);
+      if (on && navigator.vibrate && navigator.userActivation && navigator.userActivation.isActive) navigator.vibrate(12);
     };
     snap.addEventListener('click', toggle);
     snap.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
@@ -266,7 +309,7 @@
       wall.appendChild(s);
       const all = wall.querySelectorAll('.e-sticky');
       if (all.length > 14) all[0].remove();
-      if (navigator.vibrate) navigator.vibrate(10);
+      if (navigator.vibrate && navigator.userActivation && navigator.userActivation.isActive) navigator.vibrate(10);
     });
   }
 
