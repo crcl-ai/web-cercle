@@ -6,8 +6,8 @@
 .e-cover-photo .e-xerox{transform:scale(1.06);transition:transform 2.4s var(--ease)}
 .e-cover.in .e-cover-photo .e-xerox{transform:none}
 .e-close>.e-xerox{position:absolute;z-index:0}
-.e-close{touch-action:pan-y}
-.e-cover-photo{touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.e-close{touch-action:pan-y pinch-zoom}
+.e-cover-photo{touch-action:pan-y pinch-zoom;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
 @media (hover:hover) and (pointer:fine){.e-cover-photo.is-xerox{cursor:crosshair}}
 @media (prefers-reduced-motion:reduce){.e-xerox{transform:none;transition:none}}
 .e-scrawl--colour{position:absolute;z-index:5;right:var(--g);top:22px;display:none;align-items:flex-end;gap:6px;color:var(--ink);font-size:var(--t-m);transform:rotate(6deg);text-shadow:0 0 6px var(--paper),0 0 2px var(--paper)}
