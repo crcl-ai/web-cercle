@@ -102,6 +102,9 @@
 .e-mark--get{display:inline-block}
 .e-mark--get>svg{left:-14%;top:-34%;width:128%;height:168%}
 .e-mark--get path{stroke-width:5}
+/* no pill: the marker loop is the button's border */
+.e-mark--get .e-get,.e-mark--get .e-get:hover{background:none;color:var(--paper)}
+@media (hover:hover){.e-mark--get .e-get:hover{color:var(--pink)}}
 
 /* ---------- save: tap a polaroid, it gets stamped ---------- */
 .e-save-art{position:relative}
