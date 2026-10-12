@@ -214,3 +214,15 @@ a,button,[role=button]{-webkit-tap-highlight-color:transparent}
 @media (max-width:1024px){
   .e-demo .step{grid-template-columns:auto minmax(0,1fr);gap:8px;padding-right:34px}
 }
+
+/* scrolling on a phone: nothing on the page may hold on to a swipe.
+   The Local panel was its own scroll box set to keep every swipe, so on iPhone
+   the page froze under a finger on the white card. */
+@media (max-width:1024px){
+  .e-local .local-experience{overflow:visible;max-height:none}
+  /* the detail card still rises from the bottom, clear of the GET bar */
+  .e-local .discovery-detail{bottom:calc(88px + env(safe-area-inset-bottom))}
+}
+@media (max-width:1024px),(hover:none){
+  .local-experience,.activity-scroll{overscroll-behavior:auto}
+}
