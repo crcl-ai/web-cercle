@@ -253,3 +253,13 @@ a,button,[role=button]{-webkit-tap-highlight-color:transparent}
   .e-save .e-receipt strong{margin:10px 0 8px}
   .e-stamp{font-size:var(--t-m);top:-16px;right:-2px;padding:5px 11px 3px;border-width:3px}
 }
+
+/* collections on a phone: headline, then straight to the deck; the pull quote follows it */
+@media (max-width:1024px){
+  .e-coll .e-spread-head{display:contents}
+  .e-coll .e-spread-head>*{order:-1}
+  .e-coll .e-spread-head>.e-kicker{margin-bottom:22px}
+  .e-coll .e-spread-head>.e-h{margin-bottom:22px}
+  .e-coll .e-spread-head>.e-quote{order:1;margin-top:64px}
+  .e-coll .e-coll-art{margin-top:40px}
+}
