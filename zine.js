@@ -268,7 +268,6 @@
       note.textContent = '“' + n + '”';
     }
     wrap.classList.toggle('is-empty', !key);
-    wrap.classList.toggle('is-set', saved.size > 1);
     if (!reduce) { wrap.classList.remove('is-print'); void wrap.offsetWidth; wrap.classList.add('is-print'); }
   };
   if (receipt) receipt.setAttribute('aria-live', 'polite');

@@ -204,12 +204,15 @@ a,button,[role=button]{-webkit-tap-highlight-color:transparent}
 .e-share[hidden]{display:none}
 @media (min-width:1025px){.e-share{display:none}}
 
-/* demo on a phone: tabs, then the phone straight away, then what you're looking at */
+/* demo on a phone: tabs, then what this screen is and what to tap, then the phone.
+   Kept tight so the cue sits right above the screen it's talking about. */
 @media (max-width:1024px){
-  .e-demo .demo-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .e-demo .demo-grid{grid-template-columns:minmax(0,1fr);gap:22px}
   .e-demo .steps{grid-column:1;grid-row:1}
-  .e-demo .demo-phone{grid-column:1;grid-row:2}
-  .e-demo .explainer{grid-column:1;grid-row:3;padding:6px 0 0}
+  .e-demo .explainer{grid-column:1;grid-row:2;padding:4px 0 6px}
+  .e-demo .demo-phone{grid-column:1;grid-row:3}
+  .e-demo .explainer p{margin-top:10px}
+  .e-demo .hint{margin-top:16px}
 }
 @media (max-width:1024px){
   .e-demo .step{grid-template-columns:auto minmax(0,1fr);gap:8px;padding-right:34px}
@@ -242,7 +245,6 @@ a,button,[role=button]{-webkit-tap-highlight-color:transparent}
 @keyframes e-restamp{from{opacity:0;transform:rotate(-12deg) scale(1.7)}}
 .e-receipt-wrap .e-stamp{transition:opacity .2s}
 .e-receipt-wrap.is-empty .e-stamp{opacity:0;animation:none}
-.e-receipt-wrap.is-set .e-receipt strong{font-family:var(--serif);font-style:italic;font-weight:300;font-size:min(var(--t-l),34px);line-height:1;letter-spacing:-.02em}
 @media (prefers-reduced-motion:reduce){.e-receipt-wrap.is-print .e-receipt>*,.e-receipt-wrap.is-print .e-stamp{animation:none}}
 
 /* on a phone the four polaroids and the receipt fit on one screen, so every tap is seen */
