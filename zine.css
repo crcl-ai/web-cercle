@@ -154,3 +154,63 @@
 
 /* ---------- ticker: yellow tape, so the yellow arrives early ---------- */
 .e-ticker{background:var(--yellow)}
+
+/* ======================================================================
+   iPhone pass — everything below 1025px is laid out for a thumb, not a
+   cursor, whatever device is looking at it.
+   ====================================================================== */
+:root{--g:max(clamp(20px,4vw,64px),env(safe-area-inset-left),env(safe-area-inset-right))}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+a,button,[role=button]{-webkit-tap-highlight-color:transparent}
+
+/* collections: a deck of polaroids in full colour — flick or tap the top one to the back */
+.e-scrawl--flick{display:none}
+@media (max-width:1024px){
+  .e-fan{display:grid;place-items:center;height:auto;margin-top:64px;padding:4px 0 26px;touch-action:pan-y pinch-zoom;-webkit-user-select:none;user-select:none}
+  .e-fan .e-snap,.e-fan .e-snap:nth-child(n){grid-area:1/1;position:relative;left:auto;right:auto;top:auto;width:min(74%,380px);cursor:grab;transition:transform .45s var(--ease),opacity .3s}
+  .e-fan .e-snap img{filter:none;-webkit-user-drag:none;-webkit-touch-callout:none}
+  .e-fan .e-snap figcaption{font-size:var(--t-m)}
+  /* without JavaScript the middle polaroid (the one with the pin) sits on top */
+  .e-fan .e-snap:nth-child(2):not([data-pos]),.e-fan .e-snap[data-pos="0"]{z-index:3;transform:translateX(var(--dx,0px)) rotate(calc(-2deg + var(--tilt,0deg)))}
+  .e-fan .e-snap:nth-child(3):not([data-pos]),.e-fan .e-snap[data-pos="1"]{z-index:2;transform:translate(9%,2%) rotate(6deg)}
+  .e-fan .e-snap:nth-child(1):not([data-pos]),.e-fan .e-snap[data-pos="2"]{z-index:1;transform:translate(-9%,4%) rotate(-8deg)}
+  .e-fan .e-snap.is-drag{transition:none;cursor:grabbing}
+  .e-fan .e-snap.is-out{opacity:0;transform:translateX(calc(var(--out,1) * 115%)) rotate(calc(var(--out,1) * 16deg))!important}
+  .e-fan .e-snap:focus-visible{outline:2px solid var(--pink);outline-offset:4px}
+  .e-coll-art .e-burst{top:12px}
+  .e-scrawl--flick{display:inline-flex;align-items:center;gap:8px;position:absolute;z-index:8;left:0;top:6px;transform:rotate(-5deg)}
+  .e-scrawl--flick .e-arrowmark{width:44px}
+}
+@media (prefers-reduced-motion:reduce){.e-fan .e-snap{transition:none}}
+
+/* demo steps: the row scrolls sideways, so its far edge fades while there's more */
+@media (max-width:1024px){
+  .e-demo .steps{-webkit-mask:linear-gradient(90deg,#000 calc(100% - 56px),transparent);mask:linear-gradient(90deg,#000 calc(100% - 56px),transparent);scroll-snap-type:x proximity}
+  .e-demo .steps.at-end{-webkit-mask:none;mask:none}
+  .e-demo .step{scroll-snap-align:start;scroll-margin-left:var(--g)}
+}
+
+/* taps answer back */
+@media (max-width:1024px){
+  .e-get:active{opacity:1;transform:scale(.96)}
+  .e-get{transition:background .15s,transform .12s}
+  .e-rules .e-toc a:active .e-toc-t{color:var(--pink)}
+  .e-link:active{color:var(--pink)}
+  .e-collage .e-snap:active{transform:rotate(0) scale(.98)}
+}
+
+/* share: a plain link-style button, only shown where the share sheet exists */
+.e-share{padding:0;border:0;border-radius:0;background:none;cursor:pointer}
+.e-share[hidden]{display:none}
+@media (min-width:1025px){.e-share{display:none}}
+
+/* demo on a phone: tabs, then the phone straight away, then what you're looking at */
+@media (max-width:1024px){
+  .e-demo .demo-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .e-demo .steps{grid-column:1;grid-row:1}
+  .e-demo .demo-phone{grid-column:1;grid-row:2}
+  .e-demo .explainer{grid-column:1;grid-row:3;padding:6px 0 0}
+}
+@media (max-width:1024px){
+  .e-demo .step{grid-template-columns:auto minmax(0,1fr);gap:8px;padding-right:34px}
+}

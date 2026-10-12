@@ -268,4 +268,87 @@
       if (navigator.vibrate) navigator.vibrate(10);
     });
   }
+
+  /* ---------- 5. collections on a phone: a deck you flick through ---------- */
+  const fan = document.querySelector('.e-fan');
+  const deck = matchMedia('(max-width: 1024px)');
+  if (fan) {
+    const cards = [...fan.querySelectorAll('.e-snap')];
+    let order = [cards[1], cards[2], cards[0]];   // the pinned polaroid starts on top
+    const place = () => order.forEach((card, i) => {
+      card.dataset.pos = i;
+      if (deck.matches) {
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', 'Next photo: ' + (card.querySelector('figcaption') || {}).textContent);
+        card.tabIndex = i === 0 ? 0 : -1;
+      } else {
+        card.removeAttribute('role'); card.removeAttribute('aria-label'); card.removeAttribute('tabindex');
+      }
+    });
+    const next = dir => {
+      const top = order[0];
+      top.style.setProperty('--out', dir);
+      top.classList.add('is-out');
+      setTimeout(() => {
+        top.classList.remove('is-out');
+        top.style.setProperty('--dx', '0px'); top.style.setProperty('--tilt', '0deg');
+        order.push(order.shift()); place();
+        if (document.activeElement === top) order[0].focus();
+      }, reduce ? 0 : 240);
+    };
+    let drag = null;
+    fan.addEventListener('pointerdown', e => {
+      if (!deck.matches || !order[0].contains(e.target)) return;
+      drag = { x: e.clientX, id: e.pointerId, dx: 0, moved: false };
+      order[0].classList.add('is-drag');
+      try { fan.setPointerCapture(e.pointerId); } catch (_) {}
+    });
+    fan.addEventListener('dragstart', e => e.preventDefault());
+    fan.addEventListener('pointermove', e => {
+      if (!drag || e.pointerId !== drag.id) return;
+      drag.dx = e.clientX - drag.x;
+      if (Math.abs(drag.dx) > 6) drag.moved = true;
+      order[0].style.setProperty('--dx', drag.dx + 'px');
+      order[0].style.setProperty('--tilt', drag.dx / 18 + 'deg');
+    });
+    const release = cancelled => {
+      if (!drag) return;
+      const { dx, moved } = drag; drag = null;
+      order[0].classList.remove('is-drag');
+      if (!cancelled && (!moved || Math.abs(dx) > 60)) next(dx < 0 ? -1 : 1);
+      else { order[0].style.setProperty('--dx', '0px'); order[0].style.setProperty('--tilt', '0deg'); }
+    };
+    fan.addEventListener('pointerup', () => release(false));
+    fan.addEventListener('pointercancel', () => release(true));
+    fan.addEventListener('keydown', e => {
+      if (deck.matches && (e.key === 'Enter' || e.key === ' ') && e.target === order[0]) { e.preventDefault(); next(1); }
+    });
+    place();
+    if (deck.addEventListener) deck.addEventListener('change', place);
+  }
+
+  /* ---------- 6. demo steps on a phone: keep the active step in view ---------- */
+  const steps = document.querySelector('.e-demo .steps');
+  if (steps && 'MutationObserver' in window) {
+    new MutationObserver(() => {
+      const on = steps.querySelector('.step.active');
+      if (!on || steps.scrollWidth <= steps.clientWidth) return;
+      const left = steps.scrollLeft + on.getBoundingClientRect().left - steps.getBoundingClientRect().left - 20;
+      steps.scrollTo({ left, behavior: reduce ? 'auto' : 'smooth' });
+    }).observe(steps, { subtree: true, attributes: true, attributeFilter: ['class'] });
+    // fade the edge that still has more steps behind it
+    const edge = () => steps.classList.toggle('at-end', steps.scrollLeft + steps.clientWidth >= steps.scrollWidth - 4);
+    steps.addEventListener('scroll', edge, { passive: true });
+    edge();
+  }
+
+  /* ---------- 7. pass it on: the phone's own share sheet ---------- */
+  const share = document.querySelector('.e-share');
+  if (share && navigator.share) {
+    share.hidden = false;
+    share.addEventListener('click', () => {
+      const url = (document.querySelector('link[rel=canonical]') || {}).href || location.href;
+      navigator.share({ title: 'Circle', text: 'Circle — a home for your taste. Save what shapes you, find what’s next.', url }).catch(() => {});
+    });
+  }
 })();

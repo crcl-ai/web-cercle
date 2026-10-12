@@ -25,23 +25,16 @@
     });
   }
 
-  // Touch screens have no hover, so the photocopied polaroids come back to
-  // colour while they cross the middle of the screen instead.
-  if (matchMedia('(hover: none)').matches && 'IntersectionObserver' in window) {
-    const live = new IntersectionObserver(entries => {
-      entries.forEach(entry => entry.target.classList.toggle('e-live', entry.isIntersecting));
-    }, { rootMargin: '-38% 0px -38% 0px' });
-    document.querySelectorAll('.e-fan .e-snap').forEach(el => live.observe(el));
-  }
-
-  // Contents: a photo follows the pointer over each entry (fine pointers only).
+  // Contents: a photo follows the pointer over each entry (desktop with a mouse only).
   const peek = document.querySelector('.e-peek');
   if (peek && matchMedia('(hover: hover) and (pointer: fine)').matches) {
     const img = peek.querySelector('img');
+    const wide = matchMedia('(min-width: 1025px)');
     let x = 0, y = 0, raf = 0;
     const move = () => { peek.style.left = x + 'px'; peek.style.top = y + 'px'; raf = 0; };
     document.querySelectorAll('.e-toc a').forEach(link => {
       link.addEventListener('pointerenter', () => {
+        if (!wide.matches) return;
         img.src = link.dataset.peek;
         peek.classList.add('on');
       });
