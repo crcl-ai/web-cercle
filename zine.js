@@ -394,4 +394,94 @@
       navigator.share({ title: 'Circle', text: 'Circle — a home for your taste. Save what shapes you, find what’s next.', url }).catch(() => {});
     });
   }
+
+  /* ---------- 8. the demo on a phone: swipe the screen like a carousel ----------
+     The phone stays taped down; only the screen slides under the finger. A swipe
+     moves to the next or previous step (same as tapping the tabs). Rows that
+     scroll sideways inside the app keep their own swipe, vertical swipes still
+     scroll the page, and taps inside the app still work. */
+  const phone = document.querySelector('.e-demo .demo-phone');
+  const screen = phone && phone.querySelector('.screen');
+  const stepBtns = [...document.querySelectorAll('.e-demo .step')];
+  const narrow = matchMedia('(max-width: 1024px)');
+  if (phone && screen && stepBtns.length) {
+    // dots under the phone, so it reads as something you can swipe
+    const dots = document.createElement('div');
+    dots.className = 'e-demo-dots';
+    dots.setAttribute('aria-hidden', 'true');
+    dots.innerHTML = '<span class="e-demo-dots-row">' + stepBtns.map(() => '<i></i>').join('') + '</span><span class="e-demo-dots-label">Swipe the screen</span>';
+    phone.appendChild(dots);
+    const index = () => Math.max(0, stepBtns.findIndex(b => b.classList.contains('active')));
+    const syncDots = () => {
+      [...dots.querySelectorAll('i')].forEach((d, i) => d.classList.toggle('on', i === index()));
+      // screens off stage get their own fade-in back for the next time they're opened
+      screen.querySelectorAll('.phone-view:not(.active)').forEach(v => { v.style.animation = ''; });
+    };
+    syncDots();
+    new MutationObserver(syncDots).observe(document.querySelector('.e-demo .steps'), { subtree: true, attributes: true, attributeFilter: ['class'] });
+
+    const active = () => screen.querySelector('.phone-view.active');
+    // does the touch start inside something that scrolls sideways on its own?
+    const sideScroller = el => {
+      for (let n = el; n && n !== screen; n = n.parentElement) {
+        const cs = getComputedStyle(n);
+        if (/(auto|scroll)/.test(cs.overflowX) && n.scrollWidth > n.clientWidth + 2) return true;
+      }
+      return false;
+    };
+    let g = null, busy = false, swallowClick = false;
+    phone.addEventListener('pointerdown', e => {
+      if (!narrow.matches || busy || !e.isPrimary || sideScroller(e.target) || !screen.contains(e.target)) return;
+      g = { x: e.clientX, y: e.clientY, dx: 0, locked: false, view: active() };
+    });
+    phone.addEventListener('pointermove', e => {
+      if (!g || !g.view) return;
+      const dx = e.clientX - g.x, dy = e.clientY - g.y;
+      if (!g.locked) {
+        if (Math.abs(dy) > 10 && Math.abs(dy) > Math.abs(dx)) { g = null; return; }   // it's a scroll
+        if (Math.abs(dx) < 8) return;
+        g.locked = true;
+        try { phone.setPointerCapture(e.pointerId); } catch (_) {}
+        g.view.style.animation = 'none';
+      }
+      const i = index(), edge = (dx > 0 && i === 0) || (dx < 0 && i === stepBtns.length - 1);
+      g.dx = edge ? dx * .3 : dx;   // rubber band at either end
+      g.view.style.transition = 'none';
+      g.view.style.transform = 'translateX(' + g.dx + 'px)';
+    });
+    const settle = (view, to, done) => {
+      view.style.transition = reduce ? 'none' : 'transform .22s cubic-bezier(.3,.7,.2,1)';
+      view.style.transform = to;
+      setTimeout(done, reduce ? 0 : 220);
+    };
+    const finish = () => {
+      if (!g) return;
+      const { view, dx, locked } = g; g = null;
+      if (!locked || !view) return;
+      swallowClick = true; setTimeout(() => { swallowClick = false; }, 60);
+      const i = index(), dir = dx < 0 ? 1 : -1, next = i + dir;
+      const go = Math.abs(dx) > Math.min(90, screen.clientWidth * .22) && next >= 0 && next < stepBtns.length;
+      // (the view's fade-in stays switched off while it is on stage, or it would replay)
+      const rest = v => { v.style.transition = ''; v.style.transform = ''; };
+      if (!go) { busy = true; settle(view, 'translateX(0)', () => { rest(view); busy = false; }); return; }
+      busy = true;
+      settle(view, 'translateX(' + (-dir * 100) + '%)', () => {
+        rest(view);
+        stepBtns[next].click();
+        const incoming = active();
+        if (incoming && !reduce) {
+          incoming.style.animation = 'none';
+          incoming.style.transition = 'none';
+          incoming.style.transform = 'translateX(' + (dir * 100) + '%)';
+          void incoming.offsetWidth;
+          settle(incoming, 'translateX(0)', () => { rest(incoming); busy = false; });
+        } else busy = false;
+        dots.classList.add('used');
+      });
+    };
+    phone.addEventListener('pointerup', finish);
+    phone.addEventListener('pointercancel', () => { if (g && g.view && g.locked) { g.view.style.transition = ''; g.view.style.transform = ''; } g = null; });
+    // a swipe that ends over a button must not also press it
+    phone.addEventListener('click', e => { if (swallowClick) { e.preventDefault(); e.stopPropagation(); } }, true);
+  }
 })();
