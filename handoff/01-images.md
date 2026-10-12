@@ -228,56 +228,63 @@ Specific risks:
 
 Save each new photo into `photos/` under the name below. Any extension is fine (`.jpg`, `.png`, `.webp`, `.heic`). An untracked file with one of these names in `photos/` is a new photo waiting to go in. Sizes are the minimum long edge.
 
+**Searching:** add `flash`, `35mm` or `film grain` to any search to get away from the stock look. On Pinterest, `flash photography aesthetic`, `dazed editorial` and `punk zine` lead to the right corners. Pick photos with deep blacks, hard light, off-centre crops, and a hot pink or yellow detail if you can.
+
 **Landing page**
 
-| Slot | Save as | Shape |
-|---|---|---|
-| Cover | `silver.png` (final, done) | 2:3 |
-| Closing | `closing` | 4:5 · 2400px |
-| Editor's letter | `letter` | 9:16 · 1400px |
-| Save polaroid "a link" | `save-link` | 1:1 · 1200px |
-| Save polaroid "a place" | `save-place` | 1:1 · 1200px |
-| Save polaroid "a song" | `save-song` | 1:1 · 1200px |
-| Save polaroid "a book" | `save-book` | 1:1 · 1200px |
-| Collections polaroid, left | `collections-1` | 4:5 · 1200px |
-| Collections polaroid, top on phones (safety pin) | `collections-2` | 4:5 · 1200px |
-| Collections polaroid, right | `collections-3` | 4:5 · 1200px |
-| Local photo | `local` | 3:4 · 1200px |
-| People first, wide | `people` | 16:9 · 2400px |
+| Slot | Save as | Shape | Search for |
+|---|---|---|---|
+| Cover | `silver.png` (final, done) | 2:3 | — |
+| Closing | `closing` | 4:5 · 2400px | london skyline night flash · st pauls dusk silhouette · tower bridge night grain |
+| Editor's letter | `letter` | 9:16 · 1400px | record shop wall · bedroom covered in posters · magazine stacks room flash |
+| Save polaroid "a link" | `save-link` | 1:1 · 1200px | punk zine spread · torn magazine page · photocopied flyer |
+| Save polaroid "a place" | `save-place` | 1:1 · 1200px | orange chairs cafe · cafe terrace winter night · pavement cafe flash |
+| Save polaroid "a song" | `save-song` | 1:1 · 1200px | vinyl record messy bedroom · holding record sleeve flash · turntable 35mm |
+| Save polaroid "a book" | `save-book` | 1:1 · 1200px | hand holding book black nail polish · paperback chipped nails · reading flash |
+| Collections polaroid, left | `collections-1` | 4:5 · 1200px | empty beach 35mm · foggy hill walk · quiet countryside film |
+| Collections polaroid, top on phones (safety pin) | `collections-2` | 4:5 · 1200px | eating ice cream flash · summer street 35mm · girl sunglasses film photo |
+| Collections polaroid, right | `collections-3` | 4:5 · 1200px | neon light installation · coloured glass light · empty swimming pool 35mm |
+| Local photo | `local` | 3:4 · 1200px | rooftop party sunset flash · pub garden night london · gig queue night |
+| People first, wide | `people` | 16:9 · 2400px | tiny restaurant night flash · late night bar 35mm · greasy spoon cafe |
+
+The Collections three must also work in black and white (desktop shows them as photocopies).
 
 **Demo phone** (640px is enough)
 
-| Slot | Save as | Shape |
-|---|---|---|
-| Home, "London summers" banner | `demo-feature` | 3:2 landscape |
-| Home, Currently: song | `demo-now-song` (skip to reuse `save-song`) | 2:3, subject centred |
-| Home, Currently: photo | `demo-now-photo` | 2:3, subject centred |
-| Home, Currently: place | `demo-now-place` | 2:3, subject centred |
-| Home, Currently: party | `demo-now-party` | 2:3, subject centred |
-| "London summers" collection: café, city, park | `demo-summers-1`, `-2`, `-3` | 2:3 |
-| "Sunday, slowly" collection: film, book, Sunday | `demo-sunday-1`, `-2`, `-3` | 2:3 |
-| Collection screen grid | `demo-grid-1` … `demo-grid-6` | 1:1 |
-| "On repeat" collection thumbnail | `demo-onrepeat` | 1:1 |
-| Activity: chai after the film | `demo-activity-chai` | 4:5 |
-| Activity: Honey (music) | `demo-activity-honey` | 1:1 |
-| Activity: an afternoon by the sea | `demo-activity-sea` | 4:5 |
-| Activity: the rain came early | `demo-activity-rain` | 4:5 |
+| Slot | Save as | Shape | Search for |
+|---|---|---|---|
+| Home, "London summers" banner | `demo-feature` | 3:2 landscape | london summer 35mm · south bank golden hour · soho street summer night |
+| Home, Currently: song | `demo-now-song` (skip to reuse `save-song`) | 2:3, subject centred | record sleeve flash · vinyl on the floor |
+| Home, Currently: photo | `demo-now-photo` | 2:3, subject centred | friend laughing flash 35mm · summer afternoon film photo |
+| Home, Currently: place | `demo-now-place` | 2:3, subject centred | bakery window london · pastry counter flash |
+| Home, Currently: party | `demo-now-party` | 2:3, subject centred | basement party flash · crowd arms up sweaty · rave flash photography |
+| "London summers" collection: café, city, park | `demo-summers-1`, `-2`, `-3` | 2:3 | soho pavement spritz · south bank wall golden hour · lying on grass cans dusk |
+| "Sunday, slowly" collection: film, book, Sunday | `demo-sunday-1`, `-2`, `-3` | 2:3 | projector light dark room · paperback on bed · coffee newspapers in bed |
+| Collection screen grid | `demo-grid-1` … `demo-grid-6` | 1:1 | london summer night 35mm · picnic flash · riverside pub · ice lolly flash |
+| "On repeat" collection thumbnail | `demo-onrepeat` | 1:1 | headphones flash · cassette tapes · stack of vinyl |
+| Activity: chai after the film | `demo-activity-chai` | 4:5 | chai glasses night · cinema neon at night · ticket stubs flash |
+| Activity: Honey (music) | `demo-activity-honey` | 1:1 | record sleeve held up bedroom · vinyl in hands flash |
+| Activity: an afternoon by the sea | `demo-activity-sea` | 4:5 | feet in sea painted nails · beach harsh sun 35mm |
+| Activity: the rain came early | `demo-activity-rain` | 4:5 | rain street night streetlight · broken umbrella rain · wet pavement neon |
 
 **Local card** (pink section and demo phone; 640px is enough)
 
-| Slot | Save as | Shape |
-|---|---|---|
-| Go out: The Courtyard café | `localcard-cafe` | 3:1 wide, subject in the middle third |
-| Go out: "A slower corner": café doorway, bookshop aisle, garden gate | `localcard-corner-1`, `-2`, `-3` | 2:3 |
-| Go out: the second-hand bookshop | `localcard-bookshop` | 1:1 |
-| Stay in: tonight's film poster | `localcard-film-poster` | 3:4 |
-| Stay in: next episode poster | `localcard-series-poster` | 3:4 |
-| Stay in: All We Imagine as Light (also used in Activity) | `localcard-film` | 1:1 |
-| Stay in: The God of Small Things (also used in Activity) | `localcard-book` | 1:1 |
+| Slot | Save as | Shape | Search for |
+|---|---|---|---|
+| Go out: The Courtyard café | `localcard-cafe` | 3:1 wide, subject in the middle third | cafe window late sun · tea on zinc table · flyposters cafe window |
+| Go out: "A slower corner": café doorway, bookshop aisle, garden gate | `localcard-corner-1`, `-2`, `-3` | 2:3 | espresso on doorstep · narrow bookshop aisle · iron garden gate dusk flash |
+| Go out: the second-hand bookshop | `localcard-bookshop` | 1:1 | secondhand bookshop counter · handwritten price tags books |
+| Stay in: tonight's film poster | `localcard-film-poster` | 3:4 | projector light on face · movie night sofa flash |
+| Stay in: next episode poster | `localcard-series-poster` | 3:4 | tv glow dark room · watching tv at night 35mm |
+| Stay in: All We Imagine as Light (also used in Activity) | `localcard-film` | 1:1 | neon on wet glass · rain window neon night |
+| Stay in: The God of Small Things (also used in Activity) | `localcard-book` | 1:1 | dog eared paperback coffee ring · book black nails |
 
 **Desktop only** (never seen on iPhone)
 
-| Slot | Save as | Shape |
-|---|---|---|
-| Contents polaroid | `contents` | 4:5 · 1200px |
-| Cursor peeks: NOTES., THIRTY THINGS., PEOPLE., TASTE. | `peek-notes`, `peek-thirty`, `peek-people`, `peek-taste` | 4:5 · 800px |
+| Slot | Save as | Shape | Search for |
+|---|---|---|---|
+| Contents polaroid | `contents` | 4:5 · 1200px | flyposted wall london · doorway street 35mm · sitting on steps flash |
+| Cursor peek: NOTES. | `peek-notes` | 4:5 · 800px | handwritten note in book · note taped to wall |
+| Cursor peek: THIRTY THINGS. | `peek-thirty` | 4:5 · 800px | wall of polaroids · pinboard tickets flyers |
+| Cursor peek: PEOPLE. | `peek-people` | 4:5 · 800px | friends around one phone pub flash |
+| Cursor peek: TASTE. | `peek-taste` | 4:5 · 800px | record shop crate digging · hand pulling record from stack |
