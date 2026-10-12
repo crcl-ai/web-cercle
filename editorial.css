@@ -418,7 +418,8 @@ main{overflow-x:clip}
    iPhone layer — touch screens only. Desktop (hover) stays exactly as is.
    ====================================================================== */
 @media (hover:none){
-  /* the photocopies come back to colour as they cross the middle of the screen */
-  .e-fan .e-snap.e-live img{filter:none}
+  /* no cursor, no photocopy: the polaroids stay in full colour, and each one
+     comes to the front as it crosses the middle of the screen */
+  .e-fan .e-snap img{filter:none}
   .e-fan .e-snap.e-live{z-index:4}
 }

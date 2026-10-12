@@ -1,10 +1,10 @@
 /* Circle — the zine layer.
-   1. The cover and closing photos are two-plate photocopies (pink + black
-      halftone). On the cover a marker circle brings what's inside it back to
-      colour, and on both a finger or cursor sprays more colour wherever it goes.
+   1. On desktop, the cover and closing photos are two-plate photocopies (pink +
+      black halftone). On the cover a marker circle brings what's inside it back
+      to colour, and on both the cursor sprays more colour wherever it goes.
    2. A GET bar that waits at the bottom of small screens once the cover's own
       GET has scrolled away.
-   Without JavaScript the photos stay in colour and the bar never shows. */
+   On phones, tablets and without JavaScript the photos stay in colour and the bar never shows. */
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -200,7 +200,12 @@
     } else start();
   }
 
-  if (document.createElement('canvas').getContext) {
+  // Desktop with a cursor only; phones and tablets keep the photographs in colour.
+  const desk = matchMedia('(min-width: 1025px) and (hover: hover) and (pointer: fine)');
+  let copied = false;
+  const copy = () => {
+    if (copied || !desk.matches || !document.createElement('canvas').getContext) return;
+    copied = true;
     const cover = document.querySelector('.e-cover-photo');
     if (cover) photocopy(cover, { cx: .64, cy: .335, rx: .3, ry: .112, tilt: -.06 }, (ring, W, dpr) => {
       const xs = ring.map(p => p[0]);
@@ -208,7 +213,9 @@
     });
     const close = document.querySelector('.e-close');
     if (close) photocopy(close, null);
-  }
+  };
+  copy();
+  if (desk.addEventListener) desk.addEventListener('change', copy);
 
   /* ---------- 2. the GET dock ---------- */
   const dock = document.querySelector('.e-dock');

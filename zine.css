@@ -1,18 +1,23 @@
 /* Circle — the zine layer (pass 4: no rules).
    Loaded after editorial.css; everything here overrides or extends it. */
 
-/* ---------- photocopy cover ---------- */
-.e-xerox{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%}
-.e-cover-photo .e-xerox{transform:scale(1.06);transition:transform 2.4s var(--ease)}
-.e-cover.in .e-cover-photo .e-xerox{transform:none}
-.e-close>.e-xerox{position:absolute;z-index:0}
-.e-close{touch-action:pan-y pinch-zoom}
-.e-cover-photo{touch-action:pan-y pinch-zoom;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
-@media (hover:hover) and (pointer:fine){.e-cover-photo.is-xerox{cursor:crosshair}}
+/* ---------- photocopies: desktop with a cursor only ----------
+   The halftone is a toy for the pointer. Phones and tablets keep every
+   photograph in full colour, exactly as in pass 3. */
+.e-xerox,.e-scrawl--colour{display:none}
+@media (min-width:1025px) and (hover:hover) and (pointer:fine){
+  .e-xerox{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%}
+  .e-cover-photo .e-xerox{transform:scale(1.06);transition:transform 2.4s var(--ease)}
+  .e-cover.in .e-cover-photo .e-xerox{transform:none}
+  .e-close>.e-xerox{position:absolute;z-index:0}
+  .e-cover-photo{-webkit-user-select:none;user-select:none}
+  .e-cover-photo.is-xerox{cursor:crosshair}
+  .e-scrawl--colour{position:absolute;z-index:5;top:22px;right:max(14px,calc(var(--ring-r,20px) - 6px));flex-direction:column;align-items:flex-end;gap:0;width:min-content;color:var(--ink);font-size:var(--t-m);line-height:.92;text-align:right;white-space:normal;transform:rotate(7deg);text-shadow:0 0 6px var(--paper),0 0 2px var(--paper)}
+  .e-scrawl--colour .e-arrowmark{width:26px;margin:2px 18px 0 0;transform:scaleX(-1) rotate(14deg)}
+  .e-scrawl--colour .e-arrowmark path{stroke:var(--ink)}
+  .is-xerox .e-scrawl--colour{display:inline-flex}
+}
 @media (prefers-reduced-motion:reduce){.e-xerox{transform:none;transition:none}}
-.e-scrawl--colour{position:absolute;z-index:5;right:var(--g);top:22px;display:none;align-items:flex-end;gap:6px;color:var(--ink);font-size:var(--t-m);transform:rotate(6deg);text-shadow:0 0 6px var(--paper),0 0 2px var(--paper)}
-.e-scrawl--colour .e-arrowmark path{stroke:var(--ink)}
-.is-xerox .e-scrawl--colour{display:inline-flex}
 
 /* ---------- GET dock (small screens) ---------- */
 .e-dock{position:fixed;z-index:40;left:0;right:0;bottom:0;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;padding:12px var(--g) calc(12px + env(safe-area-inset-bottom));background:var(--ink);color:var(--paper);transform:translateY(calc(100% + 20px));visibility:hidden;transition:transform .45s var(--ease),visibility 0s linear .45s}
@@ -27,16 +32,6 @@
 .e-dock .e-get{height:36px;min-width:84px;font-size:var(--t-s)}
 @media (min-width:1025px){.e-dock{display:none}}
 @media (prefers-reduced-motion:reduce){.e-dock,.e-dock.on{transition:none}}
-
-/* headline as cut-out strips pasted onto the photocopy */
-.e-cover-photo:before{display:none}
-.e-cover h1{display:grid;justify-items:start;gap:.07em;text-shadow:none}
-.e-strip{display:block;width:max-content;max-width:100%;padding:.07em .14em .03em .1em;background:var(--ink);color:#fff;box-shadow:0 3px 0 rgba(0,0,0,.18);transform:rotate(-1.4deg)}
-.e-strip:nth-child(2){transform:rotate(.9deg) translateX(.22em)}
-.e-cover h1 .e-strip--it{margin-top:.08em;padding:.04em .2em .1em .14em;background:var(--pink);color:var(--ink);transform:rotate(-2.2deg) translateX(-.04em)}
-.e-scrawl--colour{top:16px;right:max(14px,calc(var(--ring-r,20px) - 6px));flex-direction:column;align-items:flex-end;gap:0;width:min-content;text-align:right;line-height:.92;white-space:normal;transform:rotate(7deg)}
-.e-scrawl--colour .e-arrowmark{width:26px;margin:2px 18px 0 0;transform:scaleX(-1) rotate(14deg)}
-.e-scrawl--you{display:none}
 
 /* ---------- house rules: the contents, crossed out and rewritten ---------- */
 .e-rules .e-contents-head{display:grid;justify-items:start;gap:18px;padding-bottom:30px}
@@ -88,11 +83,15 @@
   .e-ransom{font-size:38px}
 }
 
-/* ---------- desktop cover: paper strips pasted on the black page ---------- */
+/* ---------- desktop cover: the headline as paper strips pasted on the black page ---------- */
 @media (min-width:1025px){
+  .e-cover h1{display:grid;justify-items:start;gap:.07em;text-shadow:none}
+  .e-strip{display:block;width:max-content;max-width:100%;padding:.07em .14em .03em .1em;background:var(--ink);color:#fff;box-shadow:0 3px 0 rgba(0,0,0,.18);transform:rotate(-1.4deg)}
+  .e-strip:nth-child(2){transform:rotate(.9deg) translateX(.22em)}
+  .e-cover h1 .e-strip--it{margin-top:.08em;padding:.04em .2em .1em .14em;background:var(--pink);color:var(--ink);transform:rotate(-2.2deg) translateX(-.04em)}
   .e-cover h1 .e-strip:not(.e-strip--it){background:var(--paper);color:var(--ink);box-shadow:0 4px 0 rgba(255,122,205,.85)}
+  .e-scrawl--you{display:none}
   .e-sticker{top:auto;bottom:36px;left:calc(50% - 128px)}
-  .e-scrawl--colour{top:22px}
 }
 
 /* ---------- closing: the GET gets circled ---------- */
@@ -155,6 +154,3 @@
 
 /* ---------- ticker: yellow tape, so the yellow arrives early ---------- */
 .e-ticker{background:var(--yellow)}
-@media (min-width:700px) and (max-width:1024px){
-  .e-cover h1{font-size:clamp(56px,11vw,112px)}
-}
