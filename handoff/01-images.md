@@ -221,3 +221,63 @@ Specific risks:
    - there's no sideways scroll;
    - first load stays light (about 450KB on a phone today).
 6. **Commit** with a message saying which slots changed. Don't change the layout or design while doing this.
+
+---
+
+## 8. File names for new photos
+
+Save each new photo into `photos/` under the name below. Any extension is fine (`.jpg`, `.png`, `.webp`, `.heic`). An untracked file with one of these names in `photos/` is a new photo waiting to go in. Sizes are the minimum long edge.
+
+**Landing page**
+
+| Slot | Save as | Shape |
+|---|---|---|
+| Cover | `silver.png` (final, done) | 2:3 |
+| Closing | `closing` | 4:5 · 2400px |
+| Editor's letter | `letter` | 9:16 · 1400px |
+| Save polaroid "a link" | `save-link` | 1:1 · 1200px |
+| Save polaroid "a place" | `save-place` | 1:1 · 1200px |
+| Save polaroid "a song" | `save-song` | 1:1 · 1200px |
+| Save polaroid "a book" | `save-book` | 1:1 · 1200px |
+| Collections polaroid, left | `collections-1` | 4:5 · 1200px |
+| Collections polaroid, top on phones (safety pin) | `collections-2` | 4:5 · 1200px |
+| Collections polaroid, right | `collections-3` | 4:5 · 1200px |
+| Local photo | `local` | 3:4 · 1200px |
+| People first, wide | `people` | 16:9 · 2400px |
+
+**Demo phone** (640px is enough)
+
+| Slot | Save as | Shape |
+|---|---|---|
+| Home, "London summers" banner | `demo-feature` | 3:2 landscape |
+| Home, Currently: song | `demo-now-song` (skip to reuse `save-song`) | 2:3, subject centred |
+| Home, Currently: photo | `demo-now-photo` | 2:3, subject centred |
+| Home, Currently: place | `demo-now-place` | 2:3, subject centred |
+| Home, Currently: party | `demo-now-party` | 2:3, subject centred |
+| "London summers" collection: café, city, park | `demo-summers-1`, `-2`, `-3` | 2:3 |
+| "Sunday, slowly" collection: film, book, Sunday | `demo-sunday-1`, `-2`, `-3` | 2:3 |
+| Collection screen grid | `demo-grid-1` … `demo-grid-6` | 1:1 |
+| "On repeat" collection thumbnail | `demo-onrepeat` | 1:1 |
+| Activity: chai after the film | `demo-activity-chai` | 4:5 |
+| Activity: Honey (music) | `demo-activity-honey` | 1:1 |
+| Activity: an afternoon by the sea | `demo-activity-sea` | 4:5 |
+| Activity: the rain came early | `demo-activity-rain` | 4:5 |
+
+**Local card** (pink section and demo phone; 640px is enough)
+
+| Slot | Save as | Shape |
+|---|---|---|
+| Go out: The Courtyard café | `localcard-cafe` | 3:1 wide, subject in the middle third |
+| Go out: "A slower corner": café doorway, bookshop aisle, garden gate | `localcard-corner-1`, `-2`, `-3` | 2:3 |
+| Go out: the second-hand bookshop | `localcard-bookshop` | 1:1 |
+| Stay in: tonight's film poster | `localcard-film-poster` | 3:4 |
+| Stay in: next episode poster | `localcard-series-poster` | 3:4 |
+| Stay in: All We Imagine as Light (also used in Activity) | `localcard-film` | 1:1 |
+| Stay in: The God of Small Things (also used in Activity) | `localcard-book` | 1:1 |
+
+**Desktop only** (never seen on iPhone)
+
+| Slot | Save as | Shape |
+|---|---|---|
+| Contents polaroid | `contents` | 4:5 · 1200px |
+| Cursor peeks: NOTES., THIRTY THINGS., PEOPLE., TASTE. | `peek-notes`, `peek-thirty`, `peek-people`, `peek-taste` | 4:5 · 800px |
