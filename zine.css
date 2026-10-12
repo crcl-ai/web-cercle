@@ -226,3 +226,9 @@ a,button,[role=button]{-webkit-tap-highlight-color:transparent}
 @media (max-width:1024px),(hover:none){
   .local-experience,.activity-scroll{overscroll-behavior:auto}
 }
+
+/* iOS keeps :hover on whatever was last tapped; don't let it stick */
+@media (hover:none){
+  .e-rules .e-toc a:hover .e-toc-t,.e-toc a:hover .e-toc-t{transform:none}
+  .e-ticker:hover .e-ticker-track{animation-play-state:running}
+}

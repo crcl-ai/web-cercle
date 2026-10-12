@@ -178,7 +178,8 @@
     let last = null;
     const at = e => { const b = view.getBoundingClientRect(); return [(e.clientX - b.left) / b.width * W, (e.clientY - b.top) / b.height * H]; };
     const stroke = e => {
-      if (!ready) return;
+      // the canvas is hidden when the window narrows to a phone layout
+      if (!ready || !view.offsetWidth || !view.offsetHeight) return;
       const [x, y] = at(e), r = (fine ? 62 : 54) * dpr;
       if (last) {
         const d = Math.hypot(x - last[0], y - last[1]), steps = Math.ceil(d / (r * .3));
