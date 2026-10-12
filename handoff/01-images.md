@@ -288,3 +288,17 @@ The Collections three must also work in black and white (desktop shows them as p
 | Cursor peek: THIRTY THINGS. | `peek-thirty` | 4:5 · 800px | wall of polaroids · pinboard tickets flyers |
 | Cursor peek: PEOPLE. | `peek-people` | 4:5 · 800px | friends around one phone pub flash |
 | Cursor peek: TASTE. | `peek-taste` | 4:5 · 800px | record shop crate digging · hand pulling record from stack |
+
+## 9. Status (12 October 2026)
+
+All the photos the user supplied are in. The originals are in `photos/` under the names in section 8, and the web versions are in `photos/ed/` and `photos/app/`.
+
+- **Kept on purpose:** cover (`silver`), closing (`dusk`), Save "a song" (*MM..FOOD*) and "a book" (Rams), the pinned Collections polaroid (ice cream), People first (Annabel's), the Jolene tile in the demo's Currently row.
+- **Copy rewritten to match the new photos:**
+  - The Save "a link" polaroid is now "a jacket" (a draped brown Loewe jacket). Its `data-kind` and the receipt keys in `zine.js` are `jacket`.
+  - The demo's song is Olivia Dean, "Man I Need" (2025, single), and its photo tile is two friends in a car at night ("The long way home").
+  - The Activity music save is Alli Neumann, "berlin night life", styled as it appears on streaming.
+  - The book is Oscar Wilde, *Only Dull People Are Brilliant at Breakfast*, in place of *The God of Small Things*.
+  - The bookshop note now reads "Ask about the ones in the suitcase outside."
+- **`demo-summers-2`** is a portrait crop of `demo-feature` (Big Ben). The unnamed file the user added (a pink light installation) became `localcard-film` (*All We Imagine as Light*).
+- **Still to do:** `localcard-series-poster` ("Your next episode") is a placeholder, with "Artwork needed" text in `local-refinement.js`. `demo-grid-1` to `-6` (Collection screen grid) are still the old stand-ins.

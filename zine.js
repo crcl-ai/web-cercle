@@ -233,23 +233,23 @@
      Every combination of the four reads as its own little story, so one more
      (or one fewer) thing changes what the whole collection is about. */
   const RECEIPT = {
-    'link':                ['The piece you keep meaning to finish.', 'Sent at 2am. Reading it properly on Sunday.'],
+    'jacket':              ['The brown Loewe jacket.', 'Worn draped, never zipped. Saving up, one skipped coffee at a time.'],
     'place':               ['The café with the orange chairs.', 'Sit outside, even in December. Especially in December.'],
     'song':                ['MM..FOOD, front to back.', 'No skipping. It only makes sense as a whole.'],
     'book':                ['The Dieter Rams book.', 'Less, but better. Borrowed it twice, finally bought my own.'],
-    'link+place':          ['Read this, then meet me here', 'Bring your take on the article. First round’s on me.'],
-    'link+song':           ['Headphones on, tabs open', 'The essay reads better with this playing. Trust me.'],
-    'link+book':           ['Before I start my own thing', 'The piece that made me want to. The book that shows me how.'],
+    'jacket+place':        ['Dressed for the orange chairs', 'Jacket on, coffee outside. December can try its best.'],
+    'jacket+song':         ['Collar up, DOOM on', 'Brown jacket, MM..FOOD, the long way home.'],
+    'jacket+book':         ['Fewer things, better ones', 'One good jacket. One book on why that’s enough.'],
     'place+song':          ['Sunday, nowhere to be', 'Window seat, one coffee, the whole album. No rush.'],
     'place+book':          ['Lunch for one, on purpose', 'Order slowly. A chapter between courses.'],
     'song+book':           ['Make something this weekend', 'Rams on the desk, DOOM on repeat. Less, but louder.'],
-    'link+place+song':     ['A Saturday, in order', 'Read it on the bus. Find the café. Put the record on.'],
-    'link+place+book':     ['A quiet day of good ideas', 'Coffee, a chapter, the essay everyone’s quoting. No soundtrack needed.'],
-    'link+song+book':      ['Staying in, thinking big', 'Everything I need is already on this desk.'],
+    'jacket+place+song':   ['A Saturday, in order', 'Jacket on. Find the café. Put the record on.'],
+    'jacket+place+book':   ['A slow day, dressed properly', 'The jacket, a coffee outside, a chapter. No soundtrack needed.'],
+    'jacket+song+book':    ['Built to last', 'One good jacket, one record on repeat, one book I keep lending out.'],
     'place+song+book':     ['A slow Sunday, done properly', 'The café first. The book after. The album all the way home.'],
-    'link+place+song+book':['Me, lately', 'If you want to know who I am right now, start here.']
+    'jacket+place+song+book':['Me, lately', 'If you want to know who I am right now, start here.']
   };
-  const KINDS = ['link', 'place', 'song', 'book'];
+  const KINDS = ['jacket', 'place', 'song', 'book'];
   const wrap = document.querySelector('.e-save .e-receipt-wrap');
   const receipt = wrap && wrap.querySelector('.e-receipt');
   const saved = new Set();
