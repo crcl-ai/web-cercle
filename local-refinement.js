@@ -6,7 +6,7 @@
     bookshop: ['PLACE · 1.2 km · Saved by @leela', 'The second-hand bookshop', '“Ask about the ones in the suitcase outside.” A recommendation with a little more context than a star rating.'],
     screening: ['EVENT · Sunday, 6:30 PM · Shared by @maya', 'A film, then a conversation', 'Neighbourhood cinema · 1.4 km away. Stay after the credits and talk about what stayed with you.'],
     film: ['FILM · Illustrative weekly activity', 'Tonight’s film', '24 people recently saved this film in this demo. Best seen big, on a wall, with the lights off.'],
-    series: ['SERIES · Illustrative weekly activity', 'Your next episode', '38 people recently saved this series in this demo. Artwork needed: a poster for a current popular show.'],
+    series: ['SERIES · Illustrative weekly activity', 'Family Business', '38 people recently saved this series in this demo. The French comedy where a family’s kosher butcher’s becomes a cannabis café. Three short seasons.'],
     light: ['FILM · Saved by @leela', 'All We Imagine as Light', '“For the nights you want to feel something.” Follow a recommendation back to the person who shared it.'],
     read: ['BOOK · Saved by @noor', 'Only Dull People Are Brilliant at Breakfast', 'Oscar Wilde, small enough for a coat pocket. Save it for the next slow breakfast.']
   };

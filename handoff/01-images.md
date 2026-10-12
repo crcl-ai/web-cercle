@@ -301,4 +301,5 @@ All the photos the user supplied are in. The originals are in `photos/` under th
   - The book is Oscar Wilde, *Only Dull People Are Brilliant at Breakfast*, in place of *The God of Small Things*.
   - The bookshop note now reads "Ask about the ones in the suitcase outside."
 - **`demo-summers-2`** is a portrait crop of `demo-feature` (Big Ben). The unnamed file the user added (a pink light installation) became `localcard-film` (*All We Imagine as Light*).
-- **Still to do:** `localcard-series-poster` ("Your next episode") is a placeholder, with "Artwork needed" text in `local-refinement.js`. `demo-grid-1` to `-6` (Collection screen grid) are still the old stand-ins.
+- **Series poster:** `localcard-series-poster` is the French Netflix series *Family Business* (season 2 poster), so the card and its detail are titled "Family Business". No placeholders are left in the Local card, and its "Artwork placeholders" note is gone.
+- **Still to do:** `demo-grid-1` to `-6` (Collection screen grid) are still the old stand-ins.
