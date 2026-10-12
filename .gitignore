@@ -2,3 +2,5 @@
 gemini-code-*.html
 __pycache__/
 *.pyc
+handoff/
+docs/
