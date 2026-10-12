@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Circle — A home for your taste</title>
   <meta name="description" content="Save the songs, films, books, links, and places that shape you. Make thoughtful collections and discover through people whose taste you trust.">
   <link rel="canonical" href="https://sruper.com/">
@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&amp;text=%20%21%2C.ACEFGHILNOPRSTUWYacefghilnoprstuwy&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&amp;text=%20%21%2C.%27ACEFGHILNOPRSTUWYabcdefghijklmnopqrstuvwxyz&amp;display=swap">
   <link rel="preload" href="apple_garamond/AppleGaramond-Light.ttf" as="font" type="font/ttf" crossorigin>
   <style>
     @font-face{font-family:"Apple Garamond";src:url("apple_garamond/AppleGaramond-Light.ttf") format("truetype");font-weight:300;font-display:swap}
@@ -46,6 +46,7 @@
   </style>
   <link rel="stylesheet" href="local-refinement.css">
   <link rel="stylesheet" href="editorial.css">
+  <link rel="stylesheet" href="zine.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -53,19 +54,19 @@
   <header class="e-head"><a class="e-brand" href="/" aria-label="Circle home">Circle</a><nav aria-label="Primary"><ul class="e-nav e-label"><li><a href="#demo">The app</a></li><li><a href="#save-anything">Features</a></li><li><a href="#download">Get Circle</a></li></ul></nav><a class="e-get" href="https://apps.apple.com/app/id6782602610">GET</a></header>
   <main id="main">
     <section class="e-cover" aria-labelledby="cover-title">
-      <figure class="e-cover-photo e-grain"><picture><source type="image/avif" srcset="photos/ed/silver-900.avif 600w, photos/ed/silver-1600.avif 1066w" sizes="(min-width:1025px) 58vw, 100vw"><img src="photos/ed/silver-900.jpg" srcset="photos/ed/silver-900.jpg 600w, photos/ed/silver-1600.jpg 1066w" sizes="(min-width:1025px) 58vw, 100vw" width="1066" height="1600" alt="A woman in yellow sunglasses and chrome nails, caught mid-gesture" fetchpriority="high" decoding="async"></picture><ul class="e-dymo" aria-label="Circle at a glance"><li>No public counts</li><li>People-led discovery</li><li>30 things per collection</li></ul></figure>
-      <div class="e-cover-type"><p class="e-label e-kicker e-pink">A home for your taste</p><h1 id="cover-title">Save what shapes <span class="e-mark">you.<svg viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M22 70C13 41 70 13 152 11C236 9 292 29 287 61C282 95 213 112 143 110C74 108 12 95 15 64C17 43 59 24 121 17C171 11 239 15 266 33"/><path class="e-mark-2" pathLength="1" d="M30 76C22 50 84 21 158 19C229 18 284 36 280 64C276 92 212 106 146 105C82 104 25 92 24 68"/></svg></span> <span class="e-it">Find what’s next.</span></h1><span class="e-scrawl e-scrawl--you" aria-hidden="true">yes, you.</span></div>
+      <figure class="e-cover-photo e-grain"><picture><source type="image/avif" srcset="photos/ed/silver-900.avif 600w, photos/ed/silver-1600.avif 1066w" sizes="(min-width:1025px) 58vw, 100vw"><img src="photos/ed/silver-900.jpg" srcset="photos/ed/silver-900.jpg 600w, photos/ed/silver-1600.jpg 1066w" sizes="(min-width:1025px) 58vw, 100vw" width="1066" height="1600" alt="A woman in yellow sunglasses and chrome nails, caught mid-gesture" fetchpriority="high" decoding="async"></picture><ul class="e-dymo" aria-label="Circle at a glance"><li>No public counts</li><li>People-led discovery</li><li>30 things per collection</li></ul><span class="e-scrawl e-scrawl--colour" aria-hidden="true">colour me in<svg class="e-arrowmark" viewBox="0 0 60 70" aria-hidden="true"><path d="M50 4C30 12 14 30 20 62M8 48l12 15 12-14"/></svg></span></figure>
+      <div class="e-cover-type"><p class="e-label e-kicker e-pink">A home for your taste</p><h1 id="cover-title"><span class="e-strip">Save what</span> <span class="e-strip">shapes <span class="e-mark">you.<svg viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M22 70C13 41 70 13 152 11C236 9 292 29 287 61C282 95 213 112 143 110C74 108 12 95 15 64C17 43 59 24 121 17C171 11 239 15 266 33"/><path class="e-mark-2" pathLength="1" d="M30 76C22 50 84 21 158 19C229 18 284 36 280 64C276 92 212 106 146 105C82 104 25 92 24 68"/></svg></span></span> <span class="e-strip e-strip--it e-it">Find what’s next.</span></h1><span class="e-scrawl e-scrawl--you" aria-hidden="true">yes, you.</span></div>
       <div class="e-cover-text"><p>Save the songs, films, books, and places you want to come back to. Share them with friends. Find something you wouldn’t have found alone.</p><div class="e-actions"><a class="e-get e-get--big" href="https://apps.apple.com/app/id6782602610">GET</a><a class="e-link" href="#demo">Try the demo</a></div></div>
       <div class="e-sticker" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="e-ring" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><circle class="e-sticker-disc" cx="60" cy="60" r="59"/><text><textPath href="#e-ring" textLength="280" lengthAdjust="spacing">No public counts ✶ People first ✶</textPath></text></svg><img src="photos/circle-avatar.png" alt=""></div>
     </section>
     <div class="e-ticker" aria-hidden="true"><div class="e-ticker-track"><span>Save what shapes you</span><span><i class="e-it">Find what’s next</i></span><span>No public counts</span><span><i class="e-it">people, not popularity</i></span><span>30 things per collection</span><span><i class="e-it">taste has no gatekeepers</i></span><span>Save what shapes you</span><span><i class="e-it">Find what’s next</i></span><span>No public counts</span><span><i class="e-it">people, not popularity</i></span><span>30 things per collection</span><span><i class="e-it">taste has no gatekeepers</i></span></div></div>
-    <section class="e-contents" aria-labelledby="toc-title">
-      <div class="e-contents-head"><h2 class="e-label" id="toc-title">In this issue</h2><span class="e-num" aria-hidden="true">Nº 01</span><span class="e-scrawl e-scrawl--issue" aria-hidden="true">first issue!</span><figure class="e-snap e-contents-snap" aria-hidden="true"><span class="e-tape"></span><picture><source type="image/avif" srcset="photos/ed/yard-800.avif 640w"><img src="photos/ed/yard-800.jpg" width="640" height="800" alt="" loading="lazy" decoding="async"></picture><figcaption>the good stuff, pp. 06–12</figcaption></figure></div>
+    <section class="e-contents e-rules" aria-labelledby="toc-title">
+      <div class="e-contents-head"><p class="e-label e-kicker">In this issue <span class="e-num" aria-hidden="true">Nº 01</span></p><h2 class="e-rules-title" id="toc-title" data-reveal>We crossed a few things <span class="e-mark">out.<svg viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M22 70C13 41 70 13 152 11C236 9 292 29 287 61C282 95 213 112 143 110C74 108 12 95 15 64C17 43 59 24 121 17C171 11 239 15 266 33"/><path class="e-mark-2" pathLength="1" d="M30 76C22 50 84 21 158 19C229 18 284 36 280 64C276 92 212 106 146 105C82 104 25 92 24 68"/></svg></span></h2><span class="e-scrawl e-scrawl--issue" aria-hidden="true">first issue!</span><figure class="e-snap e-contents-snap" aria-hidden="true"><span class="e-tape"></span><picture><source type="image/avif" srcset="photos/ed/yard-800.avif 640w"><img src="photos/ed/yard-800.jpg" width="640" height="800" alt="" loading="lazy" decoding="async"></picture><figcaption>the good stuff, pp. 06–12</figcaption></figure></div>
       <ol class="e-toc">
-        <li><a href="#save-anything" data-peek="photos/ed/place-800.jpg"><span class="e-toc-n">01</span><span class="e-toc-t">Save the good stuff.</span><span class="e-toc-p">p. 06</span><span class="e-toc-d">Capture a song, film, book, link, or spot without losing it to an endless feed.</span></a></li>
-        <li><a href="#collections" data-peek="photos/ed/summer-700.jpg"><span class="e-toc-n">02</span><span class="e-toc-t">Put good things together.</span><span class="e-toc-p">p. 08</span><span class="e-toc-d">Songs for the drive. Places for the weekend. A collection for whatever brings them together.</span></a></li>
-        <li><a href="#local" data-peek="photos/ed/rooftop-700.jpg"><span class="e-toc-n">03</span><span class="e-toc-t">Follow <span class="e-strike" aria-hidden="true">popularity</span> human taste.</span><span class="e-toc-p">p. 10</span><span class="e-toc-d">Find your next favourite thing through people, not popularity signals.</span></a></li>
-        <li><a href="#people" data-peek="photos/ed/garden-900.jpg"><span class="e-toc-n">04</span><span class="e-toc-t">Taste has no gatekeepers.</span><span class="e-toc-p">p. 12</span><span class="e-toc-d">A great recommendation can come from anyone, anywhere. Circle values the find, not the following.</span></a></li>
+        <li data-reveal><a href="#save-anything" data-peek="photos/ed/place-800.jpg"><span class="e-toc-n">01</span><s class="e-x"><span class="e-sr">Not </span>likes.</s><span class="e-toc-t">Notes.</span><span class="e-toc-p">p. 06</span><span class="e-toc-d">Save a song, film, book, link, or spot, with a line on why it matters to you.</span></a></li>
+        <li data-reveal><a href="#collections" data-peek="photos/ed/summer-700.jpg"><span class="e-toc-n">02</span><s class="e-x"><span class="e-sr">Not </span>endless feeds.</s><span class="e-toc-t">Thirty things.</span><span class="e-toc-p">p. 08</span><span class="e-toc-d">A collection holds thirty, so everything in it earns its place.</span></a></li>
+        <li data-reveal><a href="#local" data-peek="photos/ed/rooftop-700.jpg"><span class="e-toc-n">03</span><s class="e-x"><span class="e-sr">Not </span>popularity.</s><span class="e-toc-t">People.</span><span class="e-toc-p">p. 10</span><span class="e-toc-d">Find places, plans, films, and shows through the people who saved them.</span></a></li>
+        <li data-reveal><a href="#people" data-peek="photos/ed/garden-900.jpg"><span class="e-toc-n">04</span><s class="e-x"><span class="e-sr">Not </span>clout.</s><span class="e-toc-t">Taste.</span><span class="e-toc-p">p. 12</span><span class="e-toc-d">A great recommendation doesn’t need a big following. Circle values the find, not the following.</span></a></li>
       </ol>
       <div class="e-peek" aria-hidden="true"><img alt=""></div>
     </section>
@@ -172,6 +173,7 @@
     <section class="e-close e-grain" id="download" aria-labelledby="close-title"><picture><source type="image/avif" srcset="photos/ed/dusk-900.avif 720w, photos/ed/dusk-1800.avif 1440w" sizes="100vw"><img src="photos/ed/dusk-900.jpg" srcset="photos/ed/dusk-900.jpg 720w, photos/ed/dusk-1800.jpg 1440w" sizes="100vw" width="1440" height="1800" alt="" loading="lazy" decoding="async"></picture><p class="e-label e-kicker e-pink">Made for iOS</p><h2 class="e-h" id="close-title" data-reveal>Found something good? <span class="e-it e-pink">Pass it on.</span></h2><div class="e-actions"><a class="e-get e-get--big" href="https://apps.apple.com/app/id6782602610">GET</a><span class="e-scrawl e-scrawl--go" aria-hidden="true"><svg class="e-arrowmark e-arrowmark--left" viewBox="0 0 90 40" aria-hidden="true"><path d="M86 30C62 6 34 4 8 18M20 6 6 19l15 9"/></svg>go on</span><a class="e-link" href="#demo">Try the demo</a></div></section>
   </main>
   <footer class="e-foot"><span class="e-foot-word" aria-hidden="true">Circle</span><div class="e-foot-row"><nav class="e-foot-nav e-label" aria-label="Legal"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a></nav><p class="e-foot-note">Made for iOS. © 2026 Sruper Inc.</p></div></footer>
+  <aside class="e-dock" aria-label="Get Circle on the App Store"><img src="photos/circle-avatar.png" alt="" width="44" height="44"><p><b>Circle</b><span>A home for your taste</span></p><a class="e-get" href="https://apps.apple.com/app/id6782602610">GET</a></aside>
   <script>
     const copy={
       home:["01 · Home","Your finds. Your friends’ finds. All here.","See featured collections, what your circle is into right now, and the collections you’ve made. Open anything that catches your eye.","Tap a card to open it"],
@@ -197,8 +199,7 @@
   </script>
   <script src="local-refinement.js"></script>
   <script src="squircle.js"></script>
-  <script src="local-refinement.js"></script>
-  <script src="squircle.js"></script>
   <script src="editorial.js"></script>
+  <script src="zine.js"></script>
 </body>
 </html>
