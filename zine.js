@@ -1,37 +1,38 @@
 /* Circle — the zine layer.
-   1. The cover photo is a two-plate photocopy (pink + black halftone). A marker
-      circle brings what's inside it back to colour, and a finger or cursor
-      sprays more colour wherever it goes.
+   1. The cover and closing photos are two-plate photocopies (pink + black
+      halftone). On the cover a marker circle brings what's inside it back to
+      colour, and on both a finger or cursor sprays more colour wherever it goes.
    2. A GET bar that waits at the bottom of small screens once the cover's own
       GET has scrolled away.
-   Without JavaScript the cover stays a colour photograph and the bar never shows. */
+   Without JavaScript the photos stay in colour and the bar never shows. */
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  /* ---------- 1. photocopy cover ---------- */
-  const fig = document.querySelector('.e-cover-photo');
-  const img = fig && fig.querySelector('img');
-  const ok = fig && img && document.createElement('canvas').getContext;
-  if (ok) {
+  /* ---------- 1. photocopies ---------- */
+  const PINK = '#ff7acd', INK = '#111', PAPER = '#efece4';
+
+  // host: the element that receives the pointer; the canvas goes after its <picture>.
+  // ring: where the marker circle goes, in fractions of the photo itself, so it
+  // stays on the same spot however the crop changes.
+  function photocopy(host, ring0, onReady) {
+    const pic = host.querySelector('picture'), img = pic && pic.querySelector('img');
+    if (!img) return;
     const view = document.createElement('canvas');
     view.className = 'e-xerox';
     view.setAttribute('aria-hidden', 'true');
-    fig.querySelector('picture').after(view);
+    pic.after(view);
     const ctx = view.getContext('2d');
     const paper = document.createElement('canvas');   // the photocopy
     const keep = document.createElement('canvas');    // colour that stays (the circle)
     const trail = document.createElement('canvas');   // colour that fades (your marks)
-    const PINK = '#ff7acd', INK = '#111', PAPER = '#efece4';
-    // The circle is placed in the photo's own coordinates (fractions of the
-    // image) so it stays on the sunglasses however the crop changes.
-    const RING = { cx: .64, cy: .335, rx: .3, ry: .112, tilt: -.06 };
     let W = 0, H = 0, dpr = 1, map = null, ring = [], drawn = 0, raf = 0, idle = 0, ready = false;
 
     const fit = () => {
       const iw = img.naturalWidth, ih = img.naturalHeight;
       const s = Math.max(W / iw, H / ih), dw = iw * s, dh = ih * s;
-      return { x: (W - dw) * .5, y: (H - dh) * .28, w: dw, h: dh };
+      const [px, py] = getComputedStyle(img).objectPosition.split(' ').map(v => parseFloat(v) / 100);
+      return { x: (W - dw) * (isNaN(px) ? .5 : px), y: (H - dh) * (isNaN(py) ? .5 : py), w: dw, h: dh };
     };
 
     function halftone() {
@@ -74,13 +75,14 @@
 
     // A hand-drawn loop: one lap and a bit, wobbling, overshooting its start.
     function loop() {
-      const pts = [], n = 120, cx = map.x + RING.cx * map.w, cy = map.y + RING.cy * map.h;
-      const rx = RING.rx * map.w, ry = RING.ry * map.h;
+      if (!ring0) return [];
+      const pts = [], n = 120, cx = map.x + ring0.cx * map.w, cy = map.y + ring0.cy * map.h;
+      const rx = ring0.rx * map.w, ry = ring0.ry * map.h, ct = Math.cos(ring0.tilt), st = Math.sin(ring0.tilt);
       for (let i = 0; i <= n; i++) {
         const t = i / n, a = -2.5 + t * 7.35;
         const wob = 1 + .045 * Math.sin(t * 11 + 1) + .03 * Math.sin(t * 23) + .09 * t * t;
         const x = rx * wob * (1 + .07 * Math.sin(a)) * Math.cos(a), y = ry * wob * (1 - .06 * Math.cos(a * 2)) * Math.sin(a);
-        pts.push([cx + x * Math.cos(RING.tilt) - y * Math.sin(RING.tilt), cy + x * Math.sin(RING.tilt) + y * Math.cos(RING.tilt)]);
+        pts.push([cx + x * ct - y * st, cy + x * st + y * ct]);
       }
       return pts;
     }
@@ -90,9 +92,8 @@
       k.clearRect(0, 0, W, H);
       if (upto < 2) return;
       // colour floods in behind the pen: a wedge from the centre to each drawn point
-      const cx = map.x + RING.cx * map.w, cy = map.y + RING.cy * map.h;
       k.fillStyle = '#000';
-      k.beginPath(); k.moveTo(cx, cy);
+      k.beginPath(); k.moveTo(map.x + ring0.cx * map.w, map.y + ring0.cy * map.h);
       for (let i = 0; i < Math.min(upto, ring.length); i++) k.lineTo(ring[i][0], ring[i][1]);
       k.closePath(); k.fill();
     }
@@ -114,7 +115,7 @@
       ctx.clearRect(0, 0, W, H);
       ctx.drawImage(paper, 0, 0);
       ctx.globalCompositeOperation = 'destination-out';
-      ctx.drawImage(keep, 0, 0);
+      if (ring.length) ctx.drawImage(keep, 0, 0);
       ctx.drawImage(trail, 0, 0);
       ctx.globalCompositeOperation = 'source-over';
       const n = Math.min(drawn, ring.length);
@@ -154,20 +155,23 @@
     function build() {
       if (!img.naturalWidth) return;
       dpr = Math.min(window.devicePixelRatio || 1, 2);
-      W = Math.round(fig.clientWidth * dpr); H = Math.round(fig.clientHeight * dpr);
+      W = Math.round(pic.clientWidth * dpr); H = Math.round(pic.clientHeight * dpr);
       if (!W || !H) return;
       [view, paper, keep, trail].forEach(c => { c.width = W; c.height = H; });
       map = fit(); ring = loop();
-      const xs = ring.map(p => p[0]), ys = ring.map(p => p[1]);
-      fig.style.setProperty('--ring-l', Math.min(...xs) / dpr + 'px');
-      fig.style.setProperty('--ring-r', (W - Math.max(...xs)) / dpr + 'px');
-      fig.style.setProperty('--ring-b', Math.max(...ys) / dpr + 'px');
       halftone();
       if (ready) drawn = ring.length;
-      fillKeep(Math.floor(drawn));
+      if (ring.length) fillKeep(Math.floor(drawn));
       paint();
-      fig.classList.add('is-xerox');
-      if (!ready) { ready = true; setTimeout(wake, reduce ? 0 : 900); }
+      host.classList.add('is-xerox');
+      if (onReady) onReady(ring, W, dpr);
+      if (!ready) {
+        ready = true;
+        // wait until the colour photo underneath can actually paint, so the
+        // circle never opens onto an empty frame
+        const painted = img.decode ? img.decode().catch(() => {}) : Promise.resolve();
+        Promise.race([painted, new Promise(r => setTimeout(r, 2500))]).then(() => setTimeout(wake, reduce ? 0 : 700));
+      }
     }
 
     // pointer: spray colour back into the photocopy
@@ -182,13 +186,28 @@
       } else spray(x, y, r);
       last = [x, y]; idle = fine ? 70 : 150; wake();
     };
-    fig.addEventListener('pointermove', e => { if (fine || e.pressure > 0) stroke(e); });
-    fig.addEventListener('pointerdown', e => { last = null; stroke(e); });
-    ['pointerleave', 'pointerup', 'pointercancel'].forEach(t => fig.addEventListener(t, () => { last = null; }));
+    host.addEventListener('pointermove', e => { if (fine || e.pressure > 0) stroke(e); });
+    host.addEventListener('pointerdown', e => { last = null; stroke(e); });
+    ['pointerleave', 'pointerup', 'pointercancel'].forEach(t => host.addEventListener(t, () => { last = null; }));
 
-    if (img.complete && img.naturalWidth) build(); else img.addEventListener('load', build, { once: true });
+    const start = () => { if (img.complete && img.naturalWidth) build(); else img.addEventListener('load', build, { once: true }); };
     let rt = 0;
-    new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(build, 120); }).observe(fig);
+    new ResizeObserver(() => { if (ready) { clearTimeout(rt); rt = setTimeout(build, 120); } }).observe(pic);
+    // build when it is about to be seen
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { io.disconnect(); if (img.loading === 'lazy') img.loading = 'eager'; start(); } }, { rootMargin: '600px 0px' });
+      io.observe(host);
+    } else start();
+  }
+
+  if (document.createElement('canvas').getContext) {
+    const cover = document.querySelector('.e-cover-photo');
+    if (cover) photocopy(cover, { cx: .64, cy: .335, rx: .3, ry: .112, tilt: -.06 }, (ring, W, dpr) => {
+      const xs = ring.map(p => p[0]);
+      cover.style.setProperty('--ring-r', (W - Math.max(...xs)) / dpr + 'px');
+    });
+    const close = document.querySelector('.e-close');
+    if (close) photocopy(close, null);
   }
 
   /* ---------- 2. the GET dock ---------- */
@@ -200,5 +219,46 @@
     const set = () => dock.classList.toggle('on', pastCover && !atClose);
     new IntersectionObserver(([e]) => { pastCover = !e.isIntersecting && e.boundingClientRect.top < 0; set(); }).observe(coverGet);
     new IntersectionObserver(([e]) => { atClose = e.isIntersecting; set(); }, { rootMargin: '0px 0px -20% 0px' }).observe(close);
+  }
+
+  /* ---------- 3. save: tap a polaroid to stamp it ---------- */
+  document.querySelectorAll('.e-collage .e-snap').forEach(snap => {
+    const what = (snap.querySelector('figcaption') || {}).textContent || 'this';
+    snap.setAttribute('role', 'button');
+    snap.setAttribute('tabindex', '0');
+    snap.setAttribute('aria-pressed', 'false');
+    snap.setAttribute('aria-label', 'Save ' + what);
+    const stamp = document.createElement('span');
+    stamp.className = 'e-snap-stamp';
+    stamp.setAttribute('aria-hidden', 'true');
+    stamp.textContent = 'Saved';
+    snap.appendChild(stamp);
+    const toggle = () => {
+      const on = snap.classList.toggle('is-saved');
+      snap.setAttribute('aria-pressed', String(on));
+      if (on && !reduce) { snap.classList.remove('is-thunk'); void snap.offsetWidth; snap.classList.add('is-thunk'); }
+      if (on && navigator.vibrate) navigator.vibrate(12);
+    };
+    snap.addEventListener('click', toggle);
+    snap.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+
+  /* ---------- 4. footer: slap a sticker anywhere on the wall ---------- */
+  const wall = document.querySelector('.e-wall');
+  if (wall) {
+    const kinds = [['No ads', 'ink'], ['30 max', 'burst'], ['No likes', 'pink'], ['People, not popularity', 'yellow'], ['your taste, not your face', 'paper'], ['No public counts', 'pink'], ['Taste > clout', 'yellow'], ['Choose wisely', 'ink'], ['Pass it on', 'paper']];
+    let n = 0;
+    wall.addEventListener('click', e => {
+      const b = wall.getBoundingClientRect();
+      const [label, kind] = kinds[n++ % kinds.length];
+      const s = document.createElement('span');
+      s.className = 'e-sticky e-sticky--' + kind + ' is-new';
+      s.textContent = label;
+      s.style.cssText = `--x:${(e.clientX - b.left) / b.width * 100}%;--y:${(e.clientY - b.top) / b.height * 100}%;--r:${(Math.random() * 24 - 12).toFixed(1)}deg`;
+      wall.appendChild(s);
+      const all = wall.querySelectorAll('.e-sticky');
+      if (all.length > 14) all[0].remove();
+      if (navigator.vibrate) navigator.vibrate(10);
+    });
   }
 })();

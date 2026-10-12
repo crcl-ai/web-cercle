@@ -2,8 +2,11 @@
    Loaded after editorial.css; everything here overrides or extends it. */
 
 /* ---------- photocopy cover ---------- */
-.e-xerox{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;transform:scale(1.06);transition:transform 2.4s var(--ease)}
-.e-cover.in .e-xerox{transform:none}
+.e-xerox{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%}
+.e-cover-photo .e-xerox{transform:scale(1.06);transition:transform 2.4s var(--ease)}
+.e-cover.in .e-cover-photo .e-xerox{transform:none}
+.e-close>.e-xerox{position:absolute;z-index:0}
+.e-close{touch-action:pan-y}
 .e-cover-photo{touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
 @media (hover:hover) and (pointer:fine){.e-cover-photo.is-xerox{cursor:crosshair}}
 @media (prefers-reduced-motion:reduce){.e-xerox{transform:none;transition:none}}
@@ -90,4 +93,47 @@
   .e-cover h1 .e-strip:not(.e-strip--it){background:var(--paper);color:var(--ink);box-shadow:0 4px 0 rgba(255,122,205,.85)}
   .e-sticker{top:auto;bottom:36px;left:calc(50% - 128px)}
   .e-scrawl--colour{top:22px}
+}
+
+/* ---------- closing: the GET gets circled ---------- */
+.e-mark--get{display:inline-block}
+.e-mark--get>svg{left:-14%;top:-34%;width:128%;height:168%}
+.e-mark--get path{stroke-width:5}
+
+/* ---------- save: tap a polaroid, it gets stamped ---------- */
+.e-save-art{position:relative}
+.e-scrawl--save{position:absolute;z-index:6;right:2px;top:-30px;display:inline-flex;align-items:flex-end;gap:6px;color:var(--ink);transform:rotate(-5deg)}
+.e-scrawl--save .e-arrowmark path{stroke:var(--ink)}
+.e-collage .e-snap{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.e-collage .e-snap:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.e-snap-stamp{position:absolute;z-index:4;left:50%;top:38%;padding:5px 12px 3px;border:4px solid var(--pink);border-radius:7px;color:var(--pink);font:900 clamp(26px,2.4vw,34px)/1 var(--grot);font-stretch:125%;letter-spacing:.02em;text-transform:uppercase;pointer-events:none;opacity:0;border-width:5px;transform:translate(-50%,-50%) rotate(-14deg) scale(2.2);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3.2 2.4'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3.2 2.4'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E")}
+.e-snap.is-saved .e-snap-stamp{opacity:.95;transform:translate(-50%,-50%) rotate(-14deg) scale(1);transition:transform .28s cubic-bezier(.5,1.8,.6,1),opacity .1s}
+.e-snap.is-thunk{animation:e-thunk .3s}
+@keyframes e-thunk{30%{translate:0 4px}}
+@media (prefers-reduced-motion:reduce){.e-snap.is-saved .e-snap-stamp{transition:none}.e-snap.is-thunk{animation:none}}
+
+/* ---------- people: ransom initials ---------- */
+.e-avatar{border-radius:0;transform:rotate(-4deg);box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.e-overheard li:nth-child(2) .e-avatar{background:var(--pink);color:var(--ink);font-stretch:75%;transform:rotate(5deg)}
+.e-overheard li:nth-child(3) .e-avatar{background:var(--yellow);color:var(--ink);font-family:var(--serif);font-style:italic;font-weight:300;font-size:30px;transform:rotate(-2deg)}
+
+/* ---------- footer: a wall to slap stickers on ---------- */
+.e-wall{position:relative;margin-bottom:34px;cursor:copy;touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.e-wall .e-foot-word{margin:0}
+.e-sticky{position:absolute;left:var(--x);top:var(--y);padding:7px 12px 6px;font:900 clamp(13px,1.3vw,18px)/1 var(--grot);font-stretch:125%;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;pointer-events:none;transform:translate(-50%,-50%) rotate(var(--r));box-shadow:0 3px 0 rgba(0,0,0,.35)}
+.e-sticky--pink{background:var(--pink);color:var(--ink);border-radius:999px}
+.e-sticky--yellow{background:var(--yellow);color:var(--ink)}
+.e-sticky--paper{background:var(--news);color:var(--ink);font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(16px,1.6vw,22px);text-transform:none;letter-spacing:0}
+.e-sticky--ink{background:var(--paper);color:var(--ink);border:2px solid var(--ink)}
+.e-sticky--burst{width:clamp(78px,7vw,100px);height:clamp(78px,7vw,100px);padding:0;font-size:clamp(14px,1.3vw,18px);font-stretch:100%;display:grid;place-items:center;background:var(--pink);color:var(--ink);box-shadow:none;clip-path:polygon(50% 0,61% 18%,80% 8%,79% 29%,100% 31%,86% 48%,100% 64%,79% 68%,82% 90%,62% 81%,50% 100%,39% 81%,18% 90%,21% 68%,0 64%,14% 48%,0 31%,21% 29%,20% 8%,39% 18%)}
+.e-sticky.is-new{animation:e-slap .32s cubic-bezier(.5,1.8,.6,1)}
+@keyframes e-slap{from{transform:translate(-50%,-50%) rotate(var(--r)) scale(1.9);opacity:0}}
+.e-scrawl--slap{position:absolute;right:0;bottom:-12px;transform:rotate(-4deg)}
+@media (prefers-reduced-motion:reduce){.e-sticky.is-new{animation:none}}
+@media (max-width:699px){
+  .e-wall{padding-top:clamp(120px,36vw,170px)}
+  .e-scrawl--slap{bottom:-22px}
+  .e-mark--get>svg{left:-6%;width:112%}
 }
