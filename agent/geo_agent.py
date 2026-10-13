@@ -206,6 +206,11 @@ def git_deploy():
         print(f"[!] Git deployment warning: {e}")
 
 if __name__ == "__main__":
+    if os.environ.get("CIRCLE_ALLOW_LEGACY_GEO") != "1":
+        raise SystemExit(
+            "Legacy page generation is disabled. Use the reviewed discovery pipeline; "
+            "set CIRCLE_ALLOW_LEGACY_GEO=1 only for an intentional local archive run."
+        )
     print("=========================================================")
     print("   CIRCLE AUTONOMOUS GEO & AEO AGENT INITIALIZED        ")
     print("=========================================================")

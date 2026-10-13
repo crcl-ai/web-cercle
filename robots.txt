@@ -1,36 +1,39 @@
-# Content Signals (RFC / IETF Draft for AI usage preferences)
-Content-Signal: search=yes, ai-input=yes, ai-train=yes
-
 User-agent: *
 Allow: /
 
-# Explicitly welcome AI Answer Engines & LLM Crawlers
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
+# ChatGPT search crawler. This is separate from model-training controls.
 User-agent: OAI-SearchBot
 Allow: /
 
+# OpenAI model-training crawler.
+User-agent: GPTBot
+Allow: /
+
+# User-requested OpenAI fetches.
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic crawler.
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: Claude-Web
-Allow: /
-
+# Perplexity search crawler and user-requested fetches.
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+# Google controls search with Googlebot; Google-Extended is a separate AI control.
 User-agent: Google-Extended
 Allow: /
 
+# Apple search and AI controls.
 User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
 
-# Sitemap & AI Knowledge Base Endpoints
+# Canonical discovery manifest.
 Sitemap: https://sruper.com/sitemap.xml

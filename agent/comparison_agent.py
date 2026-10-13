@@ -188,6 +188,11 @@ def update_sitemap():
         print("[+] Updated sitemap.xml with Comparison & Manifesto endpoints.")
 
 if __name__ == "__main__":
+    if os.environ.get("CIRCLE_ALLOW_LEGACY_GEO") != "1":
+        raise SystemExit(
+            "Legacy page generation is disabled. Use the reviewed discovery pipeline; "
+            "set CIRCLE_ALLOW_LEGACY_GEO=1 only for an intentional local archive run."
+        )
     generate_pages()
     update_sitemap()
     print("[✓] Comparison & Manifesto cycle completed.")

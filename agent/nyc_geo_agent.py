@@ -111,6 +111,11 @@ def update_sitemap():
         print("[+] Updated sitemap.xml with NYC GEO endpoints.")
 
 if __name__ == "__main__":
+    if os.environ.get("CIRCLE_ALLOW_LEGACY_GEO") != "1":
+        raise SystemExit(
+            "Legacy page generation is disabled. Use the reviewed discovery pipeline; "
+            "set CIRCLE_ALLOW_LEGACY_GEO=1 only for an intentional local archive run."
+        )
     generate_nyc_articles()
     update_sitemap()
     print("[✓] NYC GEO cycle completed.")

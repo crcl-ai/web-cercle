@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-13",
+  "review_by": "2026-10-27",
+  "owner": "Circle product",
+  "product": {
+    "name": "Circle",
+    "tagline": "A home for your taste",
+    "canonical_url": "https://sruper.com/",
+    "app_store_url": "https://apps.apple.com/app/id6744259628",
+    "platform": "iOS",
+    "company": "Sruper Inc.",
+    "description": "Circle is an iOS app for saving songs, films, books, links, and places, making thoughtful collections, and discovering through people whose taste you trust.",
+    "short_description": "Save what shapes you. Discover through people whose taste you trust.",
+    "official_account": "@circle",
+    "collection_limit": 30,
+    "content_types": [
+      "songs",
+      "films",
+      "books",
+      "links",
+      "places"
+    ]
+  },
+  "terms": [
+    {
+      "name": "Thing",
+      "definition": "A saved song, film, book, link, place, photo, note, or other media object."
+    },
+    {
+      "name": "Save",
+      "definition": "The action for saving a thing or collection in Circle."
+    },
+    {
+      "name": "Collection",
+      "definition": "A group of up to 30 things chosen around a place, trip, mood, idea, or person."
+    },
+    {
+      "name": "Your circle",
+      "definition": "The people you follow in Circle."
+    }
+  ],
+  "claims": [
+    {
+      "id": "circle_name",
+      "status": "shipping",
+      "public": true,
+      "wording": "The app is Circle.",
+      "evidence": ["index.html", "CNAME"]
+    },
+    {
+      "id": "ios_platform",
+      "status": "shipping",
+      "public": true,
+      "wording": "Circle is made for iOS.",
+      "evidence": ["index.html", "https://apps.apple.com/app/id6744259628"]
+    },
+    {
+      "id": "save_content_types",
+      "status": "shipping",
+      "public": true,
+      "wording": "Circle lets people save songs, films, books, links, and places.",
+      "evidence": ["index.html"]
+    },
+    {
+      "id": "collections",
+      "status": "shipping",
+      "public": true,
+      "wording": "People can make collections containing up to 30 things.",
+      "evidence": ["index.html#collections"]
+    },
+    {
+      "id": "discovery_through_people",
+      "status": "shipping",
+      "public": true,
+      "wording": "Circle is designed for discovery through people whose taste you trust.",
+      "evidence": ["index.html#people"]
+    },
+    {
+      "id": "launch_geography",
+      "status": "review_required",
+      "public": false,
+      "wording": null,
+      "evidence": []
+    },
+    {
+      "id": "human_verification",
+      "status": "prohibited_absolute",
+      "public": false,
+      "wording": null,
+      "evidence": []
+    },
+    {
+      "id": "spatial_availability",
+      "status": "review_required",
+      "public": false,
+      "wording": null,
+      "evidence": []
+    }
+  ]
+}

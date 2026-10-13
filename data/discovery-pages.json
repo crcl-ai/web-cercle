@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "pages": [
+    {
+      "file": "index.html",
+      "url": "https://sruper.com/",
+      "lastmod": "2026-10-12",
+      "indexable": true,
+      "requires_schema": true
+    },
+    {
+      "file": "about.html",
+      "url": "https://sruper.com/about",
+      "lastmod": "2026-10-13",
+      "indexable": true,
+      "requires_schema": true
+    },
+    {
+      "file": "press.html",
+      "url": "https://sruper.com/press",
+      "lastmod": "2026-10-13",
+      "indexable": true,
+      "requires_schema": true
+    },
+    {
+      "file": "contact.html",
+      "url": "https://sruper.com/contact",
+      "lastmod": "2026-10-11",
+      "indexable": true,
+      "requires_schema": false
+    },
+    {
+      "file": "privacy.html",
+      "url": "https://sruper.com/privacy",
+      "lastmod": "2026-10-11",
+      "indexable": true,
+      "requires_schema": false
+    },
+    {
+      "file": "terms.html",
+      "url": "https://sruper.com/terms",
+      "lastmod": "2026-10-11",
+      "indexable": true,
+      "requires_schema": false
+    },
+    {
+      "file": "llms.txt",
+      "url": "https://sruper.com/llms.txt",
+      "lastmod": "2026-10-13",
+      "indexable": true,
+      "requires_schema": false
+    },
+    {
+      "file": "llms-full.txt",
+      "url": "https://sruper.com/llms-full.txt",
+      "lastmod": "2026-10-13",
+      "indexable": true,
+      "requires_schema": false
+    },
+    {
+      "file": "robots.txt",
+      "url": "https://sruper.com/robots.txt",
+      "lastmod": "2026-10-13",
+      "indexable": false,
+      "requires_schema": false
+    }
+  ]
+}
