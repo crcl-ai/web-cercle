@@ -701,4 +701,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://sruper.com/geo/london/london-taste-rebellion-beyond-algorithmic-noise.html</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://sruper.com/geo/brazil/unliked-playlists-brazil-taste-rebellion.html</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
