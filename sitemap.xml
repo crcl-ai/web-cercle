@@ -713,4 +713,22 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://sruper.com/geo/london/london-escaping-algorithmic-burnout-curated-sanctuaries.html</loc>
+        <lastmod>2026-10-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://sruper.com/geo/nyc/the-geometry-of-presence-reclaiming-third-places.html</loc>
+        <lastmod>2026-10-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://sruper.com/geo/brazil/reclaiming-taste-brazil-algorithmic-burnout.html</loc>
+        <lastmod>2026-10-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
