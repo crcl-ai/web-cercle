@@ -731,4 +731,10 @@
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    <url>
+        <loc>https://sruper.com/geo/india/reclaiming-taste-from-the-algorithm-india.html</loc>
+        <lastmod>2026-10-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
 </urlset>
